@@ -71,6 +71,15 @@
       object-fit: cover;
       border-radius: 10px;
     }
+    @media (max-width: 768px) {
+      .menu-table {
+        flex-direction: column;
+        align-items: center;
+      }
+      .menu-column {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -94,48 +103,54 @@
         </table>
       </div>
     </div>
-    <div class="image-slider" id="image-slider">
-      <img id="img0"><img id="img1"><img id="img2"><img id="img3"><img id="img4">
+
+    <div class="image-slider">
+      <img id="img0" src="">
+      <img id="img1" src="">
+      <img id="img2" src="">
+      <img id="img3" src="">
+      <img id="img4" src="">
     </div>
   </div>
 
 <script>
-let imageIndexes = [0, 0, 0, 0, 0];
-
-function updateImages(images) {
-  images.forEach((set, idx) => {
-    document.getElementById(`img${idx}`).src = set[imageIndexes[idx]];
-    imageIndexes[idx] = (imageIndexes[idx] + 1) % set.length;
-  });
-}
+let imageIndexes = [0,0,0,0,0];
 
 fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/menu.json')
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('menu-title').textContent = data.title;
-    document.getElementById('category').textContent = data.header.category;
-    document.getElementById('note').textContent = data.header.note;
+.then(response => response.json())
+.then(data => {
+  document.getElementById('menu-title').textContent = data.title;
+  document.getElementById('category').textContent = data.header.category;
+  document.getElementById('note').textContent = data.header.note;
 
-    let half = Math.ceil(data.items.length / 2);
-    let leftItems = data.items.slice(0, half);
-    let rightItems = data.items.slice(half);
+  const half = Math.ceil(data.items.length / 2);
+  const leftItems = data.items.slice(0, half);
+  const rightItems = data.items.slice(half);
 
-    let leftHTML = '';
-    leftItems.forEach(item => {
-      leftHTML += `<tr><td>${item.name}</td><td class="price">${item.lg_price}</td><td class="price">${item.reg_price}</td></tr>`;
+  const leftHTML = leftItems.map(item => `
+    <tr><td>${item.name}</td><td class="price">${item.lg_price}</td><td class="price">${item.reg_price}</td></tr>`).join('');
+  document.getElementById('left-items').innerHTML = leftItems;
+
+  const rightHTML = rightItems.map(item => 
+    `<tr><td>${item.name}</td><td class="price">${item.lg_price}</td><td class="price">${item.reg_price}</td></tr>`
+  ).join('');
+  document.getElementById('right-menu').querySelector('tbody').innerHTML = rightHTML;
+
+  function updateImages(){
+    data.images.forEach((imageSet, idx) => {
+      document.getElementById(`img${idx}`).src = imageSets[idx][imageIndexes[idx]];
+      imageIndexes[idx] = (imageIndexes[idx] + 1) % imageSets[idx].length;
     });
-    document.getElementById('left-items').innerHTML = leftHTML;
+  }
 
-    let rightHTML = '';
-    rightItems.forEach(item => {
-      rightHTML += `<tr><td>${item.name}</td><td class="price">${item.lg_price}</td><td class="price">${item.reg_price}</td></tr>`;
-    });
-    document.getElementById('right-items').innerHTML = rightHTML;
+  const imageSets = data.images;
+  let imageIndexes = [0, 0, 0, 0, 0];
+  updateImages();
+  setInterval(updateImages, 5000);
 
-    updateImages(data.images);
-    setInterval(() => updateImages(data.images), 5000);
-  })
-  .catch(err => console.error('Error fetching menu:', err));
+  updateImages();
+})
+.catch(err => console.error('Error fetching menu:', err));
 </script>
 </body>
 </html>
