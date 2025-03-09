@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang=\"en\">
+<html lang="en">
 <head>
-  <meta charset=\"UTF-8\">
-  <title>Jimmy's House of Pizza Menu</title>
-  <link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap\" rel=\"stylesheet\">
+  <meta charset="UTF-8">
+  <title>Jimmy's House of Pizza - Digital Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       background: black;
@@ -16,12 +16,14 @@
       margin: auto;
       padding-top: 5px;
     }
+
     .menu-title {
       font-size: 3.8em;
       font-weight: bold;
       color: red;
       text-shadow: 4px 4px 6px rgba(255, 0, 0, 0.7);
     }
+
     .menu-header {
       display: flex;
       justify-content: space-between;
@@ -37,13 +39,11 @@
       flex: 1;
       text-align: center;
     }
+
     .menu-table {
-      width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      text-align: left;
-      margin-top: 5px;
+      width: 100%;
     }
     .menu-column {
       width: 49%;
@@ -51,72 +51,89 @@
     table {
       width: 100%;
       border-collapse: collapse;
+      color: white;
+      font-size: 1.8em;
     }
     th, td {
-      font-size: 1.8em;
       padding: 10px;
-    }
-    th {
-      text-align: center;
-      font-weight: bold;
+      text-align: left;
     }
     .price {
       text-align: right;
     }
-    @media (max-width: 768px) {
-      .menu-table {
-        flex-direction: column;
-        align-items: center;
-      }
-      .menu-column {
-        width: 100%;
-      }
+
+    .image-slider {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 15px;
+      width: 100%;
+      padding-bottom: 10px;
+    }
+    .image-slider img {
+      width: 14%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-  <div class=\"menu-container\">
-    <h1 class=\"menu-title\" id=\"title\"></h1>
-    <div class=\"menu-header\">
-      <span id=\"category\"></span>
-      <span id=\"note\"></span>
+  <div class="menu-container">
+    <h1 class="menu-title" id="menu-title"></h1>
+    <div class="menu-header">
+      <span id="category"></span>
+      <span id="note"></span>
     </div>
-    <div class=\"menu-table\">
-      <div class=\"menu-column\">
-        <table id=\"left-menu\">
-          <tr><th>Item</th><th>LG 12\"</th><th>REG 8\"</th></tr>
+    <div class="menu-table">
+      <div class="menu-column">
+        <table id="left-menu">
+          <thead><tr><th>Item</th><th class="price">LG 12"</th><th class="price">REG 8"</th></tr>
+          <tbody id="left-items"></tbody>
         </table>
       </div>
-      <div class=\"menu-column\">
-        <table id=\"right-menu\">
-          <tr><th>Item</th><th>LG 12\"</th><th>REG 8\"</th></tr>
+      <div class="menu-column">
+        <table id="right-menu">
+          <tr><th>Item</th><th>LG 12"</th><th>REG 8"</th></tr>
+          <tbody id="right-items"></tbody>
         </table>
       </div>
     </div>
+    <div class="image-slider" id="image-slider"></div>
   </div>
 
-  <script>
-    fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/menu.json')
-    .then(response => response.json())
-    .then(data => {
-      document.querySelector('.menu-title').textContent = data.title;
-      document.querySelector('.menu-header').innerHTML = `<span>${data.header.category}</span><span>${data.header.note}</span>`;
-      
-      const half = Math.ceil(data.items.length / 2);
-      const leftItems = data.items.slice(0, half = Math.ceil(data.items.length / 2));
-      const rightItems = data.items.slice(half);
+<script>
+fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/menu.json')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('menu-title').textContent = data.title;
+    document.getElementById('category').textContent = data.header.category;
+    document.getElementById('note').textContent = data.header.note;
 
-      const leftTable = document.getElementById('left-menu');
-      leftItems.forEach(item => {
-        leftTable.innerHTML += `<tr><td>${item.name}</td><td class=\"price\">${item.lg_price}</td><td class=\"price\">${item.reg_price}</td>`;
-      });
+    let half = Math.ceil(data.items.length / 2);
+    let leftItems = data.items.slice(0, half);
+    let rightItems = data.items.slice(half);
 
-      const rightTable = document.getElementById('right-menu');
-      rightItems.forEach(item => {
-        rightTable.innerHTML += `<tr><td>${item.name}</td><td class=\"price\">${item.lg_price}</td><td class=\"price\">${item.reg_price}</td></tr>`;
-      });
-    })
-    .catch(err => console.error('Error fetching menu:', err));
-  </script>
+    let leftHTML = '';
+    leftItems = document.getElementById('left-items');
+    leftItems.innerHTML = '';
+    leftItems = data.items.slice(0, data.items.length / 2);
+    leftItems.forEach(item => {
+      leftHTML += `<tr><td>${item.name}</td><td class="price">${item.lg_price}</td><td class="price">${item.reg_price}</td></tr>`;
+    });
+    document.getElementById('left-items').innerHTML = leftHTML;
+
+    rightItems = data.items.slice(data.items.length / 2);
+    let rightHTML = '';
+    const rightMenu = document.getElementById('right-menu');
+    rightMenu.innerHTML = '<tr><th>Item</th><th>LG 12"</th><th>REG 8"</th></tr>';
+    rightItems.forEach(item => {
+      rightHTML += `<tr><td>${item.name}</td><td class="price">${item.lg_price}</td><td class="price">${item.reg_price}</td></tr>`;
+    });
+    rightMenu.innerHTML += rightHTML;
+
+    document.getElementById('note').textContent = data.header.note;
+  })
+  .catch(err => console.error('Error fetching menu:', err));
+</script>
 </body>
 </html>
