@@ -1,0 +1,34 @@
+{
+  "title": "JIMMY'S HOUSE OF PIZZA",
+  "header": {
+    "category": "HOT OR COLD SUBS",
+    "note": "* ALL PRICES INCLUDE 9% TAXES *"
+  },
+  "items": [
+    {"name": "MEATBALLS", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "SAUSAGE", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "HAM & CHEESE", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "SALAMI", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "TUNA", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "CHEESEBURGER", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "B.L.T", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "PASTRAMI", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "GYROS", "lg_price": "13.75", "reg_price": "11.75"},
+    {"name": "VEAL PARMESAN", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "CHICKEN PARMESAN", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "VEGETARIAN", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "ROAST BEEF", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "TURKEY", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "SAUSAGE & MEATBALLS", "lg_price": "13.00", "reg_price": "11.75"},
+    {"name": "COMBO ITALIAN", "lg_price": "13.75", "reg_price": "11.75"},
+    {"name": "LAMB GRINDER", "lg_price": "13.75", "reg_price": "---"},
+    {"name": "EXTRA CHEESE", "lg_price": "2.50", "reg_price": "2.00"}
+  ],
+  "images": [
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/pizza4.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza2.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/PIzza1.png?raw=true"],
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/Calzone2.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza3.png?raw=true"],
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/Calzone5.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone3.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone4.png?raw=true"],
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/SubRings.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/StkFries.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/CalzoneRingsFries.png?raw=true"],
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/Spaghetti.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Spaghetti.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/StkCheese.png?raw=true"]
+  ]
+}
