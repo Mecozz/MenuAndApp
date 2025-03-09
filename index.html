@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jimmy's House of Pizza Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      text-align: center;
+    }
+
+    .menu-container {
+      width: 90%;
+      margin: auto;
+      padding-top: 20px;
+    }
+
+    .menu-title {
+      color: red;
+      font-size: 3.5em;
+      text-shadow: 4px 4px 6px rgba(255, 0, 0, 0.7);
+    }
+
+    .menu-header {
+      background-color: yellow;
+      color: red;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 10px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      font-size: 1.8em;
+      text-align: left;
+    }
+
+    .price {
+      text-align: right;
+    }
+
+    .menu-note {
+      margin-top: 10px;
+      font-size: 1.4em;
+      font-style: italic;
+    }
+
+    @media(max-width:768px) {
+      .menu-title {
+        font-size: 2.5em;
+      }
+
+      .menu-header, th, td {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <h1 class="menu-title" id="title"></h1>
+    <div class="menu-header" id="header"></div>
+    <table id="menu">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th class="price">LG 12"</th>
+          <th class="price">REG 8"</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="menu-note" id="note"></div>
+  </div>
+
+<script>
+fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/menu.json')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('title').textContent = data.title;
+    document.getElementById('header').textContent = data.header.category;
+    document.getElementById('note').textContent = data.header.note;
+
+    const tbody = document.querySelector('#menu tbody');
+    data.items.forEach(item => {
+      const row = `<tr>
+        <td>${item.name}</td>
+        <td class="price">${item.lg_price}</td>
+        <td class="price">${item.reg_price}</td>
+      </tr>`;
+      tbody.innerHTML += row;
+    });
+  })
+  .catch(err => console.error('Error fetching menu:', err));
+</script>
+
+</body>
+</html>
