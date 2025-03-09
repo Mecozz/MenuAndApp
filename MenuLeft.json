@@ -30,10 +30,10 @@
     {"name": "EXTRA CHEESE", "lg_price": "3.00", "reg_price": "2.50"}
   ],
   "images": [
-    ["https://github.com/Mecozz/Digital-Menu/blob/main/PIzza1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/SubRings.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/PIzza1.png?raw=true"],
-    ["https://github.com/Mecozz/Digital-Menu/blob/main/Pizza2.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza2.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza2.png?raw=true"],
-    ["https://github.com/Mecozz/Digital-Menu/blob/main/pizza4.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/pizza4.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/pizza4.png?raw=true"],
-    ["https://github.com/Mecozz/Digital-Menu/blob/main/Pizza3.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza3.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza3.png?raw=true"],
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/SubRings.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/PIzza1.png?raw=true"],
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza2.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza2.png?raw=true"],
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/pizza4.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/pizza4.png?raw=true"],
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza3.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza3.png?raw=true"],
     ["https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true"]
   ]
 }
