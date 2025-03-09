@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Jimmy's House of Pizza - Menu</title>
+  <title>Jimmy's House of Pizza - Left Menu</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -24,7 +24,6 @@
       padding: 15px;
       font-size: 2.5em;
       font-weight: bold;
-      width: 100%;
       text-transform: uppercase;
     }
     .menu-header span {
@@ -36,8 +35,6 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      text-align: left;
       margin-top: 10px;
     }
     .menu-column {
@@ -46,25 +43,19 @@
     table {
       width: 100%;
       border-collapse: collapse;
+      font-size: 1.8em;
     }
     th, td {
-      font-size: 1.8em;
       padding: 8px 15px;
-    }
-    th {
-      text-align: center;
-      font-weight: bold;
+      text-align: left;
     }
     .price {
       text-align: right;
     }
-    /* Image Slider */
     .image-slider {
       display: flex;
       justify-content: space-evenly;
-      align-items: center;
       margin-top: 15px;
-      width: 100%;
       padding-bottom: 10px;
     }
     .image-slider img {
@@ -78,70 +69,48 @@
 </head>
 <body>
 
-  <div class="menu-container">
-    <!-- Header -->
-    <div class="menu-header">
-      <span>PIZZA</span>
-      <span>CALZONES</span>
+<div class="menu-container">
+  <div class="menu-header">
+    <span id="left-category"></span>
+    <span id="right-category"></span>
+  </div>
+  <div class="menu-table">
+    <div class="menu-column">
+      <table>
+        <thead><tr><th>Item</th><th class="price">LG 14"</th><th class="price">REG 10"</th></tr></thead>
+        <tbody id="left-items"></tbody>
+      </table>
     </div>
-    
-    <div class="menu-table">
-      <!-- Pizza Section -->
-      <div class="menu-column">
-        <table>
-          <tr><th>Item</th><th>LG 14"</th><th>REG 10"</th></tr>
-          <tr><td>PLAIN</td><td class="price">13.00</td><td class="price">9.00</td></tr>
-          <tr><td>ONIONS</td><td class="price">15.00</td><td class="price">11.00</td></tr>
-          <tr><td>PEPPERS</td><td class="price">15.00</td><td class="price">11.00</td></tr>
-          <tr><td>HAMBURG</td><td class="price">15.00</td><td class="price">11.00</td></tr>
-          <tr><td>PEPPERONI</td><td class="price">15.00</td><td class="price">11.00</td></tr>
-          <tr><td>HAM</td><td class="price">15.00</td><td class="price">11.00</td></tr>
-          <tr><td>MUSHROOM</td><td class="price">15.00</td><td class="price">11.00</td></tr>
-          <tr><td>SAUSAGE</td><td class="price">15.00</td><td class="price">11.00</td></tr>
-          <tr><td>MEATBALLS</td><td class="price">16.00</td><td class="price">12.00</td></tr>
-          <tr><td>BACON</td><td class="price">16.00</td><td class="price">12.00</td></tr>
-        </table>
-      </div>
-
-      <!-- Calzones Section -->
-      <div class="menu-column">
-        <table>
-          <tr><th>Item</th><th>LG 14"</th><th>REG 10"</th></tr>
-          <tr><td>PLAIN</td><td class="price">16.75</td><td class="price">13.00</td></tr>
-          <tr><td>1 ITEM</td><td class="price">18.75</td><td class="price">15.00</td></tr>
-          <tr><td>2 ITEMS</td><td class="price">22.00</td><td class="price">16.75</td></tr>
-          <tr><td>STEAK SPECIAL</td><td class="price">22.00</td><td class="price">16.75</td></tr>
-          <tr><td>CHICKEN</td><td class="price">22.00</td><td class="price">16.75</td></tr>
-          <tr><td>SPINACH & FETA</td><td class="price">22.00</td><td class="price">16.75</td></tr>
-          <tr><td>MEATBALL</td><td class="price">22.00</td><td class="price">16.75</td></tr>
-          <tr><td>HAM & PINEAPPLE</td><td class="price">22.00</td><td class="price">16.75</td></tr>
-          <tr><td>HOUSE SPECIAL</td><td class="price">23.00</td><td class="price">16.75</td></tr>
-          <tr><td>BACON OR GYRO</td><td class="price">23.00</td><td class="price">16.75</td></tr>
-          <tr><td>MEAT LOVERS</td><td class="price">23.00</td><td class="price">17.75</td></tr>
-          <tr><td>EXTRA CHEESE</td><td class="price">3.00</td><td class="price">2.50</td></tr>
-        </table>
-      </div>
-    </div>
-
-    <!-- Image Slider -->
-    <div class="image-slider">
-      <img src="" id="img1">
-      <img src="" id="img2">
-      <img src="" id="img3">
-      <img src="" id="img4">
-      <img src="" id="img5">
+    <div class="menu-column">
+      <table>
+        <thead><tr><th>Item</th><th class="price">LG 14"</th><th class="price">REG 10"</th></tr></thead>
+        <tbody id="right-items"></tbody>
+      </table>
     </div>
   </div>
+  <div class="image-slider">
+    <img id="img0"><img id="img1"><img id="img2"><img id="img3"><img id="img4">
+  </div>
+</div>
 
-  <script>
-    let imageSets = [
-      ["https://github.com/Mecozz/Digital-Menu/blob/main/PIzza1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/SubRings.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/PIzza1.png?raw=true"],  // Slot 1
-      ["https://github.com/Mecozz/Digital-Menu/blob/main/Pizza2.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza2.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza2.png?raw=true"],  // Slot 2
-      ["https://github.com/Mecozz/Digital-Menu/blob/main/pizza4.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/pizza4.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/pizza4.png?raw=true"],  // Slot 3
-      ["https://github.com/Mecozz/Digital-Menu/blob/main/Pizza3.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza3.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza3.png?raw=true"],  // Slot 4
-      ["https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true"]   // Slot 5
-    ];
+<script>
+fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuLeft.json')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('left-category').textContent = data.header.left_category;
+    document.getElementById('right-category').textContent = data.header.right_category;
 
+    let leftHTML = data.left_items.map(item => `
+      <tr><td>${item.name}</td><td class="price">${item.lg_price}</td><td class="price">${item.reg_price}</td></tr>
+    `).join('');
+    document.getElementById('left-items').innerHTML = leftHTML;
+
+    let rightHTML = data.right_items.map(item => `
+      <tr><td>${item.name}</td><td class="price">${item.lg_price}</td><td class="price">${item.reg_price}</td></tr>
+    `).join('');
+    document.getElementById('right-items').innerHTML = rightHTML;
+
+    let imageSets = data.images;
     let imgElements = document.querySelectorAll(".image-slider img");
     let currentIndexes = new Array(imageSets.length).fill(0);
 
@@ -151,10 +120,11 @@
         currentIndexes[i] = (currentIndexes[i] + 1) % imageSets[i].length;
       });
     }
-
-    updateImages(); // Initialize images
+    updateImages();
     setInterval(updateImages, 5000);
-  </script>
+  })
+  .catch(err => console.error('Error loading menu:', err));
+</script>
 
 </body>
 </html>
