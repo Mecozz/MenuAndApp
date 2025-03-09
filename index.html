@@ -16,14 +16,12 @@
       margin: auto;
       padding-top: 5px;
     }
-
     .menu-title {
       font-size: 3.8em;
       font-weight: bold;
       color: red;
       text-shadow: 4px 4px 6px rgba(255, 0, 0, 0.7);
     }
-
     .menu-header {
       display: flex;
       justify-content: space-between;
@@ -39,7 +37,6 @@
       flex: 1;
       text-align: center;
     }
-
     .menu-table {
       display: flex;
       justify-content: space-between;
@@ -61,7 +58,6 @@
     .price {
       text-align: right;
     }
-
     .image-slider {
       display: flex;
       justify-content: space-evenly;
@@ -70,7 +66,7 @@
       padding-bottom: 10px;
     }
     .image-slider img {
-      width: 14%;
+      width: 18%;
       height: 120px;
       object-fit: cover;
       border-radius: 10px;
@@ -87,21 +83,32 @@
     <div class="menu-table">
       <div class="menu-column">
         <table id="left-menu">
-          <thead><tr><th>Item</th><th class="price">LG 12"</th><th class="price">REG 8"</th></tr>
+          <thead><tr><th>Item</th><th>LG 12"</th><th>REG 8"</th></tr></thead>
           <tbody id="left-items"></tbody>
         </table>
       </div>
       <div class="menu-column">
         <table id="right-menu">
-          <tr><th>Item</th><th>LG 12"</th><th>REG 8"</th></tr>
+          <thead><tr><th>Item</th><th>LG 12"</th><th>REG 8"</th></tr></thead>
           <tbody id="right-items"></tbody>
         </table>
       </div>
     </div>
-    <div class="image-slider" id="image-slider"></div>
+    <div class="image-slider" id="image-slider">
+      <img id="img0"><img id="img1"><img id="img2"><img id="img3"><img id="img4">
+    </div>
   </div>
 
 <script>
+let imageIndexes = [0, 0, 0, 0, 0];
+
+function updateImages(images) {
+  images.forEach((set, idx) => {
+    document.getElementById(`img${idx}`).src = set[imageIndexes[idx]];
+    imageIndexes[idx] = (imageIndexes[idx] + 1) % set.length;
+  });
+}
+
 fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/menu.json')
   .then(response => response.json())
   .then(data => {
@@ -114,24 +121,19 @@ fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/menu.json')
     let rightItems = data.items.slice(half);
 
     let leftHTML = '';
-    leftItems = document.getElementById('left-items');
-    leftItems.innerHTML = '';
-    leftItems = data.items.slice(0, data.items.length / 2);
     leftItems.forEach(item => {
       leftHTML += `<tr><td>${item.name}</td><td class="price">${item.lg_price}</td><td class="price">${item.reg_price}</td></tr>`;
     });
     document.getElementById('left-items').innerHTML = leftHTML;
 
-    rightItems = data.items.slice(data.items.length / 2);
     let rightHTML = '';
-    const rightMenu = document.getElementById('right-menu');
-    rightMenu.innerHTML = '<tr><th>Item</th><th>LG 12"</th><th>REG 8"</th></tr>';
     rightItems.forEach(item => {
       rightHTML += `<tr><td>${item.name}</td><td class="price">${item.lg_price}</td><td class="price">${item.reg_price}</td></tr>`;
     });
-    rightMenu.innerHTML += rightHTML;
+    document.getElementById('right-items').innerHTML = rightHTML;
 
-    document.getElementById('note').textContent = data.header.note;
+    updateImages(data.images);
+    setInterval(() => updateImages(data.images), 5000);
   })
   .catch(err => console.error('Error fetching menu:', err));
 </script>
