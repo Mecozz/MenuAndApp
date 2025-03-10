@@ -221,7 +221,7 @@
         fetchWithTimeout('MenuRight.json')
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+                    throw new Error(HTTP error! Status: ${response.status});
                 }
                 return response.json();
             })
@@ -236,95 +236,95 @@
                 document.getElementById('dinnersHeader').innerText = data.header.bottom_middle_category;
 
                 // Update Steak Subs
-                let steakSubsHTML = `
+                let steakSubsHTML = 
                     <table>
                         <tr class="header-row">
                             <td class="subheader"></td>
                             <td class="subheader">LG 12"</td>
                             <td class="subheader">REG 8"</td>
                         </tr>
-                        ${data.left_items.map(item => `
+                        ${data.left_items.map(item => 
                             <tr>
                                 <td>${item.name.replace(' STEAK', '')}</td>
                                 <td class="price">${item.lg_price}</td>
                                 <td class="price">${item.reg_price}</td>
                             </tr>
-                        `).join('')}
+                        ).join('')}
                     </table>
-                `;
+                ;
                 document.getElementById('steakSubsContent').innerHTML = steakSubsHTML;
 
                 // Update Salads
-                let saladsHTML = `
+                let saladsHTML = 
                     <table>
-                        ${data.middle_items.map(item => `
+                        ${data.middle_items.map(item => 
                             <tr>
                                 <td>${item.name}</td>
                                 <td class="price">${item.price}</td>
                                 <td></td>
                             </tr>
-                        `).join('')}
+                        ).join('')}
                     </table>
-                `;
+                ;
                 document.getElementById('saladsContent').innerHTML = saladsHTML;
 
                 // Update Side Orders
-                let sideOrdersHTML = `
+                let sideOrdersHTML = 
                     <table>
                         <tr class="header-row">
                             <td class="subheader"></td>
                             <td class="subheader">LG</td>
                             <td class="subheader">SM</td>
                         </tr>
-                        ${data.right_items.map(item => `
+                        ${data.right_items.map(item => 
                             <tr>
                                 <td>${item.name}</td>
                                 <td class="price">${item.lg_price || ''}</td>
                                 <td class="price">${item.sm_price || ''}</td>
                             </tr>
-                        `).join('')}
+                        ).join('')}
                     </table>
-                `;
+                ;
                 document.getElementById('sideOrdersContent').innerHTML = sideOrdersHTML;
 
                 // Update Italian Dishes
-                let italianDishesHTML = `
+                let italianDishesHTML = 
                     <table>
-                        ${data.bottom_left_items.map(item => `
+                        ${data.bottom_left_items.map(item => 
                             <tr>
                                 <td>${item.name}</td>
                                 <td class="price">${item.price}</td>
                                 <td></td>
                             </tr>
-                        `).join('')}
+                        ).join('')}
                     </table>
-                `;
+                ;
                 document.getElementById('italianDishesContent').innerHTML = italianDishesHTML;
 
                 // Update Dinners
-                let dinnersHTML = `
+                let dinnersHTML = 
                     <table>
-                        ${data.bottom_middle_items.map(item => `
+                        ${data.bottom_middle_items.map(item => 
                             <tr>
                                 <td class="dinners-td">${item.name}</td>
                                 <td class="price">${item.price}</td>
                             </tr>
-                        `).join('')}
+                        ).join('')}
                     </table>
-                `;
+                ;
                 document.getElementById('dinnersContent').innerHTML = dinnersHTML;
 
                 // Update Image
-                let imageHTML = `
+                let imageHTML = 
                     <img src="${data.image || 'your-image.jpg'}" alt="Menu Image" class="menu-image" id="menuImage">
-                `;
+                ;
                 document.getElementById('imageContent').innerHTML = imageHTML;
             })
             .catch(error => {
                 console.error('Error loading MenuRight.json:', error);
                 const errorMessage = document.getElementById('errorMessage');
                 errorMessage.style.display = 'block';
-                errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details. Using hardcoded data as fallback.`;
+                errorMessage.innerText = Failed to load menu data: ${error.message}. Check the console for details. Using hardcoded data as fallback.;
             });
     </script>
 </body>
