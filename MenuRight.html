@@ -86,6 +86,7 @@
             max-width: 250px;  /* Set a reasonable max width */
             height: auto;  /* Keep aspect ratio */
             object-fit: contain; /* Ensure the image fits without distortion */
+            transition: opacity 0.5s ease; /* Smooth transition for slideshow */
         }
         /* Error message styling */
         .error-message {
@@ -223,6 +224,10 @@
             ]);
         }
 
+        let currentImageIndex = 0;
+        let images = [];
+        let slideshowInterval;
+
         // Fetch and render the menu data from MenuRight.json
         fetchWithTimeout('MenuRight.json')
             .then(response => {
@@ -320,18 +325,43 @@
                 `;
                 document.getElementById('dinnersContent').innerHTML = dinnersHTML;
 
-                // Update Image
-                let imageHTML = `
-                    <img src="${data.image || 'your-image.jpg'}" alt="Menu Image" class="menu-image" id="menuImage">
-                `;
-                document.getElementById('imageContent').innerHTML = imageHTML;
+                // Initialize slideshow
+                images = data.images || [];
+                if (images.length > 0) {
+                    startSlideshow();
+                } else {
+                    document.getElementById('imageContent').innerHTML = '<p>No images available</p>';
+                }
             })
             .catch(error => {
                 console.error('Error loading MenuRight.json:', error);
                 const errorMessage = document.getElementById('errorMessage');
                 errorMessage.style.display = 'block';
-                errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details.`;
+                errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details or ensure MenuRight.json is accessible.`;
             });
+
+        // Function to start the slideshow
+        function startSlideshow() {
+            if (slideshowInterval) clearInterval(slideshowInterval); // Clear existing interval
+            slideshowInterval = setInterval(() => {
+                const imageElement = document.getElementById('menuImage');
+                if (imageElement) {
+                    imageElement.style.opacity = '0'; // Fade out
+                    setTimeout(() => {
+                        currentImageIndex = (currentImageIndex + 1) % images.length;
+                        imageElement.src = images[currentImageIndex];
+                        imageElement.style.opacity = '1'; // Fade in
+                    }, 500); // Match transition duration
+                }
+            }, 5000); // Change image every 5 seconds (adjustable)
+            // Set initial image
+            document.getElementById('menuImage').src = images[currentImageIndex];
+        }
+
+        // Cleanup on page unload
+        window.onbeforeunload = () => {
+            if (slideshowInterval) clearInterval(slideshowInterval);
+        };
     </script>
 </body>
 </html>
