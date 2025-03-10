@@ -10,23 +10,25 @@
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            overflow-x: hidden;
         }
         .container {
             background-color: black;
             border: 2px solid #ccc;
-            padding: 20px;
             width: 100%;
-            max-width: 1200px;
+            max-width: 100%;
+            padding: 0;
+            box-sizing: border-box;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 16px;
+            font-size: 18px; /* Larger base font size for full-screen effect */
         }
         th {
             background-color: yellow;
@@ -34,19 +36,22 @@
             font-weight: bold;
             padding: 10px;
             text-align: center;
+            font-size: 20px;
         }
         td {
-            padding: 6px;
+            padding: 8px;
             text-align: left;
             vertical-align: top;
         }
         .price {
             text-align: right;
-            width: 60px;
+            width: 70px; /* Adjusted for better spacing */
         }
         .subheader {
             font-weight: bold;
             text-align: center;
+            background-color: black; /* Remove yellow background */
+            color: white; /* Ensure text is white */
         }
         .header-row {
             background-color: yellow;
@@ -57,10 +62,22 @@
             color: #666;
             font-size: 12px;
             margin-top: 10px;
+            padding: 10px;
         }
         @media (max-width: 768px) {
             table {
-                font-size: 14px;
+                font-size: 14px; /* Reduce font size on smaller screens */
+            }
+            td, th {
+                padding: 6px;
+            }
+            .price {
+                width: 60px;
+            }
+        }
+        @media (max-width: 480px) {
+            table {
+                font-size: 12px; /* Further reduce for very small screens */
             }
             td, th {
                 padding: 4px;
