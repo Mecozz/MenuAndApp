@@ -226,17 +226,28 @@
 
         let currentImageIndex = 0;
         let images = [];
+        let validImages = [];
         let slideshowInterval;
 
+        // Function to check if an image URL is valid by attempting to load it
+        async function checkImage(url) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+                img.src = url;
+            });
+        }
+
         // Fetch and render the menu data from MenuRight.json
-        fetchWithTimeout('MenuRight.json')
+        fetchWithTimeout('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
                 return response.json();
             })
-            .then(data => {
+            .then(async data => {
                 console.log('JSON loaded successfully:', data);
 
                 // Update headers
@@ -325,19 +336,28 @@
                 `;
                 document.getElementById('dinnersContent').innerHTML = dinnersHTML;
 
-                // Initialize slideshow
+                // Filter valid images by checking if they load
                 images = data.images || [];
-                if (images.length > 0) {
+                for (let url of images) {
+                    if (await checkImage(url)) {
+                        validImages.push(url);
+                    } else {
+                        console.log(`Skipping invalid image: ${url}`);
+                    }
+                }
+
+                // Initialize slideshow with valid images
+                if (validImages.length > 0) {
                     startSlideshow();
                 } else {
-                    document.getElementById('imageContent').innerHTML = '<p>No images available</p>';
+                    document.getElementById('imageContent').innerHTML = '<p>No valid images available</p>';
                 }
             })
             .catch(error => {
                 console.error('Error loading MenuRight.json:', error);
                 const errorMessage = document.getElementById('errorMessage');
                 errorMessage.style.display = 'block';
-                errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details or ensure MenuRight.json is accessible.`;
+                errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details or ensure MenuRight.json is accessible at https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json.`;
             });
 
         // Function to start the slideshow
@@ -348,14 +368,15 @@
                 if (imageElement) {
                     imageElement.style.opacity = '0'; // Fade out
                     setTimeout(() => {
-                        currentImageIndex = (currentImageIndex + 1) % images.length;
-                        imageElement.src = images[currentImageIndex];
+                        // Move to the next valid image
+                        currentImageIndex = (currentImageIndex + 1) % validImages.length;
+                        imageElement.src = validImages[currentImageIndex];
                         imageElement.style.opacity = '1'; // Fade in
                     }, 500); // Match transition duration
                 }
             }, 5000); // Change image every 5 seconds (adjustable)
             // Set initial image
-            document.getElementById('menuImage').src = images[currentImageIndex];
+            document.getElementById('menuImage').src = validImages[currentImageIndex] || 'your-image.jpg';
         }
 
         // Cleanup on page unload
