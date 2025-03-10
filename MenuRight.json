@@ -1,123 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Jimmy's House of Pizza - Right Menu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background: black;
-      color: white;
-      font-family: 'Open Sans', sans-serif;
-      text-align: center;
-    }
-    .menu-container {
-      width: 98%;
-      margin: auto;
-      padding-top: 10px;
-    }
-    .menu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: yellow;
-      padding: 15px;
-      font-size: 2em;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    .menu-header span {
-      color: red;
-      flex: 1;
-      text-align: center;
-    }
-    .menu-table {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 15px;
-    }
-    .menu-column {
-      width: 32%;
-      text-align: left;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 1.5em;
-    }
-    th, td {
-      padding: 8px;
-      text-align: left;
-    }
-    .price {
-      text-align: right;
-    }
-    .section-divider {
-      background: yellow;
-      color: red;
-      font-weight: bold;
-      padding: 5px;
-      font-size: 1.5em;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div class="menu-container">
-    <div class="menu-header">
-      <span id="col1-header"></span>
-      <span id="col2-header"></span>
-      <span id="col3-header"></span>
-    </div>
-    <div class="menu-table">
-      <div class="menu-column">
-        <table id="column1"></table>
-      </div>
-      <div class="menu-column">
-        <table id="column2"></table>
-      </div>
-      <div class="menu-column">
-        <table id="column3"></table>
-      </div>
-    </div>
-
-    <div class="section-divider" id="bottom-left-category"></div>
-    <div class="menu-table">
-      <div class="menu-column">
-        <table id="bottom-left-items"></table>
-      </div>
-      <div class="menu-column">
-        <div class="section-divider" id="bottom-middle-category"></div>
-        <table id="bottom-middle-items"></table>
-      </div>
-      <div class="menu-column"></div>
-    </div>
-  </div>
-
-<script>
-fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json')
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('col1-header').textContent = data.header.left_category;
-    document.getElementById('col2-header').textContent = data.header.middle_category;
-    document.getElementById('col3-header').textContent = data.header.right_category;
-
-    document.getElementById('bottom-left-category').textContent = data.header.bottom_left_category;
-    document.getElementById('bottom-middle-category').textContent = data.header.bottom_middle_category;
-
-    const buildTable = (items, tableId) => {
-      document.getElementById(tableId).innerHTML = items.map(item => `
-        <tr><td>${item.name}</td><td class="price">${item.lg_price || ''}</td><td class="price">${item.sm_price || item.price || ''}</td></tr>
-      `).join('');
-    };
-
-    buildTable(data.left_items, 'column1');
-    buildTable(data.middle_items, 'column2');
-    buildTable(data.right_items, 'column3');
-    buildTable(data.bottom_left_items, 'bottom-left-items');
-    buildTable(data.bottom_middle_items, 'bottom-middle-items');
-  })
-  .catch(err => console.error('Error loading menu:', err));
-</script>
-</body>
-</html>
+{
+  "header": {
+    "left_category": "STEAK SUBS",
+    "middle_category": "SALADS",
+    "right_category": "SIDE ORDERS",
+    "bottom_left_category": "ITALIAN DISHES",
+    "bottom_middle_category": "DINNERS"
+  },
+  "left_items": [
+    {"name": "CHEESE STEAK", "lg_price": "13.00", "reg_price": "10.50"},
+    {"name": "PEPPER STEAK", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "ONION STEAK", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "MUSHROOM STEAK", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "2 ITEMS", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "3 ITEMS", "lg_price": "13.75", "reg_price": "12.75"},
+    {"name": "SPECIAL STEAK", "lg_price": "13.75", "reg_price": "12.75"},
+    {"name": "EXTRA CHEESE", "lg_price": "2.50", "reg_price": "2.00"},
+    {"name": "EXTRA STEAK", "lg_price": "5.00", "reg_price": "3.50"}
+  ],
+  "middle_items": [
+    {"name": "TOSSED SALAD", "price": "9.00"},
+    {"name": "ANTIPASTO SALAD", "price": "12.00"},
+    {"name": "GREEK SALAD", "price": "11.00"},
+    {"name": "CHEF'S SALAD", "price": "11.00"},
+    {"name": "TUNA SALAD", "price": "11.00"},
+    {"name": "TURKEY SALAD", "price": "11.00"},
+    {"name": "CHICKEN SALAD", "price": "11.00"},
+    {"name": "BUFFALO CHICKEN SALAD", "price": "11.00"},
+    {"name": "GRILLED CHICKEN SALAD", "price": "11.00"},
+    {"name": "LAMB OR STEAK SALAD", "price": "12.00"}
+  ],
+  "right_items": [
+    {"name": "BAKLAVA", "lg_price": "3.75", "sm_price": ""},
+    {"name": "GARLIC BREAD-PLAIN", "lg_price": "4.50", "sm_price": "4.50"},
+    {"name": "W/CHEESE", "lg_price": "5.75", "sm_price": "5.00"},
+    {"name": "FRENCH FRIES", "lg_price": "6.75", "sm_price": "5.00"},
+    {"name": "ONION RINGS", "lg_price": "6.75", "sm_price": "5.00"},
+    {"name": "RICE PILAF", "lg_price": "6.75", "sm_price": ""},
+    {"name": "GREEK PITA", "lg_price": "9.75", "sm_price": ""},
+    {"name": "FRIED MUSHROOMS", "lg_price": "9.75", "sm_price": ""},
+    {"name": "MOZZARELLA STICKS", "lg_price": "9.75", "sm_price": ""},
+    {"name": "CHICKEN WINGS", "lg_price": "9.75", "sm_price": ""},
+    {"name": "JALAPENO POPPERS", "lg_price": "9.75", "sm_price": ""},
+    {"name": "CHICKEN TENDERS", "lg_price": "9.75", "sm_price": ""},
+    {"name": "BUFFALO TENDERS", "lg_price": "9.75", "sm_price": ""},
+    {"name": "FRIED RAVIOLI", "lg_price": "9.75", "sm_price": ""}
+  ],
+  "bottom_left_items": [
+    {"name": "SPAGHETTI & SAUCE", "price": "10.00"},
+    {"name": "W/MEATBALLS", "price": "11.75"},
+    {"name": "W/SAUSAGE", "price": "11.75"},
+    {"name": "COMBO", "price": "12.75"},
+    {"name": "W/CHICKEN OR VEAL", "price": "11.75"}
+  ],
+  "bottom_middle_items": [
+    {"name": "FRIED CHICKEN FINGER & FRIES", "price": "13.75"},
+    {"name": "BUFFALO TENDERS & FRIES", "price": "13.75"},
+    {"name": "REG WINGS & FRIES", "price": "13.75"},
+    {"name": "LAMB PLATE W/GREEK SALAD & FRIES", "price": "23.00"}
+  ]
+}
