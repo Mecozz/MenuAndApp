@@ -254,6 +254,7 @@
         // Fetch and render the menu data from MenuRight.json
         fetchWithTimeout('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json')
             .then(response => {
+                console.log('Fetch response status:', response.status);
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
@@ -350,6 +351,13 @@
 
                 // Filter valid images by checking if they load
                 images = data.images || [];
+                console.log('Images array:', images);
+                if (!images || images.length === 0) {
+                    console.log('No images found in JSON');
+                    document.getElementById('imageContent').innerHTML = '<p style="color: white;">No images available</p>';
+                    return;
+                }
+
                 for (let url of images) {
                     const isValid = await checkImage(url);
                     if (isValid) {
@@ -363,9 +371,11 @@
                     const imageElement = document.getElementById('menuImage');
                     imageElement.style.display = 'block'; // Show the image
                     imageElement.src = validImages[0]; // Set initial image
+                    console.log('Initial image set to:', validImages[0]);
                     startSlideshow();
                 } else {
                     document.getElementById('imageContent').innerHTML = '<p style="color: white;">No valid images available</p>';
+                    console.log('No valid images found after validation');
                 }
             })
             .catch(error => {
@@ -377,6 +387,7 @@
 
         // Function to start the slideshow
         function startSlideshow() {
+            console.log('Starting slideshow with', validImages.length, 'images');
             if (slideshowInterval) clearInterval(slideshowInterval); // Clear existing interval
             slideshowInterval = setInterval(() => {
                 const imageElement = document.getElementById('menuImage');
@@ -387,6 +398,7 @@
                         currentImageIndex = (currentImageIndex + 1) % validImages.length;
                         imageElement.src = validImages[currentImageIndex];
                         imageElement.style.opacity = '1'; // Fade in
+                        console.log('Displaying image:', validImages[currentImageIndex]);
                     }, 500); // Match transition duration
                 }
             }, 5000); // Change image every 5 seconds (adjustable)
