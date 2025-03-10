@@ -34,24 +34,24 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 12px; /* Matches the compact text size in the reference */
+            font-size: 16px; /* Increased for better readability on TV */
         }
         th {
             background-color: yellow;
             color: black;
             font-weight: bold;
-            padding: 5px; /* Matches header padding in reference */
+            padding: 6px; /* Adjusted padding to scale with font size */
             text-align: center;
-            font-size: 14px; /* Slightly larger for headers, matching reference */
+            font-size: 18px; /* Slightly larger for headers */
         }
         td {
-            padding: 3px; /* Matches the tight padding in the reference */
+            padding: 4px; /* Adjusted padding to scale with font size */
             text-align: left;
             vertical-align: top;
         }
         .price {
             text-align: right;
-            width: 40px; /* Matches the column width in the reference */
+            width: 50px; /* Adjusted width to scale with font size */
         }
         .subheader {
             font-weight: bold;
@@ -66,30 +66,30 @@
         /* Adjustments for smaller screens */
         @media (max-width: 768px) {
             table {
-                font-size: 10px;
+                font-size: 14px;
             }
             th {
+                font-size: 16px;
+            }
+            td, th {
+                padding: 3px;
+            }
+            .price {
+                width: 45px;
+            }
+        }
+        @media (max-width: 480px) {
+            table {
                 font-size: 12px;
+            }
+            th {
+                font-size: 14px;
             }
             td, th {
                 padding: 2px;
             }
             .price {
-                width: 35px;
-            }
-        }
-        @media (max-width: 480px) {
-            table {
-                font-size: 8px;
-            }
-            th {
-                font-size: 10px;
-            }
-            td, th {
-                padding: 1px;
-            }
-            .price {
-                width: 30px;
+                width: 40px;
             }
         }
     </style>
