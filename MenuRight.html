@@ -53,13 +53,15 @@
             text-align: right;
             width: 70px; /* Width scaled with font size */
         }
-        /* Add spacing between sections */
+        /* Add spacing between Steak Subs prices and Salads names */
         .steak-subs .price {
             padding-right: 40px; /* Increased space to the right */
         }
+        /* Add spacing between Salads prices and Side Orders names */
         .salads .price {
             padding-right: 40px; /* Increased space to the right */
         }
+        /* Add spacing between Italian Dishes prices and Dinners names */
         .italian-dishes .price {
             padding-right: 40px; /* Increased space to the right */
         }
@@ -142,14 +144,13 @@
     <div class="menu-container">
         <div class="menu-table">
             <table id="menuTable">
-                <!-- Fallback table in case JSON fails to load -->
                 <tr class="header-row">
-                    <th>STEAK SUBS</th>
-                    <th>SALADS</th>
-                    <th>SIDE ORDERS</th>
+                    <th id="steakSubsHeader">STEAK SUBS</th>
+                    <th id="saladsHeader">SALADS</th>
+                    <th id="sideOrdersHeader">SIDE ORDERS</th>
                 </tr>
                 <tr>
-                    <td class="steak-subs">
+                    <td class="steak-subs" id="steakSubsContent">
                         <table>
                             <tr class="header-row">
                                 <td class="subheader"></td>
@@ -157,22 +158,102 @@
                                 <td class="subheader">REG 8"</td>
                             </tr>
                             <tr>
-                                <td>Loading...</td>
-                                <td class="price">-</td>
-                                <td class="price">-</td>
+                                <td>CHEESE</td>
+                                <td class="price">13.00</td>
+                                <td class="price">10.50</td>
+                            </tr>
+                            <tr>
+                                <td>PEPPER STEAK</td>
+                                <td class="price">13.00</td>
+                                <td class="price">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>ONION</td>
+                                <td class="price">13.00</td>
+                                <td class="price">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>MUSHROOM</td>
+                                <td class="price">13.00</td>
+                                <td class="price">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>STEAK</td>
+                                <td class="price">13.00</td>
+                                <td class="price">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>2 ITEMS</td>
+                                <td class="price">13.00</td>
+                                <td class="price">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>3 ITEMS</td>
+                                <td class="price">13.75</td>
+                                <td class="price">12.75</td>
+                            </tr>
+                            <tr>
+                                <td>SPECIAL</td>
+                                <td class="price">13.75</td>
+                                <td class="price">12.75</td>
+                            </tr>
+                            <tr>
+                                <td>EXTRA CHEESE</td>
+                                <td class="price">2.50</td>
+                                <td class="price">2.00</td>
+                            </tr>
+                            <tr>
+                                <td>EXTRA STEAK</td>
+                                <td class="price">5.00</td>
+                                <td class="price">3.50</td>
                             </tr>
                         </table>
                     </td>
-                    <td class="salads">
+                    <td class="salads" id="saladsContent">
                         <table>
                             <tr>
-                                <td>Loading...</td>
-                                <td class="price">-</td>
-                                <td></td>
+                                <td>TOSSED SALAD</td>
+                                <td class="price">9.00</td>
+                            </tr>
+                            <tr>
+                                <td>ANTIPASTO SALAD</td>
+                                <td class="price">12.00</td>
+                            </tr>
+                            <tr>
+                                <td>GREEK SALAD</td>
+                                <td class="price">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>CHEF'S SALAD</td>
+                                <td class="price">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>TUNA SALAD</td>
+                                <td class="price">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>TURKEY</td>
+                                <td class="price">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>CHICKEN SALAD</td>
+                                <td class="price">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>BUFFALO CHICKEN SALAD</td>
+                                <td class="price">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>GRILLED CHICKEN SALAD</td>
+                                <td class="price">11.00</td>
+                            </tr>
+                            <tr>
+                                <td>LAMB OR STEAK SALAD</td>
+                                <td class="price">12.00</td>
                             </tr>
                         </table>
                     </td>
-                    <td>
+                    <td id="sideOrdersContent">
                         <table>
                             <tr class="header-row">
                                 <td class="subheader"></td>
@@ -180,38 +261,125 @@
                                 <td class="subheader">SM</td>
                             </tr>
                             <tr>
-                                <td>Loading...</td>
-                                <td class="price">-</td>
-                                <td class="price">-</td>
+                                <td>BAKLAVA</td>
+                                <td class="price">3.75</td>
+                                <td class="price"></td>
+                            </tr>
+                            <tr>
+                                <td>GARLIC BREAD-PLAIN</td>
+                                <td class="price">4.50</td>
+                                <td class="price">4.50</td>
+                            </tr>
+                            <tr>
+                                <td>W/CHEESE</td>
+                                <td class="price">5.75</td>
+                                <td class="price">5.00</td>
+                            </tr>
+                            <tr>
+                                <td>FRENCH FRIES</td>
+                                <td class="price">6.75</td>
+                                <td class="price">5.00</td>
+                            </tr>
+                            <tr>
+                                <td>ONION RINGS</td>
+                                <td class="price">6.75</td>
+                                <td class="price">5.00</td>
+                            </tr>
+                            <tr>
+                                <td>RICE PILAF</td>
+                                <td class="price">6.75</td>
+                                <td class="price"></td>
+                            </tr>
+                            <tr>
+                                <td>GREEK PITA</td>
+                                <td class="price">9.75</td>
+                                <td class="price"></td>
+                            </tr>
+                            <tr>
+                                <td>FRIED MUSHROOMS</td>
+                                <td class="price">9.75</td>
+                                <td class="price"></td>
+                            </tr>
+                            <tr>
+                                <td>MOZZARELLA STICKS</td>
+                                <td class="price">9.75</td>
+                                <td class="price"></td>
+                            </tr>
+                            <tr>
+                                <td>CHICKEN WINGS</td>
+                                <td class="price">9.75</td>
+                                <td class="price"></td>
+                            </tr>
+                            <tr>
+                                <td>JALAPENO POPPERS</td>
+                                <td class="price">9.75</td>
+                                <td class="price"></td>
+                            </tr>
+                            <tr>
+                                <td>CHICKEN TENDERS</td>
+                                <td class="price">9.75</td>
+                                <td class="price"></td>
+                            </tr>
+                            <tr>
+                                <td>FRIED RAVIOLI</td>
+                                <td class="price">9.75</td>
+                                <td class="price"></td>
                             </tr>
                         </table>
                     </td>
                 </tr>
                 <tr class="header-row">
-                    <th>ITALIAN DISHES</th>
-                    <th>DINNERS</th>
+                    <th id="italianDishesHeader">ITALIAN DISHES</th>
+                    <th id="dinnersHeader" class="dinners-th">DINNERS</th>
                     <th></th>
                 </tr>
                 <tr>
-                    <td class="italian-dishes">
+                    <td class="italian-dishes" id="italianDishesContent">
                         <table>
                             <tr>
-                                <td>Loading...</td>
-                                <td class="price">-</td>
-                                <td></td>
+                                <td>SPAGHETTI & SAUCE</td>
+                                <td class="price">10.00</td>
+                            </tr>
+                            <tr>
+                                <td>W/MEATBALLS</td>
+                                <td class="price">11.75</td>
+                            </tr>
+                            <tr>
+                                <td>W/SAUSAGE</td>
+                                <td class="price">11.75</td>
+                            </tr>
+                            <tr>
+                                <td>COMBO</td>
+                                <td class="price">12.75</td>
+                            </tr>
+                            <tr>
+                                <td>W/CHICKEN OR VEAL</td>
+                                <td class="price">11.75</td>
                             </tr>
                         </table>
                     </td>
-                    <td>
+                    <td id="dinnersContent">
                         <table>
                             <tr>
-                                <td class="dinners-td">Loading...</td>
-                                <td class="price">-</td>
+                                <td class="dinners-td">FRIED CHICKEN FINGER & FRIES</td>
+                                <td class="price">13.75</td>
+                            </tr>
+                            <tr>
+                                <td class="dinners-td">BUFFALO TENDERS & FRIES</td>
+                                <td class="price">13.75</td>
+                            </tr>
+                            <tr>
+                                <td class="dinners-td">REG WINGS & FRIES</td>
+                                <td class="price">13.75</td>
+                            </tr>
+                            <tr>
+                                <td class="dinners-td">LAMB PLATE W/GREEK SALAD & FRIES</td>
+                                <td class="price">23.00</td>
                             </tr>
                         </table>
                     </td>
-                    <td class="image-cell">
-                        <img src="" alt="Menu Image" class="menu-image" id="menuImage">
+                    <td class="image-cell" id="imageContent">
+                        <img src="your-image.jpg" alt="Menu Image" class="menu-image" id="menuImage">
                     </td>
                 </tr>
             </table>
@@ -220,16 +388,8 @@
     <div id="errorMessage" class="error-message" style="display: none;"></div>
 
     <script>
-        // Function to handle fetch with timeout
-        function fetchWithTimeout(url, timeout = 5000) {
-            return Promise.race([
-                fetch(url),
-                new Promise((_, reject) => setTimeout(() => reject(new Error('Request timed out')), timeout))
-            ]);
-        }
-
         // Fetch and render the menu data from MenuRight.json
-        fetchWithTimeout('MenuRight.json')
+        fetch('MenuRight.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -238,115 +398,104 @@
             })
             .then(data => {
                 console.log('JSON loaded successfully:', data);
-                const table = document.getElementById('menuTable');
 
-                // Clear the fallback table
-                table.innerHTML = '';
+                // Update headers
+                document.getElementById('steakSubsHeader').innerText = data.header.left_category;
+                document.getElementById('saladsHeader').innerText = data.header.middle_category;
+                document.getElementById('sideOrdersHeader').innerText = data.header.right_category;
+                document.getElementById('italianDishesHeader').innerText = data.header.bottom_left_category;
+                document.getElementById('dinnersHeader').innerText = data.header.bottom_middle_category;
 
-                // Top row headers
-                const topHeaderRow = document.createElement('tr');
-                topHeaderRow.className = 'header-row';
-                topHeaderRow.innerHTML = `
-                    <th>${data.header.left_category}</th>
-                    <th>${data.header.middle_category}</th>
-                    <th>${data.header.right_category}</th>
-                `;
-                table.appendChild(topHeaderRow);
-
-                // Top row content
-                const topContentRow = document.createElement('tr');
-                topContentRow.innerHTML = `
-                    <td class="steak-subs">
-                        <table>
-                            <tr class="header-row">
-                                <td class="subheader"></td>
-                                <td class="subheader">LG 12"</td>
-                                <td class="subheader">REG 8"</td>
+                // Update Steak Subs
+                let steakSubsHTML = `
+                    <table>
+                        <tr class="header-row">
+                            <td class="subheader"></td>
+                            <td class="subheader">LG 12"</td>
+                            <td class="subheader">REG 8"</td>
+                        </tr>
+                        ${data.left_items.map(item => `
+                            <tr>
+                                <td>${item.name.replace(' STEAK', '')}</td>
+                                <td class="price">${item.lg_price}</td>
+                                <td class="price">${item.reg_price}</td>
                             </tr>
-                            ${data.left_items.map(item => `
-                                <tr>
-                                    <td>${item.name.replace(' STEAK', '')}</td>
-                                    <td class="price">${item.lg_price}</td>
-                                    <td class="price">${item.reg_price}</td>
-                                </tr>
-                            `).join('')}
-                        </table>
-                    </td>
-                    <td class="salads">
-                        <table>
-                            ${data.middle_items.map(item => `
-                                <tr>
-                                    <td>${item.name}</td>
-                                    <td class="price">${item.price}</td>
-                                    <td></td>
-                                </tr>
-                            `).join('')}
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            <tr class="header-row">
-                                <td class="subheader"></td>
-                                <td class="subheader">LG</td>
-                                <td class="subheader">SM</td>
+                        `).join('')}
+                    </table>
+                `;
+                document.getElementById('steakSubsContent').innerHTML = steakSubsHTML;
+
+                // Update Salads
+                let saladsHTML = `
+                    <table>
+                        ${data.middle_items.map(item => `
+                            <tr>
+                                <td>${item.name}</td>
+                                <td class="price">${item.price}</td>
+                                <td></td>
                             </tr>
-                            ${data.right_items.map(item => `
-                                <tr>
-                                    <td>${item.name}</td>
-                                    <td class="price">${item.lg_price || ''}</td>
-                                    <td class="price">${item.sm_price || ''}</td>
-                                </tr>
-                            `).join('')}
-                        </table>
-                    </td>
+                        `).join('')}
+                    </table>
                 `;
-                table.appendChild(topContentRow);
+                document.getElementById('saladsContent').innerHTML = saladsHTML;
 
-                // Bottom row headers
-                const bottomHeaderRow = document.createElement('tr');
-                bottomHeaderRow.className = 'header-row';
-                bottomHeaderRow.innerHTML = `
-                    <th>${data.header.bottom_left_category}</th>
-                    <th>${data.header.bottom_middle_category}</th>
-                    <th></th>
+                // Update Side Orders
+                let sideOrdersHTML = `
+                    <table>
+                        <tr class="header-row">
+                            <td class="subheader"></td>
+                            <td class="subheader">LG</td>
+                            <td class="subheader">SM</td>
+                        </tr>
+                        ${data.right_items.map(item => `
+                            <tr>
+                                <td>${item.name}</td>
+                                <td class="price">${item.lg_price || ''}</td>
+                                <td class="price">${item.sm_price || ''}</td>
+                            </tr>
+                        `).join('')}
+                    </table>
                 `;
-                table.appendChild(bottomHeaderRow);
+                document.getElementById('sideOrdersContent').innerHTML = sideOrdersHTML;
 
-                // Bottom row content
-                const bottomContentRow = document.createElement('tr');
-                bottomContentRow.innerHTML = `
-                    <td class="italian-dishes">
-                        <table>
-                            ${data.bottom_left_items.map(item => `
-                                <tr>
-                                    <td>${item.name}</td>
-                                    <td class="price">${item.price}</td>
-                                    <td></td>
-                                </tr>
-                            `).join('')}
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            ${data.bottom_middle_items.map(item => `
-                                <tr>
-                                    <td class="dinners-td">${item.name}</td>
-                                    <td class="price">${item.price}</td>
-                                </tr>
-                            `).join('')}
-                        </table>
-                    </td>
-                    <td class="image-cell">
-                        <img src="${data.image || 'your-image.jpg'}" alt="Menu Image" class="menu-image" id="menuImage">
-                    </td>
+                // Update Italian Dishes
+                let italianDishesHTML = `
+                    <table>
+                        ${data.bottom_left_items.map(item => `
+                            <tr>
+                                <td>${item.name}</td>
+                                <td class="price">${item.price}</td>
+                                <td></td>
+                            </tr>
+                        `).join('')}
+                    </table>
                 `;
-                table.appendChild(bottomContentRow);
+                document.getElementById('italianDishesContent').innerHTML = italianDishesHTML;
+
+                // Update Dinners
+                let dinnersHTML = `
+                    <table>
+                        ${data.bottom_middle_items.map(item => `
+                            <tr>
+                                <td class="dinners-td">${item.name}</td>
+                                <td class="price">${item.price}</td>
+                            </tr>
+                        `).join('')}
+                    </table>
+                `;
+                document.getElementById('dinnersContent').innerHTML = dinnersHTML;
+
+                // Update Image
+                let imageHTML = `
+                    <img src="${data.image || 'your-image.jpg'}" alt="Menu Image" class="menu-image" id="menuImage">
+                `;
+                document.getElementById('imageContent').innerHTML = imageHTML;
             })
             .catch(error => {
                 console.error('Error loading MenuRight.json:', error);
                 const errorMessage = document.getElementById('errorMessage');
                 errorMessage.style.display = 'block';
-                errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details.`;
+                errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details. Using hardcoded data as fallback.`;
             });
     </script>
 </body>
