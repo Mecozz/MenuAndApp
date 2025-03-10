@@ -6,6 +6,7 @@
     "bottom_left_category": "ITALIAN DISHES",
     "bottom_middle_category": "DINNERS"
   },
+  "image": "your-image.jpg",  // Added field for the image path
   "left_items": [
     {"name": "CHEESE STEAK", "lg_price": "13.00", "reg_price": "10.50"},
     {"name": "PEPPER STEAK", "lg_price": "13.00", "reg_price": "11.00"},
@@ -56,6 +57,4 @@
     {"name": "FRIED CHICKEN FINGER & FRIES", "price": "13.75"},
     {"name": "BUFFALO TENDERS & FRIES", "price": "13.75"},
     {"name": "REG WINGS & FRIES", "price": "13.75"},
-    {"name": "LAMB PLATE W/GREEK SALAD & FRIES", "price": "23.00"}
-  ]
-}
+    {"
