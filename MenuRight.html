@@ -1,163 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Jimmy's House of Pizza - Right Menu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background: black;
-      color: white;
-      font-family: 'Open Sans', sans-serif;
-      text-align: center;
-    }
-    .menu-container {
-      width: 98%;
-      margin: auto;
-      padding-top: 5px;
-    }
-    .menu-header {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      background: yellow;
-      padding: 12px;
-      font-size: 2em;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    .menu-header span {
-      color: red;
-      flex: 1;
-      text-align: center;
-    }
-    .menu-sections {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 12px;
-    }
-    .menu-column {
-      width: 32%;
-      text-align: left;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 1.8em;
-    }
-    th, td {
-      padding: 6px;
-      text-align: left;
-    }
-    .price {
-      text-align: right;
-    }
-    .section-divider {
-      background: yellow;
-      color: red;
-      font-weight: bold;
-      padding: 6px;
-      font-size: 1.8em;
-      text-align: center;
-      width: 100%;
-      display: block;
-      margin-top: 10px;
-    }
-    .column-divider {
-      background: yellow;
-      color: red;
-      font-weight: bold;
-      padding: 6px;
-      font-size: 1.8em;
-      text-align: center;
-      margin-top: 10px;
-    }
-    .bottom-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-top: 12px;
-    }
-    .bottom-column {
-      width: 48%;
-    }
-    .side-orders-header {
-      display: flex;
-      justify-content: space-between;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .side-orders-header span {
-      flex: 1;
-      text-align: right;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+        }
+        td {
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .price {
+            text-align: right;
+        }
+        .subheader {
+            font-weight: bold;
+        }
+        .price-spacing {
+            width: 80px;
+        }
+    </style>
 </head>
 <body>
-  <div class="menu-container">
-    <div class="menu-header">
-      <span id="col1-header"></span>
-      <span id="col2-header"></span>
-      <span id="col3-header"></span>
-    </div>
-    <div class="menu-sections">
-      <div class="menu-column">
-        <table>
-          <thead>
-            <tr><th>Item</th><th class="price">LG 12"</th><th class="price">REG 8"</th></tr>
-          </thead>
-          <tbody id="column1"></tbody>
-        </table>
-      </div>
-      <div class="menu-column">
-        <table>
-          <thead>
-            <tr><th>Item</th><th class="price">Price</th></tr>
-          </thead>
-          <tbody id="column2"></tbody>
-        </table>
-      </div>
-      <div class="menu-column">
-        <div class="side-orders-header">
-          <span>Item</span><span>LG</span><span>SM</span>
-        </div>
-        <table id="column3"></table>
-      </div>
-    </div>
-    <div class="bottom-section">
-      <div class="bottom-column">
-        <div class="column-divider" id="bottom-left-category"></div>
-        <table id="bottom-left-items"></table>
-      </div>
-      <div class="bottom-column">
-        <div class="column-divider" id="bottom-middle-category"></div>
-        <table id="bottom-middle-items"></table>
-      </div>
-    </div>
-  </div>
-  <script>
-    fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('col1-header').textContent = data.header.left_category;
-        document.getElementById('col2-header').textContent = data.header.middle_category;
-        document.getElementById('col3-header').textContent = data.header.right_category;
-        document.getElementById('bottom-left-category').textContent = data.header.bottom_left_category;
-        document.getElementById('bottom-middle-category').textContent = data.header.bottom_middle_category;
-
-        const buildTable = (items, tableId) => {
-          document.getElementById(tableId).innerHTML = items.map(item => `
-            <tr><td>${item.name}</td><td class="price">${item.lg_price || ''}</td><td class="price">${item.sm_price || item.price || ''}</td></tr>
-          `).join('');
-        };
-
-        buildTable(data.left_items, 'column1');
-        buildTable(data.middle_items, 'column2');
-        buildTable(data.right_items, 'column3');
-        buildTable(data.bottom_left_items, 'bottom-left-items');
-        buildTable(data.bottom_middle_items, 'bottom-middle-items');
-      })
-      .catch(err => console.error('Error loading menu:', err));
-  </script>
+    <table>
+        <tr>
+            <th>STEAK SUBS</th>
+            <th>SALADS</th>
+            <th>SIDE ORDERS</th>
+        </tr>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td class="subheader">LG 12"</td>
+                        <td class="subheader price">REG 8"</td>
+                    </tr>
+                    <tr>
+                        <td>CHEESE</td>
+                        <td class="price">13.00</td>
+                        <td class="price">10.50</td>
+                    </tr>
+                    <tr>
+                        <td>PEPPER STEAK</td>
+                        <td class="price">13.00</td>
+                        <td class="price">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>ONION</td>
+                        <td class="price">13.00</td>
+                        <td class="price">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>MUSHROOM</td>
+                        <td class="price">13.00</td>
+                        <td class="price">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>STEAK</td>
+                        <td class="price">13.00</td>
+                        <td class="price">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>2 ITEMS</td>
+                        <td class="price">13.00</td>
+                        <td class="price">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>3 ITEMS</td>
+                        <td class="price">13.75</td>
+                        <td class="price">12.75</td>
+                    </tr>
+                    <tr>
+                        <td>SPECIAL</td>
+                        <td class="price">13.75</td>
+                        <td class="price">12.75</td>
+                    </tr>
+                    <tr>
+                        <td>EXTRA CHEESE</td>
+                        <td class="price">2.50</td>
+                        <td class="price">2.00</td>
+                    </tr>
+                    <tr>
+                        <td>EXTRA STEAK</td>
+                        <td class="price">5.00</td>
+                        <td class="price">3.50</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>TOSSED SALAD</td>
+                        <td class="price">9.00</td>
+                    </tr>
+                    <tr>
+                        <td>ANTIPASTO SALAD</td>
+                        <td class="price">12.00</td>
+                    </tr>
+                    <tr>
+                        <td>GREEK SALAD</td>
+                        <td class="price">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>CHEF'S SALAD</td>
+                        <td class="price">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>TUNA SALAD</td>
+                        <td class="price">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>TURKEY</td>
+                        <td class="price">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>CHICKEN SALAD</td>
+                        <td class="price">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>BUFFALO CHICKEN SALAD</td>
+                        <td class="price">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>GRILLED CHICKEN SALAD</td>
+                        <td class="price">11.00</td>
+                    </tr>
+                    <tr>
+                        <td>LAMB OR STEAK SALAD</td>
+                        <td class="price">12.00</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td class="subheader">LG</td>
+                        <td class="subheader price">SM</td>
+                    </tr>
+                    <tr>
+                        <td>BAKLAVA</td>
+                        <td class="price">3.75</td>
+                        <td class="price-spacing"></td>
+                    </tr>
+                    <tr>
+                        <td>GARLIC BREAD-PLAIN</td>
+                        <td class="price">4.50</td>
+                        <td class="price">4.50</td>
+                    </tr>
+                    <tr>
+                        <td>W/CHEESE</td>
+                        <td class="price">5.75</td>
+                        <td class="price">5.00</td>
+                    </tr>
+                    <tr>
+                        <td>FRENCH FRIES</td>
+                        <td class="price">6.75</td>
+                        <td class="price">5.00</td>
+                    </tr>
+                    <tr>
+                        <td>ONION RINGS</td>
+                        <td class="price">6.75</td>
+                        <td class="price">5.00</td>
+                    </tr>
+                    <tr>
+                        <td>RICE PILAF</td>
+                        <td class="price">6.75</td>
+                        <td class="price-spacing"></td>
+                    </tr>
+                    <tr>
+                        <td>GREEK PITA</td>
+                        <td class="price">9.75</td>
+                        <td class="price-spacing"></td>
+                    </tr>
+                    <tr>
+                        <td>FRIED MUSHROOMS</td>
+                        <td class="price">9.75</td>
+                        <td class="price-spacing"></td>
+                    </tr>
+                    <tr>
+                        <td>MOZZARELLA STICKS</td>
+                        <td class="price">9.75</td>
+                        <td class="price-spacing"></td>
+                    </tr>
+                    <tr>
+                        <td>CHICKEN WINGS</td>
+                        <td class="price">9.75</td>
+                        <td class="price-spacing"></td>
+                    </tr>
+                    <tr>
+                        <td>JALAPENO POPPERS</td>
+                        <td class="price">9.75</td>
+                        <td class="price-spacing"></td>
+                    </tr>
+                    <tr>
+                        <td>CHICKEN TENDERS</td>
+                        <td class="price">9.75</td>
+                        <td class="price-spacing"></td>
+                    </tr>
+                    <tr>
+                        <td>FRIED RAVIOLI</td>
+                        <td class="price">9.75</td>
+                        <td class="price-spacing"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th>ITALIAN DISHES</th>
+            <th>DINNERS</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td>SPAGHETTI & SAUCE</td>
+                        <td class="price">10.00</td>
+                    </tr>
+                    <tr>
+                        <td>W/MEATBALLS</td>
+                        <td class="price">11.75</td>
+                    </tr>
+                    <tr>
+                        <td>W/SAUSAGE</td>
+                        <td class="price">11.75</td>
+                    </tr>
+                    <tr>
+                        <td>COMBO</td>
+                        <td class="price">12.75</td>
+                    </tr>
+                    <tr>
+                        <td>W/CHICKEN OR VEAL</td>
+                        <td class="price">11.75</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>FRIED CHICKEN FINGER & FRIES</td>
+                        <td class="price">13.75</td>
+                    </tr>
+                    <tr>
+                        <td>BUFFALO TENDERS & FRIES</td>
+                        <td class="price">13.75</td>
+                    </tr>
+                    <tr>
+                        <td>REG WINGS & FRIES</td>
+                        <td class="price">13.75</td>
+                    </tr>
+                    <tr>
+                        <td>LAMB PLATE W/GREEK SALAD & FRIES</td>
+                        <td class="price">23.00</td>
+                    </tr>
+                </table>
+            </td>
+            <td></td>
+        </tr>
+    </table>
 </body>
 </html>
