@@ -1,10 +1,12 @@
- "header": {
+{
+  "header": {
     "left_category": "STEAK SUBS",
     "middle_category": "SALADS",
     "right_category": "SIDE ORDERS",
     "bottom_left_category": "ITALIAN DISHES",
     "bottom_middle_category": "DINNERS"
   },
+  "image": "your-image.jpg",  // Add this line to specify the image path
   "left_items": [
     {"name": "CHEESE STEAK", "lg_price": "13.00", "reg_price": "10.50"},
     {"name": "PEPPER STEAK", "lg_price": "13.00", "reg_price": "11.00"},
@@ -58,4 +60,3 @@
     {"name": "LAMB PLATE W/GREEK SALAD & FRIES", "price": "23.00"}
   ]
 }
-
