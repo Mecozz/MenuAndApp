@@ -6,7 +6,7 @@
     "bottom_left_category": "ITALIAN DISHES",
     "bottom_middle_category": "DINNERS"
   },
-  "image": "your-image.jpg",  // Correctly placed at the root level
+  "image": "your-image.jpg",
   "left_items": [
     {"name": "CHEESE STEAK", "lg_price": "13.00", "reg_price": "10.50"},
     {"name": "PEPPER STEAK", "lg_price": "13.00", "reg_price": "11.00"},
