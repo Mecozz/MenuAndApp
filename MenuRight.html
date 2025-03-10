@@ -40,10 +40,10 @@
             text-align: center;
             font-size: 26px; /* Slightly larger for headers */
         }
-        /* Custom styling for DINNERS th to stop yellow at the price */
+        /* Custom styling for DINNERS th to remove yellow background */
         th.dinners-th {
-            background-color: yellow;
-            color: black;
+            background-color: black; /* Removed yellow background */
+            color: white;
             font-weight: bold;
             padding: 10px;
             text-align: center;
@@ -61,15 +61,15 @@
         }
         /* Add spacing between Steak Subs prices and Salads names */
         .steak-subs .price {
-            padding-right: 30px; /* Increased space to the right */
+            padding-right: 40px; /* Increased space to the right */
         }
         /* Add spacing between Salads prices and Side Orders names */
         .salads .price {
-            padding-right: 30px; /* Increased space to the right */
+            padding-right: 40px; /* Increased space to the right */
         }
         /* Add spacing between Italian Dishes prices and Dinners names */
         .italian-dishes .price {
-            padding-right: 30px; /* Increased space to the right */
+            padding-right: 40px; /* Increased space to the right */
         }
         .subheader {
             font-weight: bold;
@@ -96,7 +96,7 @@
                 width: 60px;
             }
             .steak-subs .price, .salads .price, .italian-dishes .price {
-                padding-right: 20px;
+                padding-right: 25px;
             }
         }
         @media (max-width: 480px) {
@@ -113,7 +113,7 @@
                 width: 50px;
             }
             .steak-subs .price, .salads .price, .italian-dishes .price {
-                padding-right: 15px;
+                padding-right: 20px;
             }
         }
     </style>
