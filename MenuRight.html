@@ -43,10 +43,10 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 1.7em;
+      font-size: 1.8em;
     }
     th, td {
-      padding: 8px;
+      padding: 6px;
       text-align: left;
     }
     .price {
@@ -57,7 +57,7 @@
       color: red;
       font-weight: bold;
       padding: 6px;
-      font-size: 1.7em;
+      font-size: 1.8em;
       text-align: center;
       width: 100%;
       display: block;
@@ -68,7 +68,7 @@
       color: red;
       font-weight: bold;
       padding: 6px;
-      font-size: 1.7em;
+      font-size: 1.8em;
       text-align: center;
       margin-top: 10px;
     }
@@ -87,6 +87,10 @@
       font-weight: bold;
       margin-bottom: 5px;
     }
+    .side-orders-header span {
+      flex: 1;
+      text-align: right;
+    }
   </style>
 </head>
 <body>
@@ -98,14 +102,24 @@
     </div>
     <div class="menu-sections">
       <div class="menu-column">
-        <table id="column1"></table>
+        <table>
+          <thead>
+            <tr><th>Item</th><th class="price">LG 12"</th><th class="price">REG 8"</th></tr>
+          </thead>
+          <tbody id="column1"></tbody>
+        </table>
       </div>
       <div class="menu-column">
-        <table id="column2"></table>
+        <table>
+          <thead>
+            <tr><th>Item</th><th class="price">Price</th></tr>
+          </thead>
+          <tbody id="column2"></tbody>
+        </table>
       </div>
       <div class="menu-column">
         <div class="side-orders-header">
-          <span></span><span>LG</span><span>SM</span>
+          <span>Item</span><span>LG</span><span>SM</span>
         </div>
         <table id="column3"></table>
       </div>
