@@ -207,7 +207,7 @@
                         </table>
                     </td>
                     <td class="image-cell" id="imageContent">
-                        <img src="your-image.jpg" alt="Menu Image" class="menu-image" id="menuImage">
+                        <img src="" alt="Menu Image" class="menu-image" id="menuImage" style="display: none;">
                     </td>
                 </tr>
             </table>
@@ -232,10 +232,22 @@
         // Function to check if an image URL is valid by attempting to load it
         async function checkImage(url) {
             return new Promise((resolve) => {
+                console.log(`Checking image: ${url}`);
                 const img = new Image();
-                img.onload = () => resolve(url); // Return the URL if it loads
-                img.onerror = () => resolve(null); // Return null if it fails
+                img.onload = () => {
+                    console.log(`Image loaded successfully: ${url}`);
+                    resolve(url); // Return the URL if it loads
+                };
+                img.onerror = () => {
+                    console.log(`Image failed to load: ${url}`);
+                    resolve(null); // Return null if it fails
+                };
                 img.src = url;
+                // Add a timeout to prevent hanging
+                setTimeout(() => {
+                    console.log(`Image check timed out: ${url}`);
+                    resolve(null);
+                }, 2000); // 2-second timeout per image
             });
         }
 
@@ -342,16 +354,18 @@
                     const isValid = await checkImage(url);
                     if (isValid) {
                         validImages.push(isValid);
-                    } else {
-                        console.log(`Skipping invalid image: ${url}`);
                     }
                 }
+                console.log('Valid images:', validImages);
 
                 // Initialize slideshow with valid images
                 if (validImages.length > 0) {
+                    const imageElement = document.getElementById('menuImage');
+                    imageElement.style.display = 'block'; // Show the image
+                    imageElement.src = validImages[0]; // Set initial image
                     startSlideshow();
                 } else {
-                    document.getElementById('imageContent').innerHTML = '<p>No valid images available</p>';
+                    document.getElementById('imageContent').innerHTML = '<p style="color: white;">No valid images available</p>';
                 }
             })
             .catch(error => {
@@ -376,8 +390,6 @@
                     }, 500); // Match transition duration
                 }
             }, 5000); // Change image every 5 seconds (adjustable)
-            // Set initial image
-            document.getElementById('menuImage').src = validImages[currentImageIndex] || 'your-image.jpg';
         }
 
         // Cleanup on page unload
