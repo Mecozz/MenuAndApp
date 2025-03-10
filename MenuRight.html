@@ -82,10 +82,11 @@
             vertical-align: middle;
         }
         .menu-image {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
+    width: 30%;  /* Use percentage instead of fixed size */
+    max-width: 250px;  /* Set a reasonable max width */
+    height: auto;  /* Keep aspect ratio */
+}
+
         /* Error message styling */
         .error-message {
             color: red;
