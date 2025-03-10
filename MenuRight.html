@@ -40,15 +40,9 @@
             text-align: center;
             font-size: 26px; /* Slightly larger for headers */
         }
-        /* Custom styling for DINNERS th to remove yellow background */
-        th.dinners-th {
-            background-color: black; /* Removed yellow background */
-            color: white;
-            font-weight: bold;
-            padding: 10px;
-            text-align: center;
-            font-size: 26px;
-            width: auto; /* Allow natural width */
+        /* Custom styling for DINNERS td to keep price column black */
+        .dinners-td {
+            background-color: black; /* Keep price column black */
         }
         td {
             padding: 6px; /* Padding scaled with font size */
@@ -339,19 +333,19 @@
                     <td>
                         <table>
                             <tr>
-                                <td>FRIED CHICKEN FINGER & FRIES</td>
+                                <td class="dinners-td">FRIED CHICKEN FINGER & FRIES</td>
                                 <td class="price">13.75</td>
                             </tr>
                             <tr>
-                                <td>BUFFALO TENDERS & FRIES</td>
+                                <td class="dinners-td">BUFFALO TENDERS & FRIES</td>
                                 <td class="price">13.75</td>
                             </tr>
                             <tr>
-                                <td>REG WINGS & FRIES</td>
+                                <td class="dinners-td">REG WINGS & FRIES</td>
                                 <td class="price">13.75</td>
                             </tr>
                             <tr>
-                                <td>LAMB PLATE W/GREEK SALAD & FRIES</td>
+                                <td class="dinners-td">LAMB PLATE W/GREEK SALAD & FRIES</td>
                                 <td class="price">23.00</td>
                             </tr>
                         </table>
