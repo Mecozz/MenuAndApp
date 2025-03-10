@@ -330,7 +330,7 @@
                 </tr>
                 <tr class="header-row">
                     <th id="italianDishesHeader">ITALIAN DISHES</th>
-                    <th id="dinnersHeader" class="dinners-th">DINNERS</th>
+                    <th id="dinnersHeader">DINNERS</th>
                     <th></th>
                 </tr>
                 <tr>
@@ -388,8 +388,16 @@
     <div id="errorMessage" class="error-message" style="display: none;"></div>
 
     <script>
+        // Function to handle fetch with timeout
+        function fetchWithTimeout(url, timeout = 5000) {
+            return Promise.race([
+                fetch(url),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('Request timed out')), timeout))
+            ]);
+        }
+
         // Fetch and render the menu data from MenuRight.json
-        fetch('MenuRight.json')
+        fetchWithTimeout('MenuRight.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
