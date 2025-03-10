@@ -75,6 +75,17 @@
             background-color: yellow;
             color: black;
         }
+        /* Style for the image cell */
+        .image-cell {
+            background-color: black;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .menu-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
         /* Adjustments for smaller screens */
         @media (max-width: 768px) {
             table {
@@ -91,6 +102,9 @@
             }
             .steak-subs .price, .salads .price, .italian-dishes .price {
                 padding-right: 25px;
+            }
+            .menu-image {
+                max-height: 80%; /* Adjust image size for smaller screens */
             }
         }
         @media (max-width: 480px) {
@@ -109,251 +123,94 @@
             .steak-subs .price, .salads .price, .italian-dishes .price {
                 padding-right: 20px;
             }
+            .menu-image {
+                max-height: 60%; /* Adjust image size for smaller screens */
+            }
         }
     </style>
 </head>
 <body>
     <div class="menu-container">
         <div class="menu-table">
-            <table>
-                <tr class="header-row">
-                    <th>STEAK SUBS</th>
-                    <th>SALADS</th>
-                    <th>SIDE ORDERS</th>
-                </tr>
-                <tr>
-                    <td class="steak-subs">
-                        <table>
-                            <tr class="header-row">
-                                <td class="subheader"></td>
-                                <td class="subheader">LG 12"</td>
-                                <td class="subheader">REG 8"</td>
-                            </tr>
-                            <tr>
-                                <td>CHEESE</td>
-                                <td class="price">13.00</td>
-                                <td class="price">10.50</td>
-                            </tr>
-                            <tr>
-                                <td>PEPPER STEAK</td>
-                                <td class="price">13.00</td>
-                                <td class="price">11.00</td>
-                            </tr>
-                            <tr>
-                                <td>ONION</td>
-                                <td class="price">13.00</td>
-                                <td class="price">11.00</td>
-                            </tr>
-                            <tr>
-                                <td>MUSHROOM</td>
-                                <td class="price">13.00</td>
-                                <td class="price">11.00</td>
-                            </tr>
-                            <tr>
-                                <td>STEAK</td>
-                                <td class="price">13.00</td>
-                                <td class="price">11.00</td>
-                            </tr>
-                            <tr>
-                                <td>2 ITEMS</td>
-                                <td class="price">13.00</td>
-                                <td class="price">11.00</td>
-                            </tr>
-                            <tr>
-                                <td>3 ITEMS</td>
-                                <td class="price">13.75</td>
-                                <td class="price">12.75</td>
-                            </tr>
-                            <tr>
-                                <td>SPECIAL</td>
-                                <td class="price">13.75</td>
-                                <td class="price">12.75</td>
-                            </tr>
-                            <tr>
-                                <td>EXTRA CHEESE</td>
-                                <td class="price">2.50</td>
-                                <td class="price">2.00</td>
-                            </tr>
-                            <tr>
-                                <td>EXTRA STEAK</td>
-                                <td class="price">5.00</td>
-                                <td class="price">3.50</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td class="salads">
-                        <table>
-                            <tr>
-                                <td>TOSSED SALAD</td>
-                                <td class="price">9.00</td>
-                            </tr>
-                            <tr>
-                                <td>ANTIPASTO SALAD</td>
-                                <td class="price">12.00</td>
-                            </tr>
-                            <tr>
-                                <td>GREEK SALAD</td>
-                                <td class="price">11.00</td>
-                            </tr>
-                            <tr>
-                                <td>CHEF'S SALAD</td>
-                                <td class="price">11.00</td>
-                            </tr>
-                            <tr>
-                                <td>TUNA SALAD</td>
-                                <td class="price">11.00</td>
-                            </tr>
-                            <tr>
-                                <td>TURKEY</td>
-                                <td class="price">11.00</td>
-                            </tr>
-                            <tr>
-                                <td>CHICKEN SALAD</td>
-                                <td class="price">11.00</td>
-                            </tr>
-                            <tr>
-                                <td>BUFFALO CHICKEN SALAD</td>
-                                <td class="price">11.00</td>
-                            </tr>
-                            <tr>
-                                <td>GRILLED CHICKEN SALAD</td>
-                                <td class="price">11.00</td>
-                            </tr>
-                            <tr>
-                                <td>LAMB OR STEAK SALAD</td>
-                                <td class="price">12.00</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            <tr class="header-row">
-                                <td class="subheader"></td>
-                                <td class="subheader">LG</td>
-                                <td class="subheader">SM</td>
-                            </tr>
-                            <tr>
-                                <td>BAKLAVA</td>
-                                <td class="price">3.75</td>
-                                <td class="price"></td>
-                            </tr>
-                            <tr>
-                                <td>GARLIC BREAD-PLAIN</td>
-                                <td class="price">4.50</td>
-                                <td class="price">4.50</td>
-                            </tr>
-                            <tr>
-                                <td>W/CHEESE</td>
-                                <td class="price">5.75</td>
-                                <td class="price">5.00</td>
-                            </tr>
-                            <tr>
-                                <td>FRENCH FRIES</td>
-                                <td class="price">6.75</td>
-                                <td class="price">5.00</td>
-                            </tr>
-                            <tr>
-                                <td>ONION RINGS</td>
-                                <td class="price">6.75</td>
-                                <td class="price">5.00</td>
-                            </tr>
-                            <tr>
-                                <td>RICE PILAF</td>
-                                <td class="price">6.75</td>
-                                <td class="price"></td>
-                            </tr>
-                            <tr>
-                                <td>GREEK PITA</td>
-                                <td class="price">9.75</td>
-                                <td class="price"></td>
-                            </tr>
-                            <tr>
-                                <td>FRIED MUSHROOMS</td>
-                                <td class="price">9.75</td>
-                                <td class="price"></td>
-                            </tr>
-                            <tr>
-                                <td>MOZZARELLA STICKS</td>
-                                <td class="price">9.75</td>
-                                <td class="price"></td>
-                            </tr>
-                            <tr>
-                                <td>CHICKEN WINGS</td>
-                                <td class="price">9.75</td>
-                                <td class="price"></td>
-                            </tr>
-                            <tr>
-                                <td>JALAPENO POPPERS</td>
-                                <td class="price">9.75</td>
-                                <td class="price"></td>
-                            </tr>
-                            <tr>
-                                <td>CHICKEN TENDERS</td>
-                                <td class="price">9.75</td>
-                                <td class="price"></td>
-                            </tr>
-                            <tr>
-                                <td>FRIED RAVIOLI</td>
-                                <td class="price">9.75</td>
-                                <td class="price"></td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr class="header-row">
-                    <th>ITALIAN DISHES</th>
-                    <th class="dinners-th">DINNERS</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td class="italian-dishes">
-                        <table>
-                            <tr>
-                                <td>SPAGHETTI & SAUCE</td>
-                                <td class="price">10.00</td>
-                            </tr>
-                            <tr>
-                                <td>W/MEATBALLS</td>
-                                <td class="price">11.75</td>
-                            </tr>
-                            <tr>
-                                <td>W/SAUSAGE</td>
-                                <td class="price">11.75</td>
-                            </tr>
-                            <tr>
-                                <td>COMBO</td>
-                                <td class="price">12.75</td>
-                            </tr>
-                            <tr>
-                                <td>W/CHICKEN OR VEAL</td>
-                                <td class="price">11.75</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td class="dinners-td">FRIED CHICKEN FINGER & FRIES</td>
-                                <td class="price">13.75</td>
-                            </tr>
-                            <tr>
-                                <td class="dinners-td">BUFFALO TENDERS & FRIES</td>
-                                <td class="price">13.75</td>
-                            </tr>
-                            <tr>
-                                <td class="dinners-td">REG WINGS & FRIES</td>
-                                <td class="price">13.75</td>
-                            </tr>
-                            <tr>
-                                <td class="dinners-td">LAMB PLATE W/GREEK SALAD & FRIES</td>
-                                <td class="price">23.00</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td></td>
-                </tr>
-            </table>
+            <table id="menuTable"></table>
         </div>
     </div>
+
+    <script>
+        // Fetch and render the menu data from MenuRight.json
+        fetch('MenuRight.json')
+            .then(response => response.json())
+            .then(data => {
+                const table = document.getElementById('menuTable');
+                data.categories.forEach(category => {
+                    // Create header row
+                    const headerRow = document.createElement('tr');
+                    headerRow.className = 'header-row';
+                    headerRow.innerHTML = `
+                        <th>${category.name}</th>
+                        ${category.name === 'DINNERS' ? '<th></th>' : '<th></th>'}
+                        <th></th>
+                    `;
+                    table.appendChild(headerRow);
+
+                    // Create content row
+                    const contentRow = document.createElement('tr');
+                    contentRow.innerHTML = `
+                        <td ${category.name === 'STEAK SUBS' ? 'class="steak-subs"' : category.name === 'SALADS' ? 'class="salads"' : category.name === 'ITALIAN DISHES' ? 'class="italian-dishes"' : ''}>
+                            <table>
+                                ${category.subcategory ? `
+                                    <tr class="header-row">
+                                        <td class="subheader"></td>
+                                        <td class="subheader">LG 12"</td>
+                                        <td class="subheader">REG 8"</td>
+                                    </tr>
+                                ` : ''}
+                                ${category.items.map(item => `
+                                    <tr>
+                                        <td>${item.name}</td>
+                                        ${category.subcategory ? `
+                                            <td class="price">${item.lg || ''}</td>
+                                            <td class="price">${item.reg || ''}</td>
+                                        ` : `
+                                            <td class="price">${item.price}</td>
+                                            <td></td>
+                                        `}
+                                    </tr>
+                                `).join('')}
+                            </table>
+                        </td>
+                        ${category.name === 'DINNERS' ? `
+                            <td>
+                                <table>
+                                    ${category.items.map(item => `
+                                        <tr>
+                                            <td class="dinners-td">${item.name}</td>
+                                            <td class="price">${item.price}</td>
+                                        </tr>
+                                    `).join('')}
+                                </table>
+                            </td>
+                            <td class="image-cell">
+                                <img src="your-image.jpg" alt="Menu Image" class="menu-image">
+                            </td>
+                        ` : `
+                            <td>
+                                <table>
+                                    ${category.items.map(item => `
+                                        <tr>
+                                            <td>${item.name}</td>
+                                            <td class="price">${item.price}</td>
+                                        </tr>
+                                    `).join('')}
+                                </table>
+                            </td>
+                            <td></td>
+                        `}
+                    `;
+                    table.appendChild(contentRow);
+                });
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+    </script>
 </body>
 </html>
