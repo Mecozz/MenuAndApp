@@ -34,24 +34,24 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 16px; /* Increased for better readability on TV */
+            font-size: 20px; /* Increased for better readability on TV */
         }
         th {
             background-color: yellow;
             color: black;
             font-weight: bold;
-            padding: 6px; /* Adjusted padding to scale with font size */
+            padding: 8px; /* Adjusted padding to scale with font size */
             text-align: center;
-            font-size: 18px; /* Slightly larger for headers */
+            font-size: 22px; /* Slightly larger for headers */
         }
         td {
-            padding: 4px; /* Adjusted padding to scale with font size */
+            padding: 5px; /* Adjusted padding to scale with font size */
             text-align: left;
             vertical-align: top;
         }
         .price {
             text-align: right;
-            width: 50px; /* Adjusted width to scale with font size */
+            width: 60px; /* Adjusted width to scale with font size */
         }
         .subheader {
             font-weight: bold;
@@ -66,6 +66,20 @@
         /* Adjustments for smaller screens */
         @media (max-width: 768px) {
             table {
+                font-size: 16px;
+            }
+            th {
+                font-size: 18px;
+            }
+            td, th {
+                padding: 4px;
+            }
+            .price {
+                width: 50px;
+            }
+        }
+        @media (max-width: 480px) {
+            table {
                 font-size: 14px;
             }
             th {
@@ -76,20 +90,6 @@
             }
             .price {
                 width: 45px;
-            }
-        }
-        @media (max-width: 480px) {
-            table {
-                font-size: 12px;
-            }
-            th {
-                font-size: 14px;
-            }
-            td, th {
-                padding: 2px;
-            }
-            .price {
-                width: 40px;
             }
         }
     </style>
