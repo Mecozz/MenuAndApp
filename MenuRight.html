@@ -207,7 +207,7 @@
                         </table>
                     </td>
                     <td class="image-cell" id="imageContent">
-                        <img src="" alt="Menu Image" class="menu-image" id="menuImage" style="display: none;">
+                        <img src="your-image.jpg" alt="Menu Image" class="menu-image" id="menuImage">
                     </td>
                 </tr>
             </table>
@@ -232,29 +232,16 @@
         // Function to check if an image URL is valid by attempting to load it
         async function checkImage(url) {
             return new Promise((resolve) => {
-                console.log(`Checking image: ${url}`);
                 const img = new Image();
-                img.onload = () => {
-                    console.log(`Image loaded successfully: ${url}`);
-                    resolve(url); // Return the URL if it loads
-                };
-                img.onerror = () => {
-                    console.log(`Image failed to load: ${url}`);
-                    resolve(null); // Return null if it fails
-                };
+                img.onload = () => resolve(url); // Return the URL if it loads
+                img.onerror = () => resolve(null); // Return null if it fails
                 img.src = url;
-                // Add a timeout to prevent hanging
-                setTimeout(() => {
-                    console.log(`Image check timed out: ${url}`);
-                    resolve(null);
-                }, 2000); // 2-second timeout per image
             });
         }
 
         // Fetch and render the menu data from MenuRight.json
         fetchWithTimeout('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json')
             .then(response => {
-                console.log('Fetch response status:', response.status);
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
@@ -351,31 +338,20 @@
 
                 // Filter valid images by checking if they load
                 images = data.images || [];
-                console.log('Images array:', images);
-                if (!images || images.length === 0) {
-                    console.log('No images found in JSON');
-                    document.getElementById('imageContent').innerHTML = '<p style="color: white;">No images available</p>';
-                    return;
-                }
-
                 for (let url of images) {
                     const isValid = await checkImage(url);
                     if (isValid) {
                         validImages.push(isValid);
+                    } else {
+                        console.log(`Skipping invalid image: ${url}`);
                     }
                 }
-                console.log('Valid images:', validImages);
 
                 // Initialize slideshow with valid images
                 if (validImages.length > 0) {
-                    const imageElement = document.getElementById('menuImage');
-                    imageElement.style.display = 'block'; // Show the image
-                    imageElement.src = validImages[0]; // Set initial image
-                    console.log('Initial image set to:', validImages[0]);
                     startSlideshow();
                 } else {
-                    document.getElementById('imageContent').innerHTML = '<p style="color: white;">No valid images available</p>';
-                    console.log('No valid images found after validation');
+                    document.getElementById('imageContent').innerHTML = '<p>No valid images available</p>';
                 }
             })
             .catch(error => {
@@ -387,7 +363,6 @@
 
         // Function to start the slideshow
         function startSlideshow() {
-            console.log('Starting slideshow with', validImages.length, 'images');
             if (slideshowInterval) clearInterval(slideshowInterval); // Clear existing interval
             slideshowInterval = setInterval(() => {
                 const imageElement = document.getElementById('menuImage');
@@ -398,10 +373,11 @@
                         currentImageIndex = (currentImageIndex + 1) % validImages.length;
                         imageElement.src = validImages[currentImageIndex];
                         imageElement.style.opacity = '1'; // Fade in
-                        console.log('Displaying image:', validImages[currentImageIndex]);
                     }, 500); // Match transition duration
                 }
             }, 5000); // Change image every 5 seconds (adjustable)
+            // Set initial image
+            document.getElementById('menuImage').src = validImages[currentImageIndex] || 'your-image.jpg';
         }
 
         // Cleanup on page unload
