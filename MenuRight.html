@@ -53,13 +53,15 @@
             text-align: right;
             width: 70px; /* Width scaled with font size */
         }
-        /* Add spacing between sections */
+        /* Add spacing between Steak Subs prices and Salads names */
         .steak-subs .price {
             padding-right: 40px; /* Increased space to the right */
         }
+        /* Add spacing between Salads prices and Side Orders names */
         .salads .price {
             padding-right: 40px; /* Increased space to the right */
         }
+        /* Add spacing between Italian Dishes prices and Dinners names */
         .italian-dishes .price {
             padding-right: 40px; /* Increased space to the right */
         }
@@ -140,107 +142,75 @@
             .then(response => response.json())
             .then(data => {
                 const table = document.getElementById('menuTable');
+                data.categories.forEach(category => {
+                    // Create header row
+                    const headerRow = document.createElement('tr');
+                    headerRow.className = 'header-row';
+                    headerRow.innerHTML = `
+                        <th>${category.name}</th>
+                        ${category.name === 'DINNERS' ? '<th></th>' : '<th></th>'}
+                        <th></th>
+                    `;
+                    table.appendChild(headerRow);
 
-                // Top row headers
-                const topHeaderRow = document.createElement('tr');
-                topHeaderRow.className = 'header-row';
-                topHeaderRow.innerHTML = `
-                    <th>${data.header.left_category}</th>
-                    <th>${data.header.middle_category}</th>
-                    <th>${data.header.right_category}</th>
-                `;
-                table.appendChild(topHeaderRow);
-
-                // Top row content
-                const topContentRow = document.createElement('tr');
-                topContentRow.innerHTML = `
-                    <td class="steak-subs">
-                        <table>
-                            <tr class="header-row">
-                                <td class="subheader"></td>
-                                <td class="subheader">LG 12"</td>
-                                <td class="subheader">REG 8"</td>
-                            </tr>
-                            ${data.left_items.map(item => `
-                                <tr>
-                                    <td>${item.name.replace(' STEAK', '')}</td>
-                                    <td class="price">${item.lg_price}</td>
-                                    <td class="price">${item.reg_price}</td>
-                                </tr>
-                            `).join('')}
-                        </table>
-                    </td>
-                    <td class="salads">
-                        <table>
-                            ${data.middle_items.map(item => `
-                                <tr>
-                                    <td>${item.name}</td>
-                                    <td class="price">${item.price}</td>
-                                    <td></td>
-                                </tr>
-                            `).join('')}
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            <tr class="header-row">
-                                <td class="subheader"></td>
-                                <td class="subheader">LG</td>
-                                <td class="subheader">SM</td>
-                            </tr>
-                            ${data.right_items.map(item => `
-                                <tr>
-                                    <td>${item.name}</td>
-                                    <td class="price">${item.lg_price || ''}</td>
-                                    <td class="price">${item.sm_price || ''}</td>
-                                </tr>
-                            `).join('')}
-                        </table>
-                    </td>
-                `;
-                table.appendChild(topContentRow);
-
-                // Bottom row headers
-                const bottomHeaderRow = document.createElement('tr');
-                bottomHeaderRow.className = 'header-row';
-                bottomHeaderRow.innerHTML = `
-                    <th>${data.header.bottom_left_category}</th>
-                    <th>${data.header.bottom_middle_category}</th>
-                    <th></th>
-                `;
-                table.appendChild(bottomHeaderRow);
-
-                // Bottom row content
-                const bottomContentRow = document.createElement('tr');
-                bottomContentRow.innerHTML = `
-                    <td class="italian-dishes">
-                        <table>
-                            ${data.bottom_left_items.map(item => `
-                                <tr>
-                                    <td>${item.name}</td>
-                                    <td class="price">${item.price}</td>
-                                    <td></td>
-                                </tr>
-                            `).join('')}
-                        </table>
-                    </td>
-                    <td>
-                        <table>
-                            ${data.bottom_middle_items.map(item => `
-                                <tr>
-                                    <td class="dinners-td">${item.name}</td>
-                                    <td class="price">${item.price}</td>
-                                </tr>
-                            `).join('')}
-                        </table>
-                    </td>
-                    <td class="image-cell">
-                        <img src="${data.image}" alt="Menu Image" class="menu-image">
-                    </td>
-                `;
-                table.appendChild(bottomContentRow);
+                    // Create content row
+                    const contentRow = document.createElement('tr');
+                    contentRow.innerHTML = `
+                        <td ${category.name === 'STEAK SUBS' ? 'class="steak-subs"' : category.name === 'SALADS' ? 'class="salads"' : category.name === 'ITALIAN DISHES' ? 'class="italian-dishes"' : ''}>
+                            <table>
+                                ${category.subcategory ? `
+                                    <tr class="header-row">
+                                        <td class="subheader"></td>
+                                        <td class="subheader">LG 12"</td>
+                                        <td class="subheader">REG 8"</td>
+                                    </tr>
+                                ` : ''}
+                                ${category.items.map(item => `
+                                    <tr>
+                                        <td>${item.name}</td>
+                                        ${category.subcategory ? `
+                                            <td class="price">${item.lg || ''}</td>
+                                            <td class="price">${item.reg || ''}</td>
+                                        ` : `
+                                            <td class="price">${item.price}</td>
+                                            <td></td>
+                                        `}
+                                    </tr>
+                                `).join('')}
+                            </table>
+                        </td>
+                        ${category.name === 'DINNERS' ? `
+                            <td>
+                                <table>
+                                    ${category.items.map(item => `
+                                        <tr>
+                                            <td class="dinners-td">${item.name}</td>
+                                            <td class="price">${item.price}</td>
+                                        </tr>
+                                    `).join('')}
+                                </table>
+                            </td>
+                            <td class="image-cell">
+                                <img src="your-image.jpg" alt="Menu Image" class="menu-image">
+                            </td>
+                        ` : `
+                            <td>
+                                <table>
+                                    ${category.items.map(item => `
+                                        <tr>
+                                            <td>${item.name}</td>
+                                            <td class="price">${item.price}</td>
+                                        </tr>
+                                    `).join('')}
+                                </table>
+                            </td>
+                            <td></td>
+                        `}
+                    `;
+                    table.appendChild(contentRow);
+                });
             })
-            .catch(error => console.error('Error loading MenuRight.json:', error));
+            .catch(error => console.error('Error loading JSON:', error));
     </script>
 </body>
 </html>
