@@ -22,32 +22,54 @@
             width: 100%;
             height: 100vh;
             background-color: black;
-            padding: 0; /* Removed padding to start at the top */
+            padding: 0; /* No padding to keep at the top */
         }
         .menu-table {
-            width: 100%; /* Full width without cropping */
+            width: 100%; /* Full width */
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 20px; /* Increased for better readability */
+            font-size: 24px; /* Kept for readability */
         }
         th {
             background-color: yellow;
             color: black;
             font-weight: bold;
-            padding: 8px; /* Adjusted padding to scale with font size */
+            padding: 10px; /* Padding scaled with font size */
             text-align: center;
-            font-size: 22px; /* Slightly larger for headers */
+            font-size: 26px; /* Slightly larger for headers */
+        }
+        /* Custom styling for DINNERS th to stop yellow at the price */
+        th.dinners-th {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            font-size: 26px;
+            width: auto; /* Allow natural width */
         }
         td {
-            padding: 5px; /* Adjusted padding to scale with font size */
+            padding: 6px; /* Padding scaled with font size */
             text-align: left;
             vertical-align: top;
         }
         .price {
             text-align: right;
-            width: 60px; /* Adjusted width to scale with font size */
+            width: 70px; /* Width scaled with font size */
+        }
+        /* Add spacing between Steak Subs prices and Salads names */
+        .steak-subs .price {
+            padding-right: 30px; /* Increased space to the right */
+        }
+        /* Add spacing between Salads prices and Side Orders names */
+        .salads .price {
+            padding-right: 30px; /* Increased space to the right */
+        }
+        /* Add spacing between Italian Dishes prices and Dinners names */
+        .italian-dishes .price {
+            padding-right: 30px; /* Increased space to the right */
         }
         .subheader {
             font-weight: bold;
@@ -62,6 +84,23 @@
         /* Adjustments for smaller screens */
         @media (max-width: 768px) {
             table {
+                font-size: 18px;
+            }
+            th {
+                font-size: 20px;
+            }
+            td, th {
+                padding: 5px;
+            }
+            .price {
+                width: 60px;
+            }
+            .steak-subs .price, .salads .price, .italian-dishes .price {
+                padding-right: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            table {
                 font-size: 16px;
             }
             th {
@@ -73,19 +112,8 @@
             .price {
                 width: 50px;
             }
-        }
-        @media (max-width: 480px) {
-            table {
-                font-size: 14px;
-            }
-            th {
-                font-size: 16px;
-            }
-            td, th {
-                padding: 3px;
-            }
-            .price {
-                width: 45px;
+            .steak-subs .price, .salads .price, .italian-dishes .price {
+                padding-right: 15px;
             }
         }
     </style>
@@ -100,7 +128,7 @@
                     <th>SIDE ORDERS</th>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="steak-subs">
                         <table>
                             <tr class="header-row">
                                 <td class="subheader"></td>
@@ -159,7 +187,7 @@
                             </tr>
                         </table>
                     </td>
-                    <td>
+                    <td class="salads">
                         <table>
                             <tr>
                                 <td>TOSSED SALAD</td>
@@ -280,11 +308,11 @@
                 </tr>
                 <tr class="header-row">
                     <th>ITALIAN DISHES</th>
-                    <th>DINNERS</th>
+                    <th class="dinners-th">DINNERS</th>
                     <th></th>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="italian-dishes">
                         <table>
                             <tr>
                                 <td>SPAGHETTI & SAUCE</td>
