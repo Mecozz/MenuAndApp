@@ -18,22 +18,27 @@
     }
     .menu-header {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       align-items: center;
       background: yellow;
-      color: red;
       padding: 15px;
       font-size: 2em;
       font-weight: bold;
       text-transform: uppercase;
     }
-    .menu-table {
+    .menu-header span {
+      color: red;
+      flex: 1;
+      text-align: center;
+    }
+    .menu-sections {
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      margin-top: 15px;
     }
     .menu-column {
       width: 32%;
+      text-align: left;
     }
     table {
       width: 100%;
@@ -41,113 +46,62 @@
       font-size: 1.5em;
     }
     th, td {
-      padding: 5px;
+      padding: 8px;
       text-align: left;
     }
     .price {
       text-align: right;
     }
-    .section-divider {
-      background: yellow;
-      color: red;
-      font-weight: bold;
-      padding: 5px;
-      font-size: 1.5em;
-      margin-top: 10px;
-    }
-    .image-slider {
-      display: flex;
-      justify-content: space-evenly;
-      margin-top: 15px;
-      padding-bottom: 10px;
-    }
-    .image-slider img {
-      width: 18%;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
   </style>
 </head>
 <body>
+
   <div class="menu-container">
     <div class="menu-header">
-      <span id="left-category"></span>
-      <span id="middle-category"></span>
-      <span id="right-category"></span>
-    </div>
-    <div class="menu-table">
-      <div class="menu-column">
-        <table><tbody id="left-items"></tbody></table>
-      </div>
-      <div class="menu-column">
-        <table><tbody id="middle-items"></tbody></table>
-      </div>
-      <div class="menu-column">
-        <table><tbody id="right-items"></tbody></table>
-      </div>
+      <span id="col1-header"></span>
+      <span id="col2-header"></span>
+      <span id="col3-header"></span>
     </div>
 
-    <div class="menu-table">
+    <div class="menu-sections">
       <div class="menu-column">
-        <div class="section-divider" id="bottom-left-category"></div>
-        <table><tbody id="bottom-left-items"></tbody></table>
+        <table id="column1"></table>
+        <table id="column1-extra"></table>
       </div>
-      <div class="menu-column">
-        <div class="section-divider" id="bottom-middle-category"></div>
-        <table><tbody id="bottom-middle-items"></tbody></table>
-      </div>
-      <div class="menu-column"></div>
-    </div>
 
-    <div class="image-slider">
-      <img id="img0"><img id="img1"><img id="img2"><img id="img3"><img id="img4">
+      <div class="menu-column">
+        <table id="column2"></table>
+        <table id="column2-extra"></table>
+      </div>
+
+      <div class="menu-column">
+        <table id="column3"></table>
+      </div>
     </div>
   </div>
 
-<script>
-fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json')
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('left-category').textContent = data.header.left_category;
-    document.getElementById('middle-category').textContent = data.header.middle_category;
-    document.getElementById('right-category').textContent = data.header.right_category;
+  <script>
+    fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('col1-header').textContent = data.header.left_category;
+        document.getElementById('col2-header').textContent = data.header.middle_category;
+        document.getElementById('col3-header').textContent = data.header.right_category;
 
-    document.getElementById('bottom-left-category').textContent = data.header.bottom_left_category;
-    document.getElementById('bottom-middle-category').textContent = data.header.bottom_middle_category;
+        const buildTable = (items, tableId) => {
+          document.getElementById(tableId).innerHTML = items.map(item => `
+            <tr><td>${item.name}</td><td class="price">${item.lg_price || ''}</td><td class="price">${item.sm_price || item.price || ''}</td></tr>
+          `).join('');
+        };
 
-    document.getElementById('left-items').innerHTML = data.left_items.map(item => `
-      <tr><td>${item.name}</td><td class="price">${item.lg_price}</td><td class="price">${item.reg_price}</td></tr>
-    `).join('');
+        buildTable(data.left_items, 'column1');
+        buildTable(data.middle_items, 'column2');
+        buildTable(data.right_items, 'column3');
+        buildTable(data.bottom_left_items, 'column1-extra');
+        buildTable(data.bottom_middle_items, 'column2-extra');
+      })
+      .catch(err => console.error('Error loading menu:', err));
+  </script>
 
-    document.getElementById('middle-items').innerHTML = data.middle_items.map(item => `
-      <tr><td>${item.name}</td><td class="price">${item.price}</td></tr>
-    `).join('');
-
-    document.getElementById('right-items').innerHTML = data.right_items.map(item => `
-      <tr><td>${item.name}</td><td class="price">${item.lg_price}</td><td class="price">${item.sm_price}</td></tr>
-    `).join('');
-
-    document.getElementById('bottom-left-items').innerHTML = data.bottom_left_items.map(item => `
-      <tr><td>${item.name}</td><td class="price">${item.price}</td></tr>
-    `).join('');
-
-    document.getElementById('bottom-middle-items').innerHTML = data.bottom_middle_items.map(item => `
-      <tr><td>${item.name}</td><td class="price">${item.price}</td></tr>
-    `).join('');
-
-    const images = data.images;
-    let idx = 0;
-    function updateImages() {
-      images.forEach((set, i) => {
-        document.getElementById(`img${i}`).src = set[idx % set.length];
-      });
-      idx++;
-    }
-    updateImages();
-    setInterval(updateImages, 5000);
-  })
-  .catch(err => console.error('Error loading menu:', err));
-</script>
 </body>
 </html>
