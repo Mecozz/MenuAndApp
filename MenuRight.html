@@ -30,7 +30,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 30px; /* Increased from 26px */
+            font-size: 24px; /* Kept for readability */
         }
         th {
             background-color: yellow;
@@ -38,7 +38,7 @@
             font-weight: bold;
             padding: 10px; /* Padding scaled with font size */
             text-align: center;
-            font-size: 32px; /* Increased from 28px */
+            font-size: 26px; /* Slightly larger for headers */
         }
         /* Custom styling for DINNERS td to keep price column black */
         .dinners-td {
@@ -65,10 +65,6 @@
         .italian-dishes .price {
             padding-right: 40px; /* Increased space to the right */
         }
-        /* Specific padding for Dinners prices */
-        #dinnersContent .price {
-            padding-right: 30px; /* Space between prices and image */
-        }
         .subheader {
             font-weight: bold;
             text-align: center;
@@ -84,7 +80,6 @@
             background-color: black;
             text-align: center;
             vertical-align: middle;
-            padding-left: 20px; /* Space from the left edge to separate from prices */
         }
         .menu-image {
             width: 30%;  /* Use percentage for responsiveness */
@@ -97,7 +92,7 @@
         .error-message {
             color: red;
             text-align: center;
-            font-size: 26px; /* Increased from 22px */
+            font-size: 20px;
             padding: 20px;
             position: absolute;
             top: 50%;
@@ -109,10 +104,10 @@
         /* Adjustments for smaller screens */
         @media (max-width: 768px) {
             table {
-                font-size: 24px; /* Increased from 20px */
+                font-size: 18px;
             }
             th {
-                font-size: 26px; /* Increased from 22px */
+                font-size: 20px;
             }
             td, th {
                 padding: 5px;
@@ -123,12 +118,6 @@
             .steak-subs .price, .salads .price, .italian-dishes .price {
                 padding-right: 25px;
             }
-            #dinnersContent .price {
-                padding-right: 20px; /* Adjusted for medium screens */
-            }
-            .image-cell {
-                padding-left: 15px; /* Adjusted for medium screens */
-            }
             .menu-image {
                 width: 25%; /* Slightly smaller width for medium screens */
                 max-width: 200px;
@@ -137,10 +126,10 @@
         }
         @media (max-width: 480px) {
             table {
-                font-size: 22px; /* Increased from 18px */
+                font-size: 16px;
             }
             th {
-                font-size: 24px; /* Increased from 20px */
+                font-size: 18px;
             }
             td, th {
                 padding: 4px;
@@ -150,12 +139,6 @@
             }
             .steak-subs .price, .salads .price, .italian-dishes .price {
                 padding-right: 20px;
-            }
-            #dinnersContent .price {
-                padding-right: 15px; /* Adjusted for small screens */
-            }
-            .image-cell {
-                padding-left: 10px; /* Adjusted for small screens */
             }
             .menu-image {
                 width: 20%; /* Even smaller width for small screens */
