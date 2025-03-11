@@ -42,6 +42,8 @@
             font-size: 26px;
             display: inline-block;
             white-space: nowrap;
+            height: 50px; /* Ensure consistent height for all headers */
+            line-height: 50px; /* Vertically center text */
         }
         .dinners-td {
             background-color: black;
@@ -91,6 +93,8 @@
             }
             th {
                 font-size: 20px;
+                height: 40px; /* Adjust for smaller screens */
+                line-height: 40px;
             }
             td, th {
                 padding: 5px;
@@ -109,6 +113,8 @@
             }
             th {
                 font-size: 18px;
+                height: 30px; /* Adjust for smaller screens */
+                line-height: 30px;
             }
             td, th {
                 padding: 4px;
@@ -250,11 +256,10 @@
                 `;
                 document.getElementById('steakSubsContent').innerHTML = steakSubsHTML;
 
-                // Update Salads - Move "SALADS" header logic to top of items
+                // Update Salads - Remove "SALADS" subheader
                 let saladsItems = data.middle_items || [];
                 let saladsHTML = `
                     <tbody>
-                        <tr><td colspan="2" class="subheader">SALADS</td></tr>
                         ${saladsItems.length > 0 ? saladsItems.map(item => `
                             <tr>
                                 <td>${item.name}</td>
@@ -265,11 +270,10 @@
                 `;
                 document.getElementById('saladsContent').innerHTML = saladsHTML;
 
-                // Update Side Orders - Move "SIDE ORDERS" header logic to top of items
+                // Update Side Orders - Remove "SIDE ORDERS" subheader
                 let sideOrdersItems = data.right_items || [];
                 let sideOrdersHTML = `
                     <tbody>
-                        <tr><td colspan="3" class="subheader">SIDE ORDERS</td></tr>
                         ${sideOrdersItems.length > 0 ? sideOrdersItems.map(item => `
                             <tr>
                                 <td>${item.name}</td>
