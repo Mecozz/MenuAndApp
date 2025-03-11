@@ -25,7 +25,11 @@
             padding: 10px;
             width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+        }
+        .menu-header div {
+            flex: 1;
+            text-align: center;
         }
         .menu-table {
             width: 100%;
@@ -67,7 +71,10 @@
 </head>
 <body>
     <div class="menu-container">
-        <div class="menu-header">Digital Menu</div>
+        <div class="menu-header">
+            <div id="left-category"></div>
+            <div id="right-category"></div>
+        </div>
         <div class="menu-table">
             <div class="menu-column" id="left-menu"></div>
             <div class="menu-column" id="right-menu"></div>
@@ -78,7 +85,8 @@
         fetch('MenuLeft.json')
             .then(response => response.json())
             .then(data => {
-                document.querySelector('.menu-header').innerText = `${data.header.left_category} & ${data.header.right_category}`;
+                document.getElementById('left-category').innerText = data.header.left_category;
+                document.getElementById('right-category').innerText = data.header.right_category;
                 
                 let leftMenu = `<table><tr><th>Item</th><th>LG 14"</th><th>REG 10"</th></tr>`;
                 data.left_items.forEach(item => {
