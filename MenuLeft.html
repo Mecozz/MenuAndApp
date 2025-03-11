@@ -31,39 +31,49 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 28px; /* Increased from 24px for larger text */
+            font-size: 28px;
         }
         th {
             background-color: yellow;
             color: black;
             font-weight: bold;
-            padding: 12px; /* Increased padding for larger text */
+            padding: 12px;
             text-align: center;
-            font-size: 30px; /* Increased from 26px */
+            font-size: 30px;
         }
         td {
-            padding: 8px; /* Increased from 6px */
+            padding: 8px;
             text-align: left;
             vertical-align: top;
         }
         .price {
             text-align: right;
-            width: 80px; /* Increased from 70px */
+            width: 80px;
         }
-        /* Gap between Pizza prices and Calzones names */
         #pizzaContent .price {
-            padding-right: 40px; /* Creates space */
-        }
-        .subheader {
-            font-weight: bold;
-            text-align: center;
-            background-color: black;
-            color: white;
-            font-size: 28px; /* Increased from 24px */
+            padding-right: 40px; /* Gap between Pizza prices and Calzones names */
         }
         .header-row {
             background-color: yellow;
             color: black;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item-name {
+            flex: 1;
+            white-space: nowrap;
+        }
+        .price-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .size-label {
+            font-weight: bold;
+            white-space: nowrap;
         }
         .image-row {
             background-color: black;
@@ -72,16 +82,16 @@
             padding: 10px;
         }
         .menu-image {
-            width: 22%; /* Adjusted to 22% to spread evenly with margins */
-            max-width: 170px; /* Increased from 150px */
+            width: 22%; /* Spread across the bottom */
+            max-width: 170px;
             height: auto;
             object-fit: contain;
-            margin: 0 10px; /* Increased margin for better spacing */
+            margin: 0 10px;
         }
         .error-message {
             color: red;
             text-align: center;
-            font-size: 22px; /* Increased from 20px */
+            font-size: 22px;
             padding: 20px;
             position: absolute;
             top: 50%;
@@ -92,44 +102,44 @@
         }
         @media (max-width: 768px) {
             table {
-                font-size: 22px; /* Increased from 18px */
+                font-size: 22px;
             }
             th {
-                font-size: 24px; /* Increased from 20px */
+                font-size: 24px;
             }
             td, th {
-                padding: 6px; /* Increased from 5px */
+                padding: 6px;
             }
             .price {
-                width: 70px; /* Increased from 60px */
+                width: 70px;
             }
             #pizzaContent .price {
-                padding-right: 30px; /* Adjusted for medium screens */
+                padding-right: 30px;
             }
             .menu-image {
                 width: 20%;
-                max-width: 140px; /* Increased from 120px */
+                max-width: 140px;
             }
         }
         @media (max-width: 480px) {
             table {
-                font-size: 18px; /* Increased from 16px */
+                font-size: 18px;
             }
             th {
-                font-size: 20px; /* Increased from 18px */
+                font-size: 20px;
             }
             td, th {
-                padding: 5px; /* Increased from 4px */
+                padding: 5px;
             }
             .price {
-                width: 60px; /* Increased from 50px */
+                width: 60px;
             }
             #pizzaContent .price {
-                padding-right: 25px; /* Adjusted for small screens */
+                padding-right: 25px;
             }
             .menu-image {
                 width: 18%;
-                max-width: 110px; /* Increased from 90px */
+                max-width: 110px;
             }
         }
     </style>
@@ -145,22 +155,40 @@
                 <tr>
                     <td id="pizzaContent">
                         <table>
-                            <tr class="header-row">
-                                <td class="subheader"></td>
-                                <td class="subheader">LG 14"</td>
-                                <td class="subheader">REG 10"</td>
+                            <tr>
+                                ${data.left_items && data.left_items.length > 0 ? data.left_items.map(item => `
+                                    <tr class="item-row">
+                                        <td class="item-name">${item.name}</td>
+                                        <td class="price-group">
+                                            <span class="size-label">LG 14"</span>
+                                            <span class="price">$${item.lg_price || '-'}</span>
+                                        </td>
+                                        <td class="price-group">
+                                            <span class="size-label">REG 10"</span>
+                                            <span class="price">$${item.reg_price || '-'}</span>
+                                        </td>
+                                    </tr>
+                                `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
                             </tr>
-                            <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
                         </table>
                     </td>
                     <td id="calzonesContent">
                         <table>
-                            <tr class="header-row">
-                                <td class="subheader"></td>
-                                <td class="subheader">LG 14"</td>
-                                <td class="subheader">REG 10"</td>
+                            <tr>
+                                ${data.right_items && data.right_items.length > 0 ? data.right_items.map(item => `
+                                    <tr class="item-row">
+                                        <td class="item-name">${item.name}</td>
+                                        <td class="price-group">
+                                            <span class="size-label">LG 14"</span>
+                                            <span class="price">$${item.lg_price || '-'}</span>
+                                        </td>
+                                        <td class="price-group">
+                                            <span class="size-label">REG 10"</span>
+                                            <span class="price">$${item.reg_price || '-'}</span>
+                                        </td>
+                                    </tr>
+                                `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
                             </tr>
-                            <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
                         </table>
                     </td>
                 </tr>
@@ -197,36 +225,38 @@
 
                 let pizzaHTML = `
                     <table>
-                        <tr class="header-row">
-                            <td class="subheader"></td>
-                            <td class="subheader">LG 14"</td>
-                            <td class="subheader">REG 10"</td>
-                        </tr>
                         ${data.left_items && data.left_items.length > 0 ? data.left_items.map(item => `
-                            <tr>
-                                <td>${item.name}</td>
-                                <td class="price">$${item.lg_price || '-'}</td>
-                                <td class="price">$${item.reg_price || '-'}</td>
+                            <tr class="item-row">
+                                <td class="item-name">${item.name}</td>
+                                <td class="price-group">
+                                    <span class="size-label">LG 14"</span>
+                                    <span class="price">$${item.lg_price || '-'}</span>
+                                </td>
+                                <td class="price-group">
+                                    <span class="size-label">REG 10"</span>
+                                    <span class="price">$${item.reg_price || '-'}</span>
+                                </td>
                             </tr>
-                        `).join('') : '<tr><td>No items available</td><td class="price">-</td><td class="price">-</td></tr>'}
+                        `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
                     </table>
                 `;
                 document.getElementById('pizzaContent').innerHTML = pizzaHTML;
 
                 let calzonesHTML = `
                     <table>
-                        <tr class="header-row">
-                            <td class="subheader"></td>
-                            <td class="subheader">LG 14"</td>
-                            <td class="subheader">REG 10"</td>
-                        </tr>
                         ${data.right_items && data.right_items.length > 0 ? data.right_items.map(item => `
-                            <tr>
-                                <td>${item.name}</td>
-                                <td class="price">$${item.lg_price || '-'}</td>
-                                <td class="price">$${item.reg_price || '-'}</td>
+                            <tr class="item-row">
+                                <td class="item-name">${item.name}</td>
+                                <td class="price-group">
+                                    <span class="size-label">LG 14"</span>
+                                    <span class="price">$${item.lg_price || '-'}</span>
+                                </td>
+                                <td class="price-group">
+                                    <span class="size-label">REG 10"</span>
+                                    <span class="price">$${item.reg_price || '-'}</span>
+                                </td>
                             </tr>
-                        `).join('') : '<tr><td>No items available</td><td class="price">-</td><td class="price">-</td></tr>'}
+                        `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
                     </table>
                 `;
                 document.getElementById('calzonesContent').innerHTML = calzonesHTML;
