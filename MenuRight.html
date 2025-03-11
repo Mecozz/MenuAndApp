@@ -16,13 +16,15 @@
             background-color: black;
             color: white;
             font-family: Arial, sans-serif;
-            overflow: hidden;
+            overflow: hidden; /* Keep hidden on body, but allow container to scroll */
         }
         .menu-container {
             width: 100%;
-            height: 100vh;
+            /* Removed height: 100vh to allow content to grow */
             background-color: black;
             padding: 0;
+            overflow-y: auto; /* Add vertical scrolling if content overflows */
+            max-height: 100vh; /* Limit to viewport height with scrolling */
         }
         .menu-table {
             width: 100%;
@@ -36,11 +38,11 @@
             background-color: yellow;
             color: black;
             font-weight: bold;
-            padding: 8px; /* Reduced from 12px */
+            padding: 8px;
             text-align: center;
             font-size: 30px;
-            height: 50px; /* Reduced from 60px */
-            line-height: 50px; /* Adjusted to match new height */
+            height: 50px;
+            line-height: 50px;
         }
         .dinners-td {
             background-color: black;
@@ -103,8 +105,8 @@
             }
             th {
                 font-size: 22px;
-                padding: 6px; /* Adjusted for smaller screens */
-                height: 40px; /* Reduced for smaller screens */
+                padding: 6px;
+                height: 40px;
                 line-height: 40px;
             }
             td {
@@ -129,7 +131,7 @@
             th {
                 font-size: 18px;
                 padding: 4px;
-                height: 30px; /* Further reduced */
+                height: 30px;
                 line-height: 30px;
             }
             td {
