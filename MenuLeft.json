@@ -30,10 +30,10 @@
     {"name": "EXTRA CHEESE", "lg_price": "3.00", "reg_price": "2.50"}
   ],
   "images": [
-    ["https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true"],
-    ["https://github.com/Mecozz/Digital-Menu/blob/main/PepperoniPizza.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true"],
-    ["https://github.com/Mecozz/Digital-Menu/blob/main/MeatballFetaPizza.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true"],
-    ["https://github.com/Mecozz/Digital-Menu/blob/main/SpinachFettaPizza.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true"],
-    ["https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true"]
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/ChickenParmSub.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/SteakPicklesSub.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/SpaghettiMeatballs.png?raw=true"],
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/MeatballFetaPizza.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/PepperoniPizza.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/SpinachFettaPizza.png?raw=true"],
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/OnionRings.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/OnionRings2.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/SpaghettiMeatballs2.png?raw=true"],
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/PepperoniPizza.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/MeatballFetaPizza.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/SpinachFettaPizza.png?raw=true"],
+    ["https://github.com/Mecozz/Digital-Menu/blob/main/SteakPicklesSub.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/ChickenParmSub.png?raw=true", "https://github.com/Mecozz/Digital-Menu/blob/main/MeatballFetaPizza.png?raw=true"]
   ]
 }
