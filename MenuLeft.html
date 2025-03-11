@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Menu</title>
+    <title>Menu Left</title>
     <style>
         * {
             margin: 0;
@@ -26,6 +26,7 @@
         }
         .menu-table {
             width: 100%;
+            height: 100%;
         }
         table {
             width: 100%;
@@ -40,9 +41,6 @@
             text-align: center;
             font-size: 26px;
         }
-        .dinners-td {
-            background-color: black;
-        }
         td {
             padding: 6px;
             text-align: left;
@@ -52,17 +50,8 @@
             text-align: right;
             width: 70px;
         }
-        .steak-subs .price {
-            padding-right: 40px;
-        }
-        .salads .price {
-            padding-right: 40px;
-        }
-        .italian-dishes .price {
-            padding-right: 40px;
-        }
-        #dinnersContent .price {
-            padding-right: 30px;
+        .calzones .price {
+            padding-right: 40px; /* Space between Calzones prices and edge */
         }
         .subheader {
             font-weight: bold;
@@ -74,18 +63,18 @@
             background-color: yellow;
             color: black;
         }
-        .image-cell {
+        .image-row {
             background-color: black;
             text-align: center;
             vertical-align: middle;
-            padding-left: 20px;
+            padding: 10px;
         }
         .menu-image {
-            width: 40%;
-            max-width: 350px;
+            width: 20%; /* Four images, so roughly 25% each, adjusted for padding */
+            max-width: 150px;
             height: auto;
             object-fit: contain;
-            transition: opacity 0.5s ease;
+            margin: 0 5px; /* Space between images */
         }
         .error-message {
             color: red;
@@ -112,19 +101,12 @@
             .price {
                 width: 60px;
             }
-            .steak-subs .price, .salads .price, .italian-dishes .price {
+            .calzones .price {
                 padding-right: 25px;
             }
-            #dinnersContent .price {
-                padding-right: 20px;
-            }
-            .image-cell {
-                padding-left: 15px;
-            }
             .menu-image {
-                width: 35%;
-                max-width: 275px;
-                max-height: 80%;
+                width: 18%;
+                max-width: 120px;
             }
         }
         @media (max-width: 480px) {
@@ -140,19 +122,12 @@
             .price {
                 width: 50px;
             }
-            .steak-subs .price, .salads .price, .italian-dishes .price {
+            .calzones .price {
                 padding-right: 20px;
             }
-            #dinnersContent .price {
-                padding-right: 15px;
-            }
-            .image-cell {
-                padding-left: 10px;
-            }
             .menu-image {
-                width: 30%;
-                max-width: 200px;
-                max-height: 60%;
+                width: 15%;
+                max-width: 90px;
             }
         }
     </style>
@@ -162,55 +137,34 @@
         <div class="menu-table">
             <table id="menuTable">
                 <tr class="header-row">
-                    <th id="steakSubsHeader">STEAK SUBS</th>
-                    <th id="saladsHeader">SALADS</th>
-                    <th id="sideOrdersHeader">SIDE ORDERS</th>
+                    <th id="pizzaHeader">PIZZA</th>
+                    <th id="calzonesHeader">CALZONES</th>
                 </tr>
                 <tr>
-                    <td class="steak-subs" id="steakSubsContent">
+                    <td id="pizzaContent">
                         <table>
                             <tr class="header-row">
                                 <td class="subheader"></td>
-                                <td class="subheader">LG 12"</td>
-                                <td class="subheader">REG 8"</td>
+                                <td class="subheader">LG 14"</td>
+                                <td class="subheader">REG 10"</td>
                             </tr>
                             <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
                         </table>
                     </td>
-                    <td class="salads" id="saladsContent">
-                        <table>
-                            <tr><td>Loading...</td><td class="price">-</td><td></td></tr>
-                        </table>
-                    </td>
-                    <td id="sideOrdersContent">
+                    <td class="calzones" id="calzonesContent">
                         <table>
                             <tr class="header-row">
                                 <td class="subheader"></td>
-                                <td class="subheader">LG</td>
-                                <td class="subheader">SM</td>
+                                <td class="subheader">LG 14"</td>
+                                <td class="subheader">REG 10"</td>
                             </tr>
                             <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
                         </table>
                     </td>
                 </tr>
-                <tr class="header-row">
-                    <th id="italianDishesHeader">ITALIAN DISHES</th>
-                    <th id="dinnersHeader">DINNERS</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td class="italian-dishes" id="italianDishesContent">
-                        <table>
-                            <tr><td>Loading...</td><td class="price">-</td><td></td></tr>
-                        </table>
-                    </td>
-                    <td id="dinnersContent">
-                        <table>
-                            <tr><td class="dinners-td">Loading...</td><td class="price">-</td></tr>
-                        </table>
-                    </td>
-                    <td class="image-cell" id="imageContent">
-                        <img src="your-image.jpg" alt="Menu Image" class="menu-image" id="menuImage">
+                <tr class="image-row">
+                    <td colspan="2" id="imageContent">
+                        <!-- Images will be populated here -->
                     </td>
                 </tr>
             </table>
@@ -226,21 +180,7 @@
             ]);
         }
 
-        let currentImageIndex = 0;
-        let images = [];
-        let validImages = [];
-        let slideshowInterval;
-
-        async function checkImage(url) {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => resolve(url);
-                img.onerror = () => resolve(null);
-                img.src = url;
-            });
-        }
-
-        fetchWithTimeout('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuLeft.json')
+        fetchWithTimeout('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuLeft.json?t=' + new Date().getTime())
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -250,101 +190,51 @@
             .then(async data => {
                 console.log('JSON loaded successfully:', data);
 
-                document.getElementById('steakSubsHeader').innerText = data.header.left_category || "STEAK SUBS";
-                document.getElementById('saladsHeader').innerText = data.header.middle_category || "SALADS";
-                document.getElementById('sideOrdersHeader').innerText = data.header.right_category || "SIDE ORDERS";
-                document.getElementById('italianDishesHeader').innerText = data.header.bottom_left_category || "ITALIAN DISHES";
-                document.getElementById('dinnersHeader').innerText = data.header.bottom_middle_category || "DINNERS";
+                document.getElementById('pizzaHeader').innerText = data.header.left_category || "PIZZA";
+                document.getElementById('calzonesHeader').innerText = data.header.right_category || "CALZONES";
 
-                let steakSubsHTML = `
+                let pizzaHTML = `
                     <table>
                         <tr class="header-row">
                             <td class="subheader"></td>
-                            <td class="subheader">LG 12"</td>
-                            <td class="subheader">REG 8"</td>
+                            <td class="subheader">LG 14"</td>
+                            <td class="subheader">REG 10"</td>
                         </tr>
                         ${data.left_items && data.left_items.length > 0 ? data.left_items.map(item => `
                             <tr>
-                                <td>${item.name.replace(' STEAK', '')}</td>
-                                <td class="price">${item.lg_price || '-'}</td>
-                                <td class="price">${item.reg_price || '-'}</td>
+                                <td>${item.name}</td>
+                                <td class="price">$${item.lg_price || '-'}</td>
+                                <td class="price">$${item.reg_price || '-'}</td>
                             </tr>
                         `).join('') : '<tr><td>No items available</td><td class="price">-</td><td class="price">-</td></tr>'}
                     </table>
                 `;
-                document.getElementById('steakSubsContent').innerHTML = steakSubsHTML;
+                document.getElementById('pizzaContent').innerHTML = pizzaHTML;
 
-                let saladsHTML = `
-                    <table>
-                        ${data.middle_items && data.middle_items.length > 0 ? data.middle_items.map(item => `
-                            <tr>
-                                <td>${item.name}</td>
-                                <td class="price">${item.price || '-'}</td>
-                                <td></td>
-                            </tr>
-                        `).join('') : '<tr><td>No items available</td><td class="price">-</td><td></td></tr>'}
-                    </table>
-                `;
-                document.getElementById('saladsContent').innerHTML = saladsHTML;
-
-                let sideOrdersHTML = `
+                let calzonesHTML = `
                     <table>
                         <tr class="header-row">
                             <td class="subheader"></td>
-                            <td class="subheader">LG</td>
-                            <td class="subheader">SM</td>
+                            <td class="subheader">LG 14"</td>
+                            <td class="subheader">REG 10"</td>
                         </tr>
                         ${data.right_items && data.right_items.length > 0 ? data.right_items.map(item => `
                             <tr>
                                 <td>${item.name}</td>
-                                <td class="price">${item.lg_price || ''}</td>
-                                <td class="price">${item.sm_price || ''}</td>
+                                <td class="price">$${item.lg_price || '-'}</td>
+                                <td class="price">$${item.reg_price || '-'}</td>
                             </tr>
                         `).join('') : '<tr><td>No items available</td><td class="price">-</td><td class="price">-</td></tr>'}
                     </table>
                 `;
-                document.getElementById('sideOrdersContent').innerHTML = sideOrdersHTML;
+                document.getElementById('calzonesContent').innerHTML = calzonesHTML;
 
-                let italianDishesHTML = `
-                    <table>
-                        ${data.bottom_left_items && data.bottom_left_items.length > 0 ? data.bottom_left_items.map(item => `
-                            <tr>
-                                <td>${item.name}</td>
-                                <td class="price">${item.price || '-'}</td>
-                                <td></td>
-                            </tr>
-                        `).join('') : '<tr><td>No items available</td><td class="price">-</td><td></td></tr>'}
-                    </table>
+                let imagesHTML = `
+                    ${data.images && data.images.length > 0 ? data.images.map(url => `
+                        <img src="${url}" alt="Menu Image" class="menu-image">
+                    `).join('') : '<p>No images available</p>'}
                 `;
-                document.getElementById('italianDishesContent').innerHTML = italianDishesHTML;
-
-                let dinnersHTML = `
-                    <table>
-                        ${data.bottom_middle_items && data.bottom_middle_items.length > 0 ? data.bottom_middle_items.map(item => `
-                            <tr>
-                                <td class="dinners-td">${item.name}</td>
-                                <td class="price">${item.price || '-'}</td>
-                            </tr>
-                        `).join('') : '<tr><td class="dinners-td">No items available</td><td class="price">-</td></tr>'}
-                    </table>
-                `;
-                document.getElementById('dinnersContent').innerHTML = dinnersHTML;
-
-                images = data.images || [];
-                for (let url of images) {
-                    const isValid = await checkImage(url);
-                    if (isValid) {
-                        validImages.push(isValid);
-                    } else {
-                        console.log(`Skipping invalid image: ${url}`);
-                    }
-                }
-
-                if (validImages.length > 0) {
-                    startSlideshow();
-                } else {
-                    document.getElementById('imageContent').innerHTML = '<p>No valid images available</p>';
-                }
+                document.getElementById('imageContent').innerHTML = imagesHTML;
             })
             .catch(error => {
                 console.error('Error loading MenuLeft.json:', error);
@@ -352,26 +242,6 @@
                 errorMessage.style.display = 'block';
                 errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details or ensure MenuLeft.json is accessible at https://raw.githubusercontent.com/Mecozz/Menu/main/MenuLeft.json.`;
             });
-
-        function startSlideshow() {
-            if (slideshowInterval) clearInterval(slideshowInterval);
-            slideshowInterval = setInterval(() => {
-                const imageElement = document.getElementById('menuImage');
-                if (imageElement) {
-                    imageElement.style.opacity = '0';
-                    setTimeout(() => {
-                        currentImageIndex = (currentImageIndex + 1) % validImages.length;
-                        imageElement.src = validImages[currentImageIndex];
-                        imageElement.style.opacity = '1';
-                    }, 500);
-                }
-            }, 5000);
-            document.getElementById('menuImage').src = validImages[currentImageIndex] || 'your-image.jpg';
-        }
-
-        window.onbeforeunload = () => {
-            if (slideshowInterval) clearInterval(slideshowInterval);
-        };
     </script>
 </body>
 </html>
