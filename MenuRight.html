@@ -26,79 +26,69 @@
         }
         .menu-table {
             width: 100%;
-            height: 100%;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 48px; /* Increased to match the large text in the image */
+            font-size: 28px; /* Increased from 24px */
         }
         th {
             background-color: yellow;
             color: black;
             font-weight: bold;
-            padding: 20px; /* Increased padding for larger text */
+            padding: 12px; /* Increased from 10px */
             text-align: center;
-            font-size: 52px; /* Larger header text to match image */
-            height: 100px; /* Increased height to fit larger text */
-            line-height: 100px; /* Vertically center text */
-            overflow: hidden; /* Prevent overflow */
-            text-overflow: ellipsis; /* Truncate if necessary */
+            font-size: 30px; /* Increased from 26px */
+            height: 60px; /* Added to ensure height fits text */
+            line-height: 60px; /* Vertically center text */
         }
         .dinners-td {
             background-color: black;
         }
         td {
-            padding: 15px; /* Increased padding for larger text */
+            padding: 8px; /* Increased from 6px */
             text-align: left;
             vertical-align: top;
-            word-wrap: break-word; /* Ensure text wraps */
-            max-width: 0; /* Allow wrapping */
         }
         .price {
             text-align: right;
-            width: 120px; /* Increased width for larger numbers */
-            display: inline-block;
+            width: 80px; /* Increased from 70px */
         }
-        /* Specific styling for price columns with increased spacing */
         .steak-subs .price {
-            padding-right: 80px; /* Increased space to the right */
+            padding-right: 50px; /* Increased from 40px */
         }
         .salads .price {
-            padding-right: 80px; /* Increased space to the right */
+            padding-right: 50px; /* Increased from 40px */
         }
         .italian-dishes .price {
-            padding-right: 80px; /* Increased space to the right */
+            padding-right: 50px; /* Increased from 40px */
         }
         .subheader {
             font-weight: bold;
             text-align: center;
             background-color: black;
             color: white;
-            font-size: 48px; /* Match table font size */
         }
         .header-row {
             background-color: yellow;
             color: black;
         }
-        /* Style for the image cell */
         .image-cell {
             background-color: black;
             text-align: center;
             vertical-align: middle;
         }
         .menu-image {
-            width: 30%; /* Use percentage for responsiveness */
-            max-width: 250px; /* Set a reasonable max width */
-            height: auto; /* Keep aspect ratio */
-            object-fit: contain; /* Ensure the image fits without distortion */
-            transition: opacity 0.5s ease; /* Smooth transition for slideshow */
+            width: 30%;
+            max-width: 250px;
+            height: auto;
+            object-fit: contain;
+            transition: opacity 0.5s ease;
         }
-        /* Error message styling */
         .error-message {
             color: red;
             text-align: center;
-            font-size: 20px; /* Keep error message readable */
+            font-size: 20px;
             padding: 20px;
             position: absolute;
             top: 50%;
@@ -107,28 +97,21 @@
             background-color: rgba(0, 0, 0, 0.8);
             z-index: 10;
         }
-        /* Adjustments for smaller screens */
         @media (max-width: 768px) {
             table {
-                font-size: 32px; /* Reduced but still large */
+                font-size: 20px;
             }
             th {
-                font-size: 36px;
-                padding: 15px;
-                height: 80px;
-                line-height: 80px;
+                font-size: 22px;
             }
-            td {
-                padding: 10px;
+            td, th {
+                padding: 5px;
             }
             .price {
-                width: 100px;
+                width: 60px;
             }
             .steak-subs .price, .salads .price, .italian-dishes .price {
-                padding-right: 60px;
-            }
-            .subheader {
-                font-size: 32px;
+                padding-right: 25px;
             }
             .menu-image {
                 width: 25%;
@@ -138,25 +121,19 @@
         }
         @media (max-width: 480px) {
             table {
-                font-size: 24px; /* Further reduced for small screens */
+                font-size: 16px;
             }
             th {
-                font-size: 28px;
-                padding: 10px;
-                height: 60px;
-                line-height: 60px;
+                font-size: 18px;
             }
-            td {
-                padding: 8px;
+            td, th {
+                padding: 4px;
             }
             .price {
-                width: 80px;
+                width: 50px;
             }
             .steak-subs .price, .salads .price, .italian-dishes .price {
-                padding-right: 40px;
-            }
-            .subheader {
-                font-size: 24px;
+                padding-right: 20px;
             }
             .menu-image {
                 width: 20%;
@@ -228,7 +205,6 @@
     <div id="errorMessage" class="error-message" style="display: none;"></div>
 
     <script>
-        // Function to handle fetch with timeout
         function fetchWithTimeout(url, timeout = 5000) {
             return Promise.race([
                 fetch(url),
@@ -241,7 +217,6 @@
         let validImages = [];
         let slideshowInterval;
 
-        // Function to check if an image URL is valid by attempting to load it
         async function checkImage(url) {
             return new Promise((resolve) => {
                 const img = new Image();
@@ -251,7 +226,6 @@
             });
         }
 
-        // Fetch and render the menu data from MenuRight.json
         fetchWithTimeout('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json')
             .then(response => {
                 if (!response.ok) {
@@ -262,14 +236,12 @@
             .then(async data => {
                 console.log('JSON loaded successfully:', data);
 
-                // Update headers
                 document.getElementById('steakSubsHeader').innerText = data.header.left_category || "STEAK SUBS";
                 document.getElementById('saladsHeader').innerText = data.header.middle_category || "SALADS";
                 document.getElementById('sideOrdersHeader').innerText = data.header.right_category || "SIDE ORDERS";
                 document.getElementById('italianDishesHeader').innerText = data.header.bottom_left_category || "ITALIAN DISHES";
                 document.getElementById('dinnersHeader').innerText = data.header.bottom_middle_category || "DINNERS";
 
-                // Update Steak Subs
                 let steakSubsHTML = `
                     <table>
                         <tr class="header-row">
@@ -288,7 +260,6 @@
                 `;
                 document.getElementById('steakSubsContent').innerHTML = steakSubsHTML;
 
-                // Update Salads
                 let saladsHTML = `
                     <table>
                         ${data.middle_items && data.middle_items.length > 0 ? data.middle_items.map(item => `
@@ -302,7 +273,6 @@
                 `;
                 document.getElementById('saladsContent').innerHTML = saladsHTML;
 
-                // Update Side Orders
                 let sideOrdersHTML = `
                     <table>
                         <tr class="header-row">
@@ -321,7 +291,6 @@
                 `;
                 document.getElementById('sideOrdersContent').innerHTML = sideOrdersHTML;
 
-                // Update Italian Dishes
                 let italianDishesHTML = `
                     <table>
                         ${data.bottom_left_items && data.bottom_left_items.length > 0 ? data.bottom_left_items.map(item => `
@@ -335,7 +304,6 @@
                 `;
                 document.getElementById('italianDishesContent').innerHTML = italianDishesHTML;
 
-                // Update Dinners
                 let dinnersHTML = `
                     <table>
                         ${data.bottom_middle_items && data.bottom_middle_items.length > 0 ? data.bottom_middle_items.map(item => `
@@ -348,7 +316,6 @@
                 `;
                 document.getElementById('dinnersContent').innerHTML = dinnersHTML;
 
-                // Filter valid images by checking if they load
                 images = data.images || [];
                 for (let url of images) {
                     const isValid = await checkImage(url);
@@ -359,7 +326,6 @@
                     }
                 }
 
-                // Initialize slideshow with valid images
                 if (validImages.length > 0) {
                     startSlideshow();
                 } else {
@@ -373,7 +339,6 @@
                 errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details or ensure MenuRight.json is accessible at https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json.`;
             });
 
-        // Function to start the slideshow
         function startSlideshow() {
             if (slideshowInterval) clearInterval(slideshowInterval);
             slideshowInterval = setInterval(() => {
@@ -390,7 +355,6 @@
             document.getElementById('menuImage').src = validImages[currentImageIndex] || 'your-image.jpg';
         }
 
-        // Cleanup on page unload
         window.onbeforeunload = () => {
             if (slideshowInterval) clearInterval(slideshowInterval);
         };
