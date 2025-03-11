@@ -30,7 +30,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 24px; /* Kept for readability */
+            font-size: 30px; /* Increased from 26px */
         }
         th {
             background-color: yellow;
@@ -38,7 +38,9 @@
             font-weight: bold;
             padding: 10px; /* Padding scaled with font size */
             text-align: center;
-            font-size: 26px; /* Slightly larger for headers */
+            font-size: 32px; /* Increased from 28px */
+            display: inline-block; /* Ensures background only covers text width */
+            white-space: nowrap; /* Prevents text wrapping */
         }
         /* Custom styling for DINNERS td to keep price column black */
         .dinners-td {
@@ -51,19 +53,15 @@
         }
         .price {
             text-align: right;
-            width: 70px; /* Width scaled with font size */
+            width: 70px; /* Consistent width for price alignment */
+            display: inline-block; /* Ensures consistent alignment */
         }
-        /* Add spacing between Steak Subs prices and Salads names */
-        .steak-subs .price {
+        /* Spacing between item names and prices */
+        .steak-subs .price, .salads .price, .side-orders .price, .italian-dishes .price {
             padding-right: 40px; /* Increased space to the right */
         }
-        /* Add spacing between Salads prices and Side Orders names */
-        .salads .price {
-            padding-right: 40px; /* Increased space to the right */
-        }
-        /* Add spacing between Italian Dishes prices and Dinners names */
-        .italian-dishes .price {
-            padding-right: 40px; /* Increased space to the right */
+        #dinnersContent .price {
+            padding-right: 30px; /* Space between prices */
         }
         .subheader {
             font-weight: bold;
@@ -72,42 +70,15 @@
             color: white;
         }
         .header-row {
-            background-color: yellow;
-            color: black;
-        }
-        /* Style for the image cell */
-        .image-cell {
-            background-color: black;
-            text-align: center;
-            vertical-align: middle;
-        }
-        .menu-image {
-            width: 30%;  /* Use percentage for responsiveness */
-            max-width: 250px;  /* Set a reasonable max width */
-            height: auto;  /* Keep aspect ratio */
-            object-fit: contain; /* Ensure the image fits without distortion */
-            transition: opacity 0.5s ease; /* Smooth transition for slideshow */
-        }
-        /* Error message styling */
-        .error-message {
-            color: red;
-            text-align: center;
-            font-size: 20px;
-            padding: 20px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-            z-index: 10; /* Ensure it appears above other content */
+            background-color: transparent; /* Removed yellow background extension */
         }
         /* Adjustments for smaller screens */
         @media (max-width: 768px) {
             table {
-                font-size: 18px;
+                font-size: 24px;
             }
             th {
-                font-size: 20px;
+                font-size: 26px;
             }
             td, th {
                 padding: 5px;
@@ -115,21 +86,19 @@
             .price {
                 width: 60px;
             }
-            .steak-subs .price, .salads .price, .italian-dishes .price {
+            .steak-subs .price, .salads .price, .side-orders .price, .italian-dishes .price {
                 padding-right: 25px;
             }
-            .menu-image {
-                width: 25%; /* Slightly smaller width for medium screens */
-                max-width: 200px;
-                max-height: 80%; /* Adjust image size for smaller screens */
+            #dinnersContent .price {
+                padding-right: 20px; /* Adjusted for medium screens */
             }
         }
         @media (max-width: 480px) {
             table {
-                font-size: 16px;
+                font-size: 22px;
             }
             th {
-                font-size: 18px;
+                font-size: 24px;
             }
             td, th {
                 padding: 4px;
@@ -137,13 +106,11 @@
             .price {
                 width: 50px;
             }
-            .steak-subs .price, .salads .price, .italian-dishes .price {
+            .steak-subs .price, .salads .price, .side-orders .price, .italian-dishes .price {
                 padding-right: 20px;
             }
-            .menu-image {
-                width: 20%; /* Even smaller width for small screens */
-                max-width: 150px;
-                max-height: 60%; /* Adjust image size for smaller screens */
+            #dinnersContent .price {
+                padding-right: 15px; /* Adjusted for small screens */
             }
         }
     </style>
@@ -152,7 +119,7 @@
     <div class="menu-container">
         <div class="menu-table">
             <table id="menuTable">
-                <!-- Fallback table structure -->
+                <!-- 3-column top row -->
                 <tr class="header-row">
                     <th id="steakSubsHeader">STEAK SUBS</th>
                     <th id="saladsHeader">SALADS</th>
@@ -176,7 +143,7 @@
                             <tr><td>Loading...</td><td class="price">-</td><td></td></tr>
                         </table>
                     </td>
-                    <td id="sideOrdersContent">
+                    <td class="side-orders" id="sideOrdersContent">
                         <table>
                             <tr class="header-row">
                                 <td class="subheader"></td>
@@ -188,10 +155,10 @@
                         </table>
                     </td>
                 </tr>
+                <!-- 2-column bottom row -->
                 <tr class="header-row">
                     <th id="italianDishesHeader">ITALIAN DISHES</th>
                     <th id="dinnersHeader">DINNERS</th>
-                    <th></th>
                 </tr>
                 <tr>
                     <td class="italian-dishes" id="italianDishesContent">
@@ -205,9 +172,6 @@
                             <!-- Fallback data -->
                             <tr><td class="dinners-td">Loading...</td><td class="price">-</td></tr>
                         </table>
-                    </td>
-                    <td class="image-cell" id="imageContent">
-                        <img src="your-image.jpg" alt="Menu Image" class="menu-image" id="menuImage">
                     </td>
                 </tr>
             </table>
@@ -224,21 +188,6 @@
             ]);
         }
 
-        let currentImageIndex = 0;
-        let images = [];
-        let validImages = [];
-        let slideshowInterval;
-
-        // Function to check if an image URL is valid by attempting to load it
-        async function checkImage(url) {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => resolve(url); // Return the URL if it loads
-                img.onerror = () => resolve(null); // Return null if it fails
-                img.src = url;
-            });
-        }
-
         // Fetch and render the menu data from MenuRight.json
         fetchWithTimeout('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json')
             .then(response => {
@@ -247,7 +196,7 @@
                 }
                 return response.json();
             })
-            .then(async data => {
+            .then(data => {
                 console.log('JSON loaded successfully:', data);
 
                 // Update headers
@@ -335,24 +284,6 @@
                     </table>
                 `;
                 document.getElementById('dinnersContent').innerHTML = dinnersHTML;
-
-                // Filter valid images by checking if they load
-                images = data.images || [];
-                for (let url of images) {
-                    const isValid = await checkImage(url);
-                    if (isValid) {
-                        validImages.push(isValid);
-                    } else {
-                        console.log(`Skipping invalid image: ${url}`);
-                    }
-                }
-
-                // Initialize slideshow with valid images
-                if (validImages.length > 0) {
-                    startSlideshow();
-                } else {
-                    document.getElementById('imageContent').innerHTML = '<p>No valid images available</p>';
-                }
             })
             .catch(error => {
                 console.error('Error loading MenuRight.json:', error);
@@ -360,30 +291,6 @@
                 errorMessage.style.display = 'block';
                 errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details or ensure MenuRight.json is accessible at https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json.`;
             });
-
-        // Function to start the slideshow
-        function startSlideshow() {
-            if (slideshowInterval) clearInterval(slideshowInterval); // Clear existing interval
-            slideshowInterval = setInterval(() => {
-                const imageElement = document.getElementById('menuImage');
-                if (imageElement) {
-                    imageElement.style.opacity = '0'; // Fade out
-                    setTimeout(() => {
-                        // Move to the next valid image
-                        currentImageIndex = (currentImageIndex + 1) % validImages.length;
-                        imageElement.src = validImages[currentImageIndex];
-                        imageElement.style.opacity = '1'; // Fade in
-                    }, 500); // Match transition duration
-                }
-            }, 5000); // Change image every 5 seconds (adjustable)
-            // Set initial image
-            document.getElementById('menuImage').src = validImages[currentImageIndex] || 'your-image.jpg';
-        }
-
-        // Cleanup on page unload
-        window.onbeforeunload = () => {
-            if (slideshowInterval) clearInterval(slideshowInterval);
-        };
     </script>
 </body>
 </html>
