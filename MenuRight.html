@@ -26,19 +26,21 @@
         }
         .menu-table {
             width: 100%; /* Full width */
+            height: 100%; /* Ensure table takes full height */
         }
         table {
             width: 100%;
+            height: 100%;
             border-collapse: collapse;
-            font-size: 30px; /* Increased from 26px */
+            font-size: 30px;
         }
         th {
             background-color: yellow;
             color: black;
             font-weight: bold;
-            padding: 10px; /* Padding scaled with font size */
+            padding: 10px;
             text-align: center;
-            font-size: 32px; /* Increased from 28px */
+            font-size: 32px;
             display: inline-block; /* Ensures background only covers text width */
             white-space: nowrap; /* Prevents text wrapping */
         }
@@ -47,9 +49,10 @@
             background-color: black; /* Keep price column black */
         }
         td {
-            padding: 6px; /* Padding scaled with font size */
+            padding: 6px;
             text-align: left;
             vertical-align: top;
+            border: none; /* Remove borders for cleaner look */
         }
         .price {
             text-align: right;
@@ -90,7 +93,7 @@
                 padding-right: 25px;
             }
             #dinnersContent .price {
-                padding-right: 20px; /* Adjusted for medium screens */
+                padding-right: 20px;
             }
         }
         @media (max-width: 480px) {
@@ -110,7 +113,7 @@
                 padding-right: 20px;
             }
             #dinnersContent .price {
-                padding-right: 15px; /* Adjusted for small screens */
+                padding-right: 15px;
             }
         }
     </style>
@@ -119,15 +122,15 @@
     <div class="menu-container">
         <div class="menu-table">
             <table id="menuTable">
-                <!-- 3-column top row -->
                 <tr class="header-row">
                     <th id="steakSubsHeader">STEAK SUBS</th>
                     <th id="saladsHeader">SALADS</th>
                     <th id="sideOrdersHeader">SIDE ORDERS</th>
                 </tr>
                 <tr>
-                    <td class="steak-subs" id="steakSubsContent">
-                        <table>
+                    <!-- Column 1: STEAK SUBS and ITALIAN DISHES -->
+                    <td style="vertical-align: top;">
+                        <table class="steak-subs">
                             <tr class="header-row">
                                 <td class="subheader"></td>
                                 <td class="subheader">LG 12"</td>
@@ -136,14 +139,30 @@
                             <!-- Fallback data -->
                             <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
                         </table>
-                    </td>
-                    <td class="salads" id="saladsContent">
-                        <table>
+                        <div class="header-row">
+                            <th id="italianDishesHeader">ITALIAN DISHES</th>
+                        </div>
+                        <table class="italian-dishes" id="italianDishesContent">
                             <!-- Fallback data -->
                             <tr><td>Loading...</td><td class="price">-</td><td></td></tr>
                         </table>
                     </td>
-                    <td class="side-orders" id="sideOrdersContent">
+                    <!-- Column 2: SALADS and DINNERS -->
+                    <td style="vertical-align: top;">
+                        <table class="salads">
+                            <!-- Fallback data -->
+                            <tr><td>Loading...</td><td class="price">-</td><td></td></tr>
+                        </table>
+                        <div class="header-row">
+                            <th id="dinnersHeader">DINNERS</th>
+                        </div>
+                        <table id="dinnersContent">
+                            <!-- Fallback data -->
+                            <tr><td class="dinners-td">Loading...</td><td class="price">-</td></tr>
+                        </table>
+                    </td>
+                    <!-- Column 3: SIDE ORDERS -->
+                    <td class="side-orders" id="sideOrdersContent" style="vertical-align: top;">
                         <table>
                             <tr class="header-row">
                                 <td class="subheader"></td>
@@ -152,25 +171,6 @@
                             </tr>
                             <!-- Fallback data -->
                             <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
-                        </table>
-                    </td>
-                </tr>
-                <!-- 2-column bottom row -->
-                <tr class="header-row">
-                    <th id="italianDishesHeader">ITALIAN DISHES</th>
-                    <th id="dinnersHeader">DINNERS</th>
-                </tr>
-                <tr>
-                    <td class="italian-dishes" id="italianDishesContent">
-                        <table>
-                            <!-- Fallback data -->
-                            <tr><td>Loading...</td><td class="price">-</td><td></td></tr>
-                        </table>
-                    </td>
-                    <td id="dinnersContent">
-                        <table>
-                            <!-- Fallback data -->
-                            <tr><td class="dinners-td">Loading...</td><td class="price">-</td></tr>
                         </table>
                     </td>
                 </tr>
@@ -223,7 +223,7 @@
                         `).join('') : '<tr><td>No items available</td><td class="price">-</td><td class="price">-</td></tr>'}
                     </table>
                 `;
-                document.getElementById('steakSubsContent').innerHTML = steakSubsHTML;
+                document.querySelector('.steak-subs').innerHTML = steakSubsHTML;
 
                 // Update Salads
                 let saladsHTML = `
@@ -237,7 +237,7 @@
                         `).join('') : '<tr><td>No items available</td><td class="price">-</td><td></td></tr>'}
                     </table>
                 `;
-                document.getElementById('saladsContent').innerHTML = saladsHTML;
+                document.querySelector('.salads').innerHTML = saladsHTML;
 
                 // Update Side Orders
                 let sideOrdersHTML = `
@@ -260,7 +260,7 @@
 
                 // Update Italian Dishes
                 let italianDishesHTML = `
-                    <table>
+                    <table class="italian-dishes">
                         ${data.bottom_left_items && data.bottom_left_items.length > 0 ? data.bottom_left_items.map(item => `
                             <tr>
                                 <td>${item.name}</td>
