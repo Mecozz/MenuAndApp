@@ -2,15 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Digital Menu</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             background: black;
             color: white;
             font-family: 'Open Sans', sans-serif;
             text-align: center;
+            overflow: hidden;
+            height: 100vh;
         }
         .menu-container {
             width: 90%;
@@ -20,7 +27,7 @@
         .menu-header {
             font-size: 2.5em;
             font-weight: bold;
-            color: red;
+            color: black;
             background: yellow;
             padding: 10px;
             width: 100%;
@@ -50,22 +57,85 @@
             text-align: center;
         }
         th {
-            color: yellow;
+            color: white;
+        }
+        /* Style for LG 14" and REG 10" headers */
+        .size-header th {
+            background-color: black;
+            font-weight: bold;
         }
         td:first-child {
             text-align: left;
+            padding-right: 30px; /* Buffer between item name and price */
+        }
+        /* Gap between Pizza prices and Calzones names */
+        #left-menu .price {
+            padding-right: 50px;
+        }
+        .price {
+            text-align: right;
+            width: 80px;
         }
         .image-slider {
             width: 100%;
             height: 200px;
             overflow: hidden;
             position: relative;
+            margin-top: 20px;
         }
         .slider-image {
             width: 100%;
             height: 100%;
             position: absolute;
             display: none;
+            object-fit: contain;
+            transition: opacity 0.5s ease;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            font-size: 1.5em;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 10;
+        }
+        @media (max-width: 768px) {
+            table {
+                font-size: 1.2em;
+            }
+            .menu-header {
+                font-size: 2em;
+            }
+            td:first-child {
+                padding-right: 20px;
+            }
+            #left-menu .price {
+                padding-right: 40px;
+            }
+            .image-slider {
+                height: 150px;
+            }
+        }
+        @media (max-width: 480px) {
+            table {
+                font-size: 1em;
+            }
+            .menu-header {
+                font-size: 1.5em;
+            }
+            td:first-child {
+                padding-right: 15px;
+            }
+            #left-menu .price {
+                padding-right: 30px;
+            }
+            .image-slider {
+                height: 100px;
+            }
         }
     </style>
 </head>
@@ -79,30 +149,135 @@
             <div class="menu-column" id="left-menu"></div>
             <div class="menu-column" id="right-menu"></div>
         </div>
+        <div class="image-slider" id="imageSlider">
+            <!-- Slideshow images will be populated here -->
+        </div>
     </div>
+    <div id="errorMessage" class="error-message" style="display: none;"></div>
 
     <script>
-        fetch('MenuLeft.json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('left-category').innerText = data.header.left_category;
-                document.getElementById('right-category').innerText = data.header.right_category;
-                
-                let leftMenu = `<table><tr><th>Item</th><th>LG 14"</th><th>REG 10"</th></tr>`;
-                data.left_items.forEach(item => {
-                    leftMenu += `<tr><td>${item.name}</td><td>${item.lg_price}</td><td>${item.reg_price}</td></tr>`;
-                });
-                leftMenu += '</table>';
+        function fetchWithTimeout(url, timeout = 5000) {
+            return Promise.race([
+                fetch(url),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('Request timed out')), timeout))
+            ]);
+        }
+
+        let currentImageIndex = 0;
+        let images = [];
+        let validImages = [];
+        let slideshowInterval;
+
+        async function checkImage(url) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve(url);
+                img.onerror = () => resolve(null);
+                img.src = url;
+            });
+        }
+
+        fetchWithTimeout('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuLeft.json?t=' + new Date().getTime())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(async data => {
+                console.log('JSON loaded successfully:', data);
+
+                // Set category headers
+                document.getElementById('left-category').innerText = data.header.left_category || "PIZZA";
+                document.getElementById('right-category').innerText = data.header.right_category || "CALZONES";
+
+                // Populate left menu (PIZZA)
+                let leftMenu = `
+                    <table>
+                        <tr class="size-header">
+                            <th></th>
+                            <th>LG 14"</th>
+                            <th>REG 10"</th>
+                        </tr>
+                        ${data.left_items && data.left_items.length > 0 ? data.left_items.map(item => `
+                            <tr class="item-row">
+                                <td>${item.name}</td>
+                                <td class="price">${item.lg_price || '-'}</td>
+                                <td class="price">${item.reg_price || '-'}</td>
+                            </tr>
+                        `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
+                    </table>
+                `;
                 document.getElementById('left-menu').innerHTML = leftMenu;
 
-                let rightMenu = `<table><tr><th>Item</th><th>LG 14"</th><th>REG 10"</th></tr>`;
-                data.right_items.forEach(item => {
-                    rightMenu += `<tr><td>${item.name}</td><td>${item.lg_price}</td><td>${item.reg_price}</td></tr>`;
-                });
-                rightMenu += '</table>';
+                // Populate right menu (CALZONES)
+                let rightMenu = `
+                    <table>
+                        <tr class="size-header">
+                            <th></th>
+                            <th>LG 14"</th>
+                            <th>REG 10"</th>
+                        </tr>
+                        ${data.right_items && data.right_items.length > 0 ? data.right_items.map(item => `
+                            <tr class="item-row">
+                                <td>${item.name}</td>
+                                <td class="price">${item.lg_price || '-'}</td>
+                                <td class="price">${item.reg_price || '-'}</td>
+                            </tr>
+                        `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
+                    </table>
+                `;
                 document.getElementById('right-menu').innerHTML = rightMenu;
+
+                // Flatten and validate images for slideshow
+                images = data.images.flat() || []; // Flatten the array of arrays into a single array
+                for (let url of images) {
+                    const isValid = await checkImage(url);
+                    if (isValid) {
+                        validImages.push(isValid);
+                    } else {
+                        console.log(`Skipping invalid image: ${url}`);
+                    }
+                }
+
+                if (validImages.length > 0) {
+                    const slider = document.getElementById('imageSlider');
+                    validImages.forEach((url, index) => {
+                        const img = document.createElement('img');
+                        img.src = url;
+                        img.className = 'slider-image';
+                        img.style.display = index === 0 ? 'block' : 'none'; // Show the first image
+                        slider.appendChild(img);
+                    });
+                    startSlideshow();
+                } else {
+                    document.getElementById('imageSlider').innerHTML = '<p>No valid images available</p>';
+                }
             })
-            .catch(error => console.error('Error loading menu:', error));
+            .catch(error => {
+                console.error('Error loading MenuLeft.json:', error);
+                const errorMessage = document.getElementById('errorMessage');
+                errorMessage.style.display = 'block';
+                errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details or ensure MenuLeft.json is accessible at https://raw.githubusercontent.com/Mecozz/Menu/main/MenuLeft.json.`;
+            });
+
+        function startSlideshow() {
+            if (slideshowInterval) clearInterval(slideshowInterval);
+            const images = document.querySelectorAll('.slider-image');
+            slideshowInterval = setInterval(() => {
+                images[currentImageIndex].style.opacity = '0';
+                images[currentImageIndex].style.display = 'none';
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                images[currentImageIndex].style.display = 'block';
+                setTimeout(() => {
+                    images[currentImageIndex].style.opacity = '1';
+                }, 50);
+            }, 5000); // Change image every 5 seconds
+        }
+
+        window.onbeforeunload = () => {
+            if (slideshowInterval) clearInterval(slideshowInterval);
+        };
     </script>
 </body>
 </html>
