@@ -22,48 +22,64 @@
             width: 100%;
             height: 100vh;
             background-color: black;
-            padding: 0; /* No padding to keep at the top */
+            padding: 0;
         }
         .menu-table {
-            width: 100%; /* Full width */
+            width: 100%;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 24px; /* Kept for readability */
+            font-size: 24px;
         }
         th {
             background-color: yellow;
             color: black;
             font-weight: bold;
-            padding: 10px; /* Padding scaled with font size */
+            padding: 10px;
             text-align: center;
-            font-size: 26px; /* Slightly larger for headers */
+            font-size: 26px;
         }
-        /* Custom styling for DINNERS td to keep price column black */
         .dinners-td {
-            background-color: black; /* Keep price column black */
+            background-color: black;
         }
         td {
-            padding: 6px; /* Padding scaled with font size */
+            padding: 6px;
             text-align: left;
             vertical-align: top;
+            word-wrap: break-word; /* Ensure long item names wrap */
+            max-width: 0; /* Allow wrapping */
         }
+        /* Consistent price column styling across all sections */
         .price {
             text-align: right;
-            width: 70px; /* Width scaled with font size */
+            width: 90px; /* Increased width for better alignment */
+            display: inline-block;
         }
-        /* Add spacing between Steak Subs prices and Salads names */
-        .steak-subs .price {
-            padding-right: 40px; /* Increased space to the right */
+        /* Ensure nested tables have consistent layout */
+        .steak-subs table, .salads table, .italian-dishes table, .dinners table, #sideOrdersContent table {
+            width: 100%; /* Ensure nested tables take full width */
+            table-layout: fixed; /* Fix column widths to prevent shifting */
         }
-        /* Add spacing between Salads prices and Side Orders names */
-        .salads .price {
-            padding-right: 40px; /* Increased space to the right */
+        /* Align prices in Steak Subs */
+        .steak-subs td:nth-child(2), .steak-subs td:nth-child(3) {
+            padding-right: 40px; /* Consistent spacing */
         }
-        /* Add spacing between Italian Dishes prices and Dinners names */
-        .italian-dishes .price {
-            padding-right: 40px; /* Increased space to the right */
+        /* Align prices in Salads */
+        .salads td:nth-child(2) {
+            padding-right: 40px;
+        }
+        /* Align prices in Side Orders */
+        #sideOrdersContent td:nth-child(2), #sideOrdersContent td:nth-child(3) {
+            padding-right: 40px;
+        }
+        /* Align prices in Italian Dishes */
+        .italian-dishes td:nth-child(2) {
+            padding-right: 40px;
+        }
+        /* Align prices in Dinners */
+        .dinners td:nth-child(2) {
+            padding-right: 40px;
         }
         .subheader {
             font-weight: bold;
@@ -75,20 +91,18 @@
             background-color: yellow;
             color: black;
         }
-        /* Style for the image cell */
         .image-cell {
             background-color: black;
             text-align: center;
             vertical-align: middle;
         }
         .menu-image {
-            width: 30%;  /* Use percentage for responsiveness */
-            max-width: 250px;  /* Set a reasonable max width */
-            height: auto;  /* Keep aspect ratio */
-            object-fit: contain; /* Ensure the image fits without distortion */
-            transition: opacity 0.5s ease; /* Smooth transition for slideshow */
+            width: 30%;
+            max-width: 250px;
+            height: auto;
+            object-fit: contain;
+            transition: opacity 0.5s ease;
         }
-        /* Error message styling */
         .error-message {
             color: red;
             text-align: center;
@@ -98,10 +112,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-            z-index: 10; /* Ensure it appears above other content */
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 10;
         }
-        /* Adjustments for smaller screens */
         @media (max-width: 768px) {
             table {
                 font-size: 18px;
@@ -115,13 +128,17 @@
             .price {
                 width: 60px;
             }
-            .steak-subs .price, .salads .price, .italian-dishes .price {
+            .steak-subs td:nth-child(2), .steak-subs td:nth-child(3),
+            .salads td:nth-child(2),
+            #sideOrdersContent td:nth-child(2), #sideOrdersContent td:nth-child(3),
+            .italian-dishes td:nth-child(2),
+            .dinners td:nth-child(2) {
                 padding-right: 25px;
             }
             .menu-image {
-                width: 25%; /* Slightly smaller width for medium screens */
+                width: 25%;
                 max-width: 200px;
-                max-height: 80%; /* Adjust image size for smaller screens */
+                max-height: 80%;
             }
         }
         @media (max-width: 480px) {
@@ -137,13 +154,17 @@
             .price {
                 width: 50px;
             }
-            .steak-subs .price, .salads .price, .italian-dishes .price {
+            .steak-subs td:nth-child(2), .steak-subs td:nth-child(3),
+            .salads td:nth-child(2),
+            #sideOrdersContent td:nth-child(2), #sideOrdersContent td:nth-child(3),
+            .italian-dishes td:nth-child(2),
+            .dinners td:nth-child(2) {
                 padding-right: 20px;
             }
             .menu-image {
-                width: 20%; /* Even smaller width for small screens */
+                width: 20%;
                 max-width: 150px;
-                max-height: 60%; /* Adjust image size for smaller screens */
+                max-height: 60%;
             }
         }
     </style>
@@ -152,7 +173,6 @@
     <div class="menu-container">
         <div class="menu-table">
             <table id="menuTable">
-                <!-- Fallback table structure -->
                 <tr class="header-row">
                     <th id="steakSubsHeader">STEAK SUBS</th>
                     <th id="saladsHeader">SALADS</th>
@@ -166,13 +186,11 @@
                                 <td class="subheader">LG 12"</td>
                                 <td class="subheader">REG 8"</td>
                             </tr>
-                            <!-- Fallback data -->
                             <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
                         </table>
                     </td>
                     <td class="salads" id="saladsContent">
                         <table>
-                            <!-- Fallback data -->
                             <tr><td>Loading...</td><td class="price">-</td><td></td></tr>
                         </table>
                     </td>
@@ -183,7 +201,6 @@
                                 <td class="subheader">LG</td>
                                 <td class="subheader">SM</td>
                             </tr>
-                            <!-- Fallback data -->
                             <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
                         </table>
                     </td>
@@ -196,13 +213,11 @@
                 <tr>
                     <td class="italian-dishes" id="italianDishesContent">
                         <table>
-                            <!-- Fallback data -->
                             <tr><td>Loading...</td><td class="price">-</td><td></td></tr>
                         </table>
                     </td>
                     <td id="dinnersContent">
                         <table>
-                            <!-- Fallback data -->
                             <tr><td class="dinners-td">Loading...</td><td class="price">-</td></tr>
                         </table>
                     </td>
@@ -216,7 +231,6 @@
     <div id="errorMessage" class="error-message" style="display: none;"></div>
 
     <script>
-        // Function to handle fetch with timeout
         function fetchWithTimeout(url, timeout = 5000) {
             return Promise.race([
                 fetch(url),
@@ -229,17 +243,15 @@
         let validImages = [];
         let slideshowInterval;
 
-        // Function to check if an image URL is valid by attempting to load it
         async function checkImage(url) {
             return new Promise((resolve) => {
                 const img = new Image();
-                img.onload = () => resolve(url); // Return the URL if it loads
-                img.onerror = () => resolve(null); // Return null if it fails
+                img.onload = () => resolve(url);
+                img.onerror = () => resolve(null);
                 img.src = url;
             });
         }
 
-        // Fetch and render the menu data from MenuRight.json
         fetchWithTimeout('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json')
             .then(response => {
                 if (!response.ok) {
@@ -250,14 +262,12 @@
             .then(async data => {
                 console.log('JSON loaded successfully:', data);
 
-                // Update headers
                 document.getElementById('steakSubsHeader').innerText = data.header.left_category || "STEAK SUBS";
                 document.getElementById('saladsHeader').innerText = data.header.middle_category || "SALADS";
                 document.getElementById('sideOrdersHeader').innerText = data.header.right_category || "SIDE ORDERS";
                 document.getElementById('italianDishesHeader').innerText = data.header.bottom_left_category || "ITALIAN DISHES";
                 document.getElementById('dinnersHeader').innerText = data.header.bottom_middle_category || "DINNERS";
 
-                // Update Steak Subs
                 let steakSubsHTML = `
                     <table>
                         <tr class="header-row">
@@ -276,7 +286,6 @@
                 `;
                 document.getElementById('steakSubsContent').innerHTML = steakSubsHTML;
 
-                // Update Salads
                 let saladsHTML = `
                     <table>
                         ${data.middle_items && data.middle_items.length > 0 ? data.middle_items.map(item => `
@@ -290,7 +299,6 @@
                 `;
                 document.getElementById('saladsContent').innerHTML = saladsHTML;
 
-                // Update Side Orders
                 let sideOrdersHTML = `
                     <table>
                         <tr class="header-row">
@@ -309,7 +317,6 @@
                 `;
                 document.getElementById('sideOrdersContent').innerHTML = sideOrdersHTML;
 
-                // Update Italian Dishes
                 let italianDishesHTML = `
                     <table>
                         ${data.bottom_left_items && data.bottom_left_items.length > 0 ? data.bottom_left_items.map(item => `
@@ -323,7 +330,6 @@
                 `;
                 document.getElementById('italianDishesContent').innerHTML = italianDishesHTML;
 
-                // Update Dinners
                 let dinnersHTML = `
                     <table>
                         ${data.bottom_middle_items && data.bottom_middle_items.length > 0 ? data.bottom_middle_items.map(item => `
@@ -336,7 +342,6 @@
                 `;
                 document.getElementById('dinnersContent').innerHTML = dinnersHTML;
 
-                // Filter valid images by checking if they load
                 images = data.images || [];
                 for (let url of images) {
                     const isValid = await checkImage(url);
@@ -347,7 +352,6 @@
                     }
                 }
 
-                // Initialize slideshow with valid images
                 if (validImages.length > 0) {
                     startSlideshow();
                 } else {
@@ -361,26 +365,22 @@
                 errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details or ensure MenuRight.json is accessible at https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json.`;
             });
 
-        // Function to start the slideshow
         function startSlideshow() {
-            if (slideshowInterval) clearInterval(slideshowInterval); // Clear existing interval
+            if (slideshowInterval) clearInterval(slideshowInterval);
             slideshowInterval = setInterval(() => {
                 const imageElement = document.getElementById('menuImage');
                 if (imageElement) {
-                    imageElement.style.opacity = '0'; // Fade out
+                    imageElement.style.opacity = '0';
                     setTimeout(() => {
-                        // Move to the next valid image
                         currentImageIndex = (currentImageIndex + 1) % validImages.length;
                         imageElement.src = validImages[currentImageIndex];
-                        imageElement.style.opacity = '1'; // Fade in
-                    }, 500); // Match transition duration
+                        imageElement.style.opacity = '1';
+                    }, 500);
                 }
-            }, 5000); // Change image every 5 seconds (adjustable)
-            // Set initial image
+            }, 5000);
             document.getElementById('menuImage').src = validImages[currentImageIndex] || 'your-image.jpg';
         }
 
-        // Cleanup on page unload
         window.onbeforeunload = () => {
             if (slideshowInterval) clearInterval(slideshowInterval);
         };
