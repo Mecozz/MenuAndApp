@@ -1,6 +1,7 @@
 {
   "config": {
-    "image_rotation_speed": 10000 
+    "image_rotation_speed": 10000
+  },
   "header": {
     "left_category": "PIZZA",
     "right_category": "CALZONES"
