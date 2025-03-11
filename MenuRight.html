@@ -128,7 +128,7 @@
         <div class="menu-table">
             <table id="menuTable">
                 <tr class="header-row">
-                    <th id="steakSubsHeader">STEAK SUBS</th>
+                    <th id="steakSubsHeader">STEAD SUBS</th>
                     <th id="saladsHeader">SALADS</th>
                     <th id="sideOrdersHeader">SIDE ORDERS</th>
                 </tr>
@@ -138,7 +138,7 @@
                             <thead>
                                 <tr class="header-row">
                                     <th class="subheader"></th>
-                                    <th class="subheader price-col">LG 12"</th>
+                                    <th class="subheader price-col">LG 1</th>
                                     <th class="subheader price-col">REG 8"</th>
                                 </tr>
                             </thead>
@@ -230,7 +230,7 @@
             .then(async data => {
                 console.log('JSON loaded successfully:', data);
 
-                document.getElementById('steakSubsHeader').innerText = data.header.left_category || "STEAK SUBS";
+                document.getElementById('steakSubsHeader').innerText = data.header.left_category || "STEAD SUBS";
                 document.getElementById('saladsHeader').innerText = data.header.middle_category || "SALADS";
                 document.getElementById('sideOrdersHeader').innerText = data.header.right_category || "SIDE ORDERS";
                 document.getElementById('italianDishesHeader').innerText = data.header.bottom_left_category || "ITALIAN DISHES";
