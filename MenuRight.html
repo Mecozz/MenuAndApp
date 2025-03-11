@@ -22,11 +22,11 @@
             width: 100%;
             height: 100vh;
             background-color: black;
-            padding: 0; /* No padding to keep at the top */
+            padding: 0;
         }
         .menu-table {
-            width: 100%; /* Full width */
-            height: 100%; /* Ensure table takes full height */
+            width: 100%;
+            height: 100%;
         }
         table {
             width: 100%;
@@ -41,30 +41,28 @@
             padding: 10px;
             text-align: center;
             font-size: 32px;
-            display: inline-block; /* Ensures background only covers text width */
-            white-space: nowrap; /* Prevents text wrapping */
+            display: inline-block;
+            white-space: nowrap;
         }
-        /* Custom styling for DINNERS td to keep price column black */
         .dinners-td {
-            background-color: black; /* Keep price column black */
+            background-color: black;
         }
         td {
             padding: 6px;
             text-align: left;
             vertical-align: top;
-            border: none; /* Remove borders for cleaner look */
+            border: none;
         }
         .price {
             text-align: right;
-            width: 70px; /* Consistent width for price alignment */
-            display: inline-block; /* Ensures consistent alignment */
+            width: 70px;
+            display: inline-block;
         }
-        /* Spacing between item names and prices */
         .steak-subs .price, .salads .price, .side-orders .price, .italian-dishes .price {
-            padding-right: 40px; /* Increased space to the right */
+            padding-right: 40px;
         }
         #dinnersContent .price {
-            padding-right: 30px; /* Space between prices */
+            padding-right: 30px;
         }
         .subheader {
             font-weight: bold;
@@ -73,9 +71,8 @@
             color: white;
         }
         .header-row {
-            background-color: transparent; /* Removed yellow background extension */
+            background-color: transparent;
         }
-        /* Adjustments for smaller screens */
         @media (max-width: 768px) {
             table {
                 font-size: 24px;
@@ -128,7 +125,6 @@
                     <th id="sideOrdersHeader">SIDE ORDERS</th>
                 </tr>
                 <tr>
-                    <!-- Column 1: STEAK SUBS and ITALIAN DISHES -->
                     <td style="vertical-align: top;">
                         <table class="steak-subs">
                             <tr class="header-row">
@@ -136,32 +132,26 @@
                                 <td class="subheader">LG 12"</td>
                                 <td class="subheader">REG 8"</td>
                             </tr>
-                            <!-- Fallback data -->
-                            <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
+                            <tr><td colspan="3">Loading...</td></tr>
                         </table>
                         <div class="header-row">
                             <th id="italianDishesHeader">ITALIAN DISHES</th>
                         </div>
                         <table class="italian-dishes" id="italianDishesContent">
-                            <!-- Fallback data -->
-                            <tr><td>Loading...</td><td class="price">-</td><td></td></tr>
+                            <tr><td colspan="3">Loading...</td></tr>
                         </table>
                     </td>
-                    <!-- Column 2: SALADS and DINNERS -->
                     <td style="vertical-align: top;">
                         <table class="salads">
-                            <!-- Fallback data -->
-                            <tr><td>Loading...</td><td class="price">-</td><td></td></tr>
+                            <tr><td colspan="3">Loading...</td></tr>
                         </table>
                         <div class="header-row">
                             <th id="dinnersHeader">DINNERS</th>
                         </div>
                         <table id="dinnersContent">
-                            <!-- Fallback data -->
-                            <tr><td class="dinners-td">Loading...</td><td class="price">-</td></tr>
+                            <tr><td colspan="2">Loading...</td></tr>
                         </table>
                     </td>
-                    <!-- Column 3: SIDE ORDERS -->
                     <td class="side-orders" id="sideOrdersContent" style="vertical-align: top;">
                         <table>
                             <tr class="header-row">
@@ -169,18 +159,16 @@
                                 <td class="subheader">LG</td>
                                 <td class="subheader">SM</td>
                             </tr>
-                            <!-- Fallback data -->
-                            <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
+                            <tr><td colspan="3">Loading...</td></tr>
                         </table>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
-    <div id="errorMessage" class="error-message" style="display: none;"></div>
+    <div id="errorMessage" class="error-message" style="display: none; color: red; text-align: center; font-size: 26px; padding: 20px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.8); z-index: 10;"></div>
 
     <script>
-        // Function to handle fetch with timeout
         function fetchWithTimeout(url, timeout = 5000) {
             return Promise.race([
                 fetch(url),
@@ -188,7 +176,6 @@
             ]);
         }
 
-        // Fetch and render the menu data from MenuRight.json
         fetchWithTimeout('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuRight.json')
             .then(response => {
                 if (!response.ok) {
@@ -208,7 +195,7 @@
 
                 // Update Steak Subs
                 let steakSubsHTML = `
-                    <table>
+                    <table class="steak-subs">
                         <tr class="header-row">
                             <td class="subheader"></td>
                             <td class="subheader">LG 12"</td>
@@ -227,7 +214,7 @@
 
                 // Update Salads
                 let saladsHTML = `
-                    <table>
+                    <table class="salads">
                         ${data.middle_items && data.middle_items.length > 0 ? data.middle_items.map(item => `
                             <tr>
                                 <td>${item.name}</td>
