@@ -1,4 +1,7 @@
 {
+  "config": {
+    "image_rotation_speed": 10000 // Default rotation speed in milliseconds (10 seconds)
+  },
   "header": {
     "left_category": "PIZZA",
     "right_category": "CALZONES"
