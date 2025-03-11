@@ -50,32 +50,16 @@
             text-align: right;
             width: 80px;
         }
-        /* Larger gap between Pizza prices and Calzones names */
+        /* Gap between Pizza prices and Calzones names */
         #pizzaContent .price {
-            padding-right: 50px; /* Increased from 40px to 50px for a slightly larger gap */
+            padding-right: 50px; /* Increased from 40px to 50px */
         }
         .header-row {
             background-color: yellow;
             color: black;
         }
-        .item-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .item-name {
-            flex: 1;
-            white-space: nowrap;
-            padding-right: 30px; /* Increased buffer between name and price (was 0) */
-        }
-        .price-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .size-label {
-            font-weight: bold;
-            white-space: nowrap;
+        .item-row td:first-child {
+            padding-right: 30px; /* Buffer between item name and price */
         }
         .image-row {
             background-color: black;
@@ -118,7 +102,7 @@
             #pizzaContent .price {
                 padding-right: 40px; /* Adjusted for medium screens */
             }
-            .item-name {
+            .item-row td:first-child {
                 padding-right: 20px; /* Adjusted buffer */
             }
             .menu-image {
@@ -142,7 +126,7 @@
             #pizzaContent .price {
                 padding-right: 30px; /* Adjusted for small screens */
             }
-            .item-name {
+            .item-row td:first-child {
                 padding-right: 15px; /* Adjusted buffer */
             }
             .menu-image {
@@ -163,34 +147,32 @@
                 <tr>
                     <td id="pizzaContent">
                         <table>
+                            <tr class="header-row">
+                                <th></th>
+                                <th>LG 14"</th>
+                                <th>REG 10"</th>
+                            </tr>
                             ${data.left_items && data.left_items.length > 0 ? data.left_items.map(item => `
                                 <tr class="item-row">
-                                    <td class="item-name">${item.name}</td>
-                                    <td class="price-group">
-                                        <span class="size-label">LG 14"</span>
-                                        <span class="price">$${item.lg_price || '-'}</span>
-                                    </td>
-                                    <td class="price-group">
-                                        <span class="size-label">REG 10"</span>
-                                        <span class="price">$${item.reg_price || '-'}</span>
-                                    </td>
+                                    <td>${item.name}</td>
+                                    <td class="price">$${item.lg_price || '-'}</td>
+                                    <td class="price">$${item.reg_price || '-'}</td>
                                 </tr>
                             `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
                         </table>
                     </td>
                     <td id="calzonesContent">
                         <table>
+                            <tr class="header-row">
+                                <th></th>
+                                <th>LG 14"</th>
+                                <th>REG 10"</th>
+                            </tr>
                             ${data.right_items && data.right_items.length > 0 ? data.right_items.map(item => `
                                 <tr class="item-row">
-                                    <td class="item-name">${item.name}</td>
-                                    <td class="price-group">
-                                        <span class="size-label">LG 14"</span>
-                                        <span class="price">$${item.lg_price || '-'}</span>
-                                    </td>
-                                    <td class="price-group">
-                                        <span class="size-label">REG 10"</span>
-                                        <span class="price">$${item.reg_price || '-'}</span>
-                                    </td>
+                                    <td>${item.name}</td>
+                                    <td class="price">$${item.lg_price || '-'}</td>
+                                    <td class="price">$${item.reg_price || '-'}</td>
                                 </tr>
                             `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
                         </table>
@@ -229,17 +211,16 @@
 
                 let pizzaHTML = `
                     <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th>LG 14"</th>
+                            <th>REG 10"</th>
+                        </tr>
                         ${data.left_items && data.left_items.length > 0 ? data.left_items.map(item => `
                             <tr class="item-row">
-                                <td class="item-name">${item.name}</td>
-                                <td class="price-group">
-                                    <span class="size-label">LG 14"</span>
-                                    <span class="price">$${item.lg_price || '-'}</span>
-                                </td>
-                                <td class="price-group">
-                                    <span class="size-label">REG 10"</span>
-                                    <span class="price">$${item.reg_price || '-'}</span>
-                                </td>
+                                <td>${item.name}</td>
+                                <td class="price">$${item.lg_price || '-'}</td>
+                                <td class="price">$${item.reg_price || '-'}</td>
                             </tr>
                         `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
                     </table>
@@ -248,17 +229,16 @@
 
                 let calzonesHTML = `
                     <table>
+                        <tr class="header-row">
+                            <th></th>
+                            <th>LG 14"</th>
+                            <th>REG 10"</th>
+                        </tr>
                         ${data.right_items && data.right_items.length > 0 ? data.right_items.map(item => `
                             <tr class="item-row">
-                                <td class="item-name">${item.name}</td>
-                                <td class="price-group">
-                                    <span class="size-label">LG 14"</span>
-                                    <span class="price">$${item.lg_price || '-'}</span>
-                                </td>
-                                <td class="price-group">
-                                    <span class="size-label">REG 10"</span>
-                                    <span class="price">$${item.reg_price || '-'}</span>
-                                </td>
+                                <td>${item.name}</td>
+                                <td class="price">$${item.lg_price || '-'}</td>
+                                <td class="price">$${item.reg_price || '-'}</td>
                             </tr>
                         `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
                     </table>
