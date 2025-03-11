@@ -68,7 +68,7 @@
             padding-right: 30px; /* Buffer between item name and price */
         }
         #left-menu .price {
-            padding-right: 30px; /* Reduced from 50px to make gap smaller */
+            padding-right: 30px; /* Reduced gap */
         }
         #right-menu .price {
             padding-right: 10px; /* Ensure alignment consistency */
@@ -85,13 +85,20 @@
             align-items: center;
             flex-wrap: nowrap;
         }
-        .menu-image {
+        .image-container {
             width: 18%; /* Adjusted for 5 images */
-            max-width: 150px; /* Limit size to fit all five */
-            max-height: 150px;
+            position: relative;
+            flex: 1;
+        }
+        .menu-image {
+            width: 100%;
+            max-width: 200px; /* Increased from 150px to make images bigger */
+            max-height: 200px; /* Increased from 150px */
             height: auto;
             object-fit: contain;
-            flex: 1;
+            position: absolute;
+            display: none;
+            transition: opacity 0.5s ease;
         }
         .error-message {
             color: red;
@@ -122,8 +129,8 @@
                 padding-right: 5px;
             }
             .menu-image {
-                max-width: 120px;
-                max-height: 120px;
+                max-width: 160px;
+                max-height: 160px;
             }
         }
         @media (max-width: 480px) {
@@ -143,8 +150,8 @@
                 padding-right: 5px;
             }
             .menu-image {
-                max-width: 90px;
-                max-height: 90px;
+                max-width: 120px;
+                max-height: 120px;
             }
         }
     </style>
@@ -160,7 +167,7 @@
             <div class="menu-column" id="right-menu"></div>
         </div>
         <div class="image-row" id="imageRow">
-            <!-- Static images will be populated here -->
+            <!-- Image containers will be populated here -->
         </div>
     </div>
     <div id="errorMessage" class="error-message" style="display: none;"></div>
@@ -234,30 +241,46 @@
                 `;
                 document.getElementById('right-menu').innerHTML = rightMenu;
 
-                // Populate static images (one from each sub-array)
+                // Populate five image slots with cycling images
                 const imageRow = document.getElementById('imageRow');
-                let imageUrls = [];
-                if (data.images && data.images.length > 0) {
-                    imageUrls = data.images.map(subArray => subArray[0] || ''); // Take the first image from each sub-array
-                }
+                let imageGroups = data.images || []; // Array of sub-arrays, each with 3 images
 
-                let validImages = [];
-                for (let url of imageUrls) {
-                    if (url) {
-                        const isValid = await checkImage(url);
-                        if (isValid) {
-                            validImages.push(isValid);
+                if (imageGroups.length > 0) {
+                    // Create five image containers
+                    let containersHTML = '';
+                    for (let i = 0; i < Math.min(5, imageGroups.length); i++) {
+                        containersHTML += `<div class="image-container" id="imageContainer${i}"></div>`;
+                    }
+                    imageRow.innerHTML = containersHTML;
+
+                    // Validate and populate images for each container
+                    for (let i = 0; i < Math.min(5, imageGroups.length); i++) {
+                        const subArray = imageGroups[i];
+                        let validSubImages = [];
+                        for (let url of subArray) {
+                            if (url) {
+                                const isValid = await checkImage(url);
+                                if (isValid) {
+                                    validSubImages.push(isValid);
+                                } else {
+                                    console.log(`Skipping invalid image: ${url}`);
+                                }
+                            }
+                        }
+
+                        const container = document.getElementById(`imageContainer${i}`);
+                        if (validSubImages.length > 0) {
+                            const imagesHTML = validSubImages.map((url, index) => `
+                                <img src="${url}" alt="Menu Image" class="menu-image" style="display: ${index === 0 ? 'block' : 'none'}; opacity: ${index === 0 ? '1' : '0'};">
+                            `).join('');
+                            container.innerHTML = imagesHTML;
+
+                            // Start cycling for this container
+                            startCycling(i, validSubImages.length);
                         } else {
-                            console.log(`Skipping invalid image: ${url}`);
+                            container.innerHTML = '<p>No valid images</p>';
                         }
                     }
-                }
-
-                if (validImages.length > 0) {
-                    const imagesHTML = validImages.map(url => `
-                        <img src="${url}" alt="Menu Image" class="menu-image">
-                    `).join('');
-                    imageRow.innerHTML = imagesHTML;
                 } else {
                     imageRow.innerHTML = '<p>No valid images available</p>';
                 }
@@ -268,6 +291,20 @@
                 errorMessage.style.display = 'block';
                 errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details or ensure MenuLeft.json is accessible at https://raw.githubusercontent.com/Mecozz/Menu/main/MenuLeft.json.`;
             });
+
+        function startCycling(containerIndex, imageCount) {
+            let currentIndex = 0;
+            const images = document.querySelectorAll(`#imageContainer${containerIndex} .menu-image`);
+            setInterval(() => {
+                images[currentIndex].style.opacity = '0';
+                images[currentIndex].style.display = 'none';
+                currentIndex = (currentIndex + 1) % imageCount;
+                images[currentIndex].style.display = 'block';
+                setTimeout(() => {
+                    images[currentIndex].style.opacity = '1';
+                }, 50);
+            }, 5000); // Change image every 5 seconds
+        }
     </script>
 </body>
 </html>
