@@ -58,6 +58,12 @@
             background-color: yellow;
             color: black;
         }
+        .subheader {
+            background-color: black; /* Black background for LG 14" and REG 10" */
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
         .item-row td:first-child {
             padding-right: 30px; /* Buffer between item name and price */
         }
@@ -67,21 +73,20 @@
             vertical-align: middle;
             padding: 10px;
         }
-        /* Use flexbox to evenly space images with size limits */
         #imageContent {
             display: flex;
-            justify-content: space-between; /* Evenly distribute images across the width */
+            justify-content: space-between;
             align-items: center;
-            flex-wrap: nowrap; /* Prevent wrapping */
-            width: 100%; /* Ensure it spans the full container */
+            flex-wrap: nowrap;
+            width: 100%;
         }
         .menu-image {
-            width: auto; /* Let the max-width and flex handle sizing */
-            max-width: 150px; /* Limit image width to ensure all fit */
-            max-height: 150px; /* Limit height to prevent vertical overflow */
+            width: auto;
+            max-width: 150px;
+            max-height: 150px;
             height: auto;
             object-fit: contain;
-            flex: 1; /* Allow images to scale within the space */
+            flex: 1;
         }
         .error-message {
             color: red;
@@ -156,10 +161,10 @@
                 <tr>
                     <td id="pizzaContent">
                         <table>
-                            <tr class="header-row">
-                                <th></th>
-                                <th>LG 14"</th>
-                                <th>REG 10"</th>
+                            <tr>
+                                <td class="subheader"></td>
+                                <td class="subheader">LG 14"</td>
+                                <td class="subheader">REG 10"</td>
                             </tr>
                             ${data.left_items && data.left_items.length > 0 ? data.left_items.map(item => `
                                 <tr class="item-row">
@@ -172,10 +177,10 @@
                     </td>
                     <td id="calzonesContent">
                         <table>
-                            <tr class="header-row">
-                                <th></th>
-                                <th>LG 14"</th>
-                                <th>REG 10"</th>
+                            <tr>
+                                <td class="subheader"></td>
+                                <td class="subheader">LG 14"</td>
+                                <td class="subheader">REG 10"</td>
                             </tr>
                             ${data.right_items && data.right_items.length > 0 ? data.right_items.map(item => `
                                 <tr class="item-row">
@@ -195,7 +200,7 @@
             </table>
         </div>
     </div>
-    <div id="errorMessage" class="error-message" style="display: none"></div>
+    <div id="errorMessage" class="error-message" style="display: none;"></div>
 
     <script>
         function fetchWithTimeout(url, timeout = 5000) {
@@ -220,10 +225,10 @@
 
                 let pizzaHTML = `
                     <table>
-                        <tr class="header-row">
-                            <th></th>
-                            <th>LG 14"</th>
-                            <th>REG 10"</th>
+                        <tr>
+                            <td class="subheader"></td>
+                            <td class="subheader">LG 14"</td>
+                            <td class="subheader">REG 10"</td>
                         </tr>
                         ${data.left_items && data.left_items.length > 0 ? data.left_items.map(item => `
                             <tr class="item-row">
@@ -238,10 +243,10 @@
 
                 let calzonesHTML = `
                     <table>
-                        <tr class="header-row">
-                            <th></th>
-                            <th>LG 14"</th>
-                            <th>REG 10"</th>
+                        <tr>
+                            <td class="subheader"></td>
+                            <td class="subheader">LG 14"</td>
+                            <td class="subheader">REG 10"</td>
                         </tr>
                         ${data.right_items && data.right_items.length > 0 ? data.right_items.map(item => `
                             <tr class="item-row">
