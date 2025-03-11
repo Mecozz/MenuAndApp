@@ -22,34 +22,34 @@
             width: 100%;
             height: 100vh;
             background-color: black;
-            padding: 0; /* No padding to keep at the top */
+            padding: 0;
         }
         .menu-table {
             width: 100%;
-            height: 100%; /* Ensure full height */
+            height: 100%;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 40px; /* Increased base font size for maximum readability */
+            font-size: 48px; /* Increased to match the large text in the image */
         }
         th {
             background-color: yellow;
             color: black;
             font-weight: bold;
-            padding: 15px; /* Increased padding for larger text */
+            padding: 20px; /* Increased padding for larger text */
             text-align: center;
-            font-size: 44px; /* Larger header text */
-            height: 80px; /* Increased height to fit larger text */
-            line-height: 80px; /* Vertically center text */
+            font-size: 52px; /* Larger header text to match image */
+            height: 100px; /* Increased height to fit larger text */
+            line-height: 100px; /* Vertically center text */
             overflow: hidden; /* Prevent overflow */
             text-overflow: ellipsis; /* Truncate if necessary */
         }
         .dinners-td {
-            background-color: black; /* Keep price column black */
+            background-color: black;
         }
         td {
-            padding: 12px; /* Increased padding for larger text */
+            padding: 15px; /* Increased padding for larger text */
             text-align: left;
             vertical-align: top;
             word-wrap: break-word; /* Ensure text wraps */
@@ -57,25 +57,25 @@
         }
         .price {
             text-align: right;
-            width: 100px; /* Increased width for larger numbers */
+            width: 120px; /* Increased width for larger numbers */
             display: inline-block;
         }
         /* Specific styling for price columns with increased spacing */
         .steak-subs .price {
-            padding-right: 60px; /* Increased space to the right */
+            padding-right: 80px; /* Increased space to the right */
         }
         .salads .price {
-            padding-right: 60px; /* Increased space to the right */
+            padding-right: 80px; /* Increased space to the right */
         }
         .italian-dishes .price {
-            padding-right: 60px; /* Increased space to the right */
+            padding-right: 80px; /* Increased space to the right */
         }
         .subheader {
             font-weight: bold;
             text-align: center;
             background-color: black;
             color: white;
-            font-size: 40px; /* Match table font size */
+            font-size: 48px; /* Match table font size */
         }
         .header-row {
             background-color: yellow;
@@ -104,16 +104,44 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-            z-index: 10; /* Ensure it appears above other content */
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 10;
         }
         /* Adjustments for smaller screens */
         @media (max-width: 768px) {
             table {
-                font-size: 28px; /* Reduced but still large */
+                font-size: 32px; /* Reduced but still large */
             }
             th {
-                font-size: 32px; /* Reduced header size */
+                font-size: 36px;
+                padding: 15px;
+                height: 80px;
+                line-height: 80px;
+            }
+            td {
+                padding: 10px;
+            }
+            .price {
+                width: 100px;
+            }
+            .steak-subs .price, .salads .price, .italian-dishes .price {
+                padding-right: 60px;
+            }
+            .subheader {
+                font-size: 32px;
+            }
+            .menu-image {
+                width: 25%;
+                max-width: 200px;
+                max-height: 80%;
+            }
+        }
+        @media (max-width: 480px) {
+            table {
+                font-size: 24px; /* Further reduced for small screens */
+            }
+            th {
+                font-size: 28px;
                 padding: 10px;
                 height: 60px;
                 line-height: 60px;
@@ -128,40 +156,12 @@
                 padding-right: 40px;
             }
             .subheader {
-                font-size: 28px;
+                font-size: 24px;
             }
             .menu-image {
-                width: 25%; /* Slightly smaller width for medium screens */
-                max-width: 200px;
-                max-height: 80%; /* Adjust image size for smaller screens */
-            }
-        }
-        @media (max-width: 480px) {
-            table {
-                font-size: 20px; /* Further reduced for small screens */
-            }
-            th {
-                font-size: 24px; /* Reduced header size */
-                padding: 8px;
-                height: 50px;
-                line-height: 50px;
-            }
-            td {
-                padding: 6px;
-            }
-            .price {
-                width: 60px;
-            }
-            .steak-subs .price, .salads .price, .italian-dishes .price {
-                padding-right: 30px;
-            }
-            .subheader {
-                font-size: 20px;
-            }
-            .menu-image {
-                width: 20%; /* Even smaller width for small screens */
+                width: 20%;
                 max-width: 150px;
-                max-height: 60%; /* Adjust image size for smaller screens */
+                max-height: 60%;
             }
         }
     </style>
@@ -170,7 +170,6 @@
     <div class="menu-container">
         <div class="menu-table">
             <table id="menuTable">
-                <!-- Fallback table structure -->
                 <tr class="header-row">
                     <th id="steakSubsHeader">STEAK SUBS</th>
                     <th id="saladsHeader">SALADS</th>
@@ -184,13 +183,11 @@
                                 <td class="subheader">LG 12"</td>
                                 <td class="subheader">REG 8"</td>
                             </tr>
-                            <!-- Fallback data -->
                             <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
                         </table>
                     </td>
                     <td class="salads" id="saladsContent">
                         <table>
-                            <!-- Fallback data -->
                             <tr><td>Loading...</td><td class="price">-</td><td></td></tr>
                         </table>
                     </td>
@@ -201,7 +198,6 @@
                                 <td class="subheader">LG</td>
                                 <td class="subheader">SM</td>
                             </tr>
-                            <!-- Fallback data -->
                             <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
                         </table>
                     </td>
@@ -214,13 +210,11 @@
                 <tr>
                     <td class="italian-dishes" id="italianDishesContent">
                         <table>
-                            <!-- Fallback data -->
                             <tr><td>Loading...</td><td class="price">-</td><td></td></tr>
                         </table>
                     </td>
                     <td id="dinnersContent">
                         <table>
-                            <!-- Fallback data -->
                             <tr><td class="dinners-td">Loading...</td><td class="price">-</td></tr>
                         </table>
                     </td>
@@ -251,8 +245,8 @@
         async function checkImage(url) {
             return new Promise((resolve) => {
                 const img = new Image();
-                img.onload = () => resolve(url); // Return the URL if it loads
-                img.onerror = () => resolve(null); // Return null if it fails
+                img.onload = () => resolve(url);
+                img.onerror = () => resolve(null);
                 img.src = url;
             });
         }
@@ -381,20 +375,18 @@
 
         // Function to start the slideshow
         function startSlideshow() {
-            if (slideshowInterval) clearInterval(slideshowInterval); // Clear existing interval
+            if (slideshowInterval) clearInterval(slideshowInterval);
             slideshowInterval = setInterval(() => {
                 const imageElement = document.getElementById('menuImage');
                 if (imageElement) {
-                    imageElement.style.opacity = '0'; // Fade out
+                    imageElement.style.opacity = '0';
                     setTimeout(() => {
-                        // Move to the next valid image
                         currentImageIndex = (currentImageIndex + 1) % validImages.length;
                         imageElement.src = validImages[currentImageIndex];
-                        imageElement.style.opacity = '1'; // Fade in
-                    }, 500); // Match transition duration
+                        imageElement.style.opacity = '1';
+                    }, 500);
                 }
-            }, 5000); // Change image every 5 seconds (adjustable)
-            // Set initial image
+            }, 5000);
             document.getElementById('menuImage').src = validImages[currentImageIndex] || 'your-image.jpg';
         }
 
