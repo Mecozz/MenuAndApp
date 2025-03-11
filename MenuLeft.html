@@ -31,34 +31,35 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 24px;
+            font-size: 28px; /* Increased from 24px for larger text */
         }
         th {
             background-color: yellow;
             color: black;
             font-weight: bold;
-            padding: 10px;
+            padding: 12px; /* Increased padding for larger text */
             text-align: center;
-            font-size: 26px;
+            font-size: 30px; /* Increased from 26px */
         }
         td {
-            padding: 6px;
+            padding: 8px; /* Increased from 6px */
             text-align: left;
             vertical-align: top;
         }
         .price {
             text-align: right;
-            width: 70px;
+            width: 80px; /* Increased from 70px */
         }
-        /* Add gap between Pizza prices and Calzones names */
+        /* Gap between Pizza prices and Calzones names */
         #pizzaContent .price {
-            padding-right: 40px; /* Creates space between prices and Calzones column */
+            padding-right: 40px; /* Creates space */
         }
         .subheader {
             font-weight: bold;
             text-align: center;
             background-color: black;
             color: white;
+            font-size: 28px; /* Increased from 24px */
         }
         .header-row {
             background-color: yellow;
@@ -71,16 +72,16 @@
             padding: 10px;
         }
         .menu-image {
-            width: 20%; /* Four images, roughly 25% each, adjusted for padding */
-            max-width: 150px;
+            width: 22%; /* Adjusted to 22% to spread evenly with margins */
+            max-width: 170px; /* Increased from 150px */
             height: auto;
             object-fit: contain;
-            margin: 0 5px; /* Space between images */
+            margin: 0 10px; /* Increased margin for better spacing */
         }
         .error-message {
             color: red;
             text-align: center;
-            font-size: 20px;
+            font-size: 22px; /* Increased from 20px */
             padding: 20px;
             position: absolute;
             top: 50%;
@@ -91,44 +92,44 @@
         }
         @media (max-width: 768px) {
             table {
-                font-size: 18px;
+                font-size: 22px; /* Increased from 18px */
             }
             th {
-                font-size: 20px;
+                font-size: 24px; /* Increased from 20px */
             }
             td, th {
-                padding: 5px;
+                padding: 6px; /* Increased from 5px */
             }
             .price {
-                width: 60px;
+                width: 70px; /* Increased from 60px */
             }
             #pizzaContent .price {
-                padding-right: 25px; /* Adjusted for medium screens */
+                padding-right: 30px; /* Adjusted for medium screens */
             }
             .menu-image {
-                width: 18%;
-                max-width: 120px;
+                width: 20%;
+                max-width: 140px; /* Increased from 120px */
             }
         }
         @media (max-width: 480px) {
             table {
-                font-size: 16px;
+                font-size: 18px; /* Increased from 16px */
             }
             th {
-                font-size: 18px;
+                font-size: 20px; /* Increased from 18px */
             }
             td, th {
-                padding: 4px;
+                padding: 5px; /* Increased from 4px */
             }
             .price {
-                width: 50px;
+                width: 60px; /* Increased from 50px */
             }
             #pizzaContent .price {
-                padding-right: 20px; /* Adjusted for small screens */
+                padding-right: 25px; /* Adjusted for small screens */
             }
             .menu-image {
-                width: 15%;
-                max-width: 90px;
+                width: 18%;
+                max-width: 110px; /* Increased from 90px */
             }
         }
     </style>
