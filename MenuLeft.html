@@ -50,8 +50,9 @@
             text-align: right;
             width: 80px;
         }
+        /* Larger gap between Pizza prices and Calzones names */
         #pizzaContent .price {
-            padding-right: 40px; /* Gap between Pizza prices and Calzones names */
+            padding-right: 50px; /* Increased from 40px to 50px for a slightly larger gap */
         }
         .header-row {
             background-color: yellow;
@@ -65,6 +66,7 @@
         .item-name {
             flex: 1;
             white-space: nowrap;
+            padding-right: 30px; /* Increased buffer between name and price (was 0) */
         }
         .price-group {
             display: flex;
@@ -82,7 +84,7 @@
             padding: 10px;
         }
         .menu-image {
-            width: 22%; /* Spread across the bottom */
+            width: 22%;
             max-width: 170px;
             height: auto;
             object-fit: contain;
@@ -114,7 +116,10 @@
                 width: 70px;
             }
             #pizzaContent .price {
-                padding-right: 30px;
+                padding-right: 40px; /* Adjusted for medium screens */
+            }
+            .item-name {
+                padding-right: 20px; /* Adjusted buffer */
             }
             .menu-image {
                 width: 20%;
@@ -135,7 +140,10 @@
                 width: 60px;
             }
             #pizzaContent .price {
-                padding-right: 25px;
+                padding-right: 30px; /* Adjusted for small screens */
+            }
+            .item-name {
+                padding-right: 15px; /* Adjusted buffer */
             }
             .menu-image {
                 width: 18%;
@@ -155,40 +163,36 @@
                 <tr>
                     <td id="pizzaContent">
                         <table>
-                            <tr>
-                                ${data.left_items && data.left_items.length > 0 ? data.left_items.map(item => `
-                                    <tr class="item-row">
-                                        <td class="item-name">${item.name}</td>
-                                        <td class="price-group">
-                                            <span class="size-label">LG 14"</span>
-                                            <span class="price">$${item.lg_price || '-'}</span>
-                                        </td>
-                                        <td class="price-group">
-                                            <span class="size-label">REG 10"</span>
-                                            <span class="price">$${item.reg_price || '-'}</span>
-                                        </td>
-                                    </tr>
-                                `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
-                            </tr>
+                            ${data.left_items && data.left_items.length > 0 ? data.left_items.map(item => `
+                                <tr class="item-row">
+                                    <td class="item-name">${item.name}</td>
+                                    <td class="price-group">
+                                        <span class="size-label">LG 14"</span>
+                                        <span class="price">$${item.lg_price || '-'}</span>
+                                    </td>
+                                    <td class="price-group">
+                                        <span class="size-label">REG 10"</span>
+                                        <span class="price">$${item.reg_price || '-'}</span>
+                                    </td>
+                                </tr>
+                            `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
                         </table>
                     </td>
                     <td id="calzonesContent">
                         <table>
-                            <tr>
-                                ${data.right_items && data.right_items.length > 0 ? data.right_items.map(item => `
-                                    <tr class="item-row">
-                                        <td class="item-name">${item.name}</td>
-                                        <td class="price-group">
-                                            <span class="size-label">LG 14"</span>
-                                            <span class="price">$${item.lg_price || '-'}</span>
-                                        </td>
-                                        <td class="price-group">
-                                            <span class="size-label">REG 10"</span>
-                                            <span class="price">$${item.reg_price || '-'}</span>
-                                        </td>
-                                    </tr>
-                                `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
-                            </tr>
+                            ${data.right_items && data.right_items.length > 0 ? data.right_items.map(item => `
+                                <tr class="item-row">
+                                    <td class="item-name">${item.name}</td>
+                                    <td class="price-group">
+                                        <span class="size-label">LG 14"</span>
+                                        <span class="price">$${item.lg_price || '-'}</span>
+                                    </td>
+                                    <td class="price-group">
+                                        <span class="size-label">REG 10"</span>
+                                        <span class="price">$${item.reg_price || '-'}</span>
+                                    </td>
+                                </tr>
+                            `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
                         </table>
                     </td>
                 </tr>
