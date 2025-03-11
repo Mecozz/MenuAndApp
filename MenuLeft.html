@@ -2,276 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Menu Left</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html, body {
-            width: 100%;
-            height: 100vh;
-            background-color: black;
+        body {
+            background: black;
             color: white;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
         }
         .menu-container {
-            width: 100%;
-            height: 100vh;
-            background-color: black;
-            padding: 0;
+            width: 90%;
+            margin: auto;
+            padding-top: 20px;
+        }
+        .menu-header {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: yellow;
         }
         .menu-table {
             width: 100%;
-            height: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .menu-column {
+            width: 45%;
+            text-align: left;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 28px;
+        }
+        th, td {
+            font-size: 1.5em;
+            padding: 8px;
         }
         th {
-            background-color: yellow;
-            color: black;
-            font-weight: bold;
-            padding: 12px;
-            text-align: center;
-            font-size: 30px;
-        }
-        td {
-            padding: 8px;
             text-align: left;
-            vertical-align: top;
+            color: yellow;
         }
-        .price {
-            text-align: right;
-            width: 80px;
-        }
-        /* Gap between Pizza prices and Calzones names */
-        #pizzaContent .price {
-            padding-right: 50px;
-        }
-        .header-row {
-            background-color: yellow;
-            color: black;
-        }
-        .subheader {
-            background-color: black; /* Black background for LG 14" and REG 10" */
-            color: white;
-            font-weight: bold;
-            text-align: center;
-        }
-        .item-row td:first-child {
-            padding-right: 30px; /* Buffer between item name and price */
-        }
-        .image-row {
-            background-color: black;
-            text-align: center;
-            vertical-align: middle;
-            padding: 10px;
-        }
-        #imageContent {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: nowrap;
+        .image-slider {
             width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
         }
-        .menu-image {
-            width: auto;
-            max-width: 150px;
-            max-height: 150px;
-            height: auto;
-            object-fit: contain;
-            flex: 1;
-        }
-        .error-message {
-            color: red;
-            text-align: center;
-            font-size: 22px;
-            padding: 20px;
+        .slider-image {
+            width: 100%;
+            height: 100%;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 10;
-        }
-        @media (max-width: 768px) {
-            table {
-                font-size: 22px;
-            }
-            th {
-                font-size: 24px;
-            }
-            td, th {
-                padding: 6px;
-            }
-            .price {
-                width: 70px;
-            }
-            #pizzaContent .price {
-                padding-right: 40px;
-            }
-            .item-row td:first-child {
-                padding-right: 20px;
-            }
-            .menu-image {
-                max-width: 120px;
-                max-height: 120px;
-            }
-        }
-        @media (max-width: 480px) {
-            table {
-                font-size: 18px;
-            }
-            th {
-                font-size: 20px;
-            }
-            td, th {
-                padding: 5px;
-            }
-            .price {
-                width: 60px;
-            }
-            #pizzaContent .price {
-                padding-right: 30px;
-            }
-            .item-row td:first-child {
-                padding-right: 15px;
-            }
-            .menu-image {
-                max-width: 90px;
-                max-height: 90px;
-            }
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="menu-container">
+        <div class="menu-header">Digital Menu</div>
         <div class="menu-table">
-            <table id="menuTable">
-                <tr class="header-row">
-                    <th id="pizzaHeader">PIZZA</th>
-                    <th id="calzonesHeader">CALZONES</th>
-                </tr>
-                <tr>
-                    <td id="pizzaContent">
-                        <table>
-                            <tr>
-                                <td class="subheader"></td>
-                                <td class="subheader">LG 14"</td>
-                                <td class="subheader">REG 10"</td>
-                            </tr>
-                            ${data.left_items && data.left_items.length > 0 ? data.left_items.map(item => `
-                                <tr class="item-row">
-                                    <td>${item.name}</td>
-                                    <td class="price">$${item.lg_price || '-'}</td>
-                                    <td class="price">$${item.reg_price || '-'}</td>
-                                </tr>
-                            `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
-                        </table>
-                    </td>
-                    <td id="calzonesContent">
-                        <table>
-                            <tr>
-                                <td class="subheader"></td>
-                                <td class="subheader">LG 14"</td>
-                                <td class="subheader">REG 10"</td>
-                            </tr>
-                            ${data.right_items && data.right_items.length > 0 ? data.right_items.map(item => `
-                                <tr class="item-row">
-                                    <td>${item.name}</td>
-                                    <td class="price">$${item.lg_price || '-'}</td>
-                                    <td class="price">$${item.reg_price || '-'}</td>
-                                </tr>
-                            `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
-                        </table>
-                    </td>
-                </tr>
-                <tr class="image-row">
-                    <td colspan="2" id="imageContent">
-                        <!-- Images will be populated here -->
-                    </td>
-                </tr>
-            </table>
+            <div class="menu-column" id="left-menu"></div>
+            <div class="menu-column" id="right-menu"></div>
         </div>
     </div>
-    <div id="errorMessage" class="error-message" style="display: none;"></div>
 
     <script>
-        function fetchWithTimeout(url, timeout = 5000) {
-            return Promise.race([
-                fetch(url),
-                new Promise((_, reject) => setTimeout(() => reject(new Error('Request timed out')), timeout))
-            ]);
-        }
+        fetch('MenuLeft.json')
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector('.menu-header').innerText = `${data.header.left_category} & ${data.header.right_category}`;
+                
+                let leftMenu = `<table><tr><th>${data.header.left_category}</th><th>Large</th><th>Regular</th></tr>`;
+                data.left_items.forEach(item => {
+                    leftMenu += `<tr><td>${item.name}</td><td>${item.lg_price}</td><td>${item.reg_price}</td></tr>`;
+                });
+                leftMenu += '</table>';
+                document.getElementById('left-menu').innerHTML = leftMenu;
 
-        fetchWithTimeout('https://raw.githubusercontent.com/Mecozz/Menu/main/MenuLeft.json?t=' + new Date().getTime())
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
+                let rightMenu = `<table><tr><th>${data.header.right_category}</th><th>Large</th><th>Regular</th></tr>`;
+                data.right_items.forEach(item => {
+                    rightMenu += `<tr><td>${item.name}</td><td>${item.lg_price}</td><td>${item.reg_price}</td></tr>`;
+                });
+                rightMenu += '</table>';
+                document.getElementById('right-menu').innerHTML = rightMenu;
             })
-            .then(async data => {
-                console.log('JSON loaded successfully:', data);
-
-                document.getElementById('pizzaHeader').innerText = data.header.left_category || "PIZZA";
-                document.getElementById('calzonesHeader').innerText = data.header.right_category || "CALZONES";
-
-                let pizzaHTML = `
-                    <table>
-                        <tr>
-                            <td class="subheader"></td>
-                            <td class="subheader">LG 14"</td>
-                            <td class="subheader">REG 10"</td>
-                        </tr>
-                        ${data.left_items && data.left_items.length > 0 ? data.left_items.map(item => `
-                            <tr class="item-row">
-                                <td>${item.name}</td>
-                                <td class="price">$${item.lg_price || '-'}</td>
-                                <td class="price">$${item.reg_price || '-'}</td>
-                            </tr>
-                        `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
-                    </table>
-                `;
-                document.getElementById('pizzaContent').innerHTML = pizzaHTML;
-
-                let calzonesHTML = `
-                    <table>
-                        <tr>
-                            <td class="subheader"></td>
-                            <td class="subheader">LG 14"</td>
-                            <td class="subheader">REG 10"</td>
-                        </tr>
-                        ${data.right_items && data.right_items.length > 0 ? data.right_items.map(item => `
-                            <tr class="item-row">
-                                <td>${item.name}</td>
-                                <td class="price">$${item.lg_price || '-'}</td>
-                                <td class="price">$${item.reg_price || '-'}</td>
-                            </tr>
-                        `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
-                    </table>
-                `;
-                document.getElementById('calzonesContent').innerHTML = calzonesHTML;
-
-                let imagesHTML = `
-                    ${data.images && data.images.length > 0 ? data.images.map(url => `
-                        <img src="${url}" alt="Menu Image" class="menu-image">
-                    `).join('') : '<p>No images available</p>'}
-                `;
-                document.getElementById('imageContent').innerHTML = imagesHTML;
-            })
-            .catch(error => {
-                console.error('Error loading MenuLeft.json:', error);
-                const errorMessage = document.getElementById('errorMessage');
-                errorMessage.style.display = 'block';
-                errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details or ensure MenuLeft.json is accessible at https://raw.githubusercontent.com/Mecozz/Menu/main/MenuLeft.json.`;
-            });
+            .catch(error => console.error('Error loading menu:', error));
     </script>
 </body>
 </html>
