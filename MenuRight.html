@@ -25,51 +25,57 @@
             padding: 0; /* No padding to keep at the top */
         }
         .menu-table {
-            width: 100%; /* Full width */
+            width: 100%;
+            height: 100%; /* Ensure full height */
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 24px; /* Kept for readability */
+            font-size: 40px; /* Increased base font size for maximum readability */
         }
         th {
             background-color: yellow;
             color: black;
             font-weight: bold;
-            padding: 10px; /* Padding scaled with font size */
+            padding: 15px; /* Increased padding for larger text */
             text-align: center;
-            font-size: 26px; /* Slightly larger for headers */
+            font-size: 44px; /* Larger header text */
+            height: 80px; /* Increased height to fit larger text */
+            line-height: 80px; /* Vertically center text */
+            overflow: hidden; /* Prevent overflow */
+            text-overflow: ellipsis; /* Truncate if necessary */
         }
-        /* Custom styling for DINNERS td to keep price column black */
         .dinners-td {
             background-color: black; /* Keep price column black */
         }
         td {
-            padding: 6px; /* Padding scaled with font size */
+            padding: 12px; /* Increased padding for larger text */
             text-align: left;
             vertical-align: top;
+            word-wrap: break-word; /* Ensure text wraps */
+            max-width: 0; /* Allow wrapping */
         }
         .price {
             text-align: right;
-            width: 70px; /* Width scaled with font size */
+            width: 100px; /* Increased width for larger numbers */
+            display: inline-block;
         }
-        /* Add spacing between Steak Subs prices and Salads names */
+        /* Specific styling for price columns with increased spacing */
         .steak-subs .price {
-            padding-right: 40px; /* Increased space to the right */
+            padding-right: 60px; /* Increased space to the right */
         }
-        /* Add spacing between Salads prices and Side Orders names */
         .salads .price {
-            padding-right: 40px; /* Increased space to the right */
+            padding-right: 60px; /* Increased space to the right */
         }
-        /* Add spacing between Italian Dishes prices and Dinners names */
         .italian-dishes .price {
-            padding-right: 40px; /* Increased space to the right */
+            padding-right: 60px; /* Increased space to the right */
         }
         .subheader {
             font-weight: bold;
             text-align: center;
             background-color: black;
             color: white;
+            font-size: 40px; /* Match table font size */
         }
         .header-row {
             background-color: yellow;
@@ -82,9 +88,9 @@
             vertical-align: middle;
         }
         .menu-image {
-            width: 30%;  /* Use percentage for responsiveness */
-            max-width: 250px;  /* Set a reasonable max width */
-            height: auto;  /* Keep aspect ratio */
+            width: 30%; /* Use percentage for responsiveness */
+            max-width: 250px; /* Set a reasonable max width */
+            height: auto; /* Keep aspect ratio */
             object-fit: contain; /* Ensure the image fits without distortion */
             transition: opacity 0.5s ease; /* Smooth transition for slideshow */
         }
@@ -92,7 +98,7 @@
         .error-message {
             color: red;
             text-align: center;
-            font-size: 20px;
+            font-size: 20px; /* Keep error message readable */
             padding: 20px;
             position: absolute;
             top: 50%;
@@ -104,19 +110,25 @@
         /* Adjustments for smaller screens */
         @media (max-width: 768px) {
             table {
-                font-size: 18px;
+                font-size: 28px; /* Reduced but still large */
             }
             th {
-                font-size: 20px;
+                font-size: 32px; /* Reduced header size */
+                padding: 10px;
+                height: 60px;
+                line-height: 60px;
             }
-            td, th {
-                padding: 5px;
+            td {
+                padding: 8px;
             }
             .price {
-                width: 60px;
+                width: 80px;
             }
             .steak-subs .price, .salads .price, .italian-dishes .price {
-                padding-right: 25px;
+                padding-right: 40px;
+            }
+            .subheader {
+                font-size: 28px;
             }
             .menu-image {
                 width: 25%; /* Slightly smaller width for medium screens */
@@ -126,19 +138,25 @@
         }
         @media (max-width: 480px) {
             table {
-                font-size: 16px;
+                font-size: 20px; /* Further reduced for small screens */
             }
             th {
-                font-size: 18px;
+                font-size: 24px; /* Reduced header size */
+                padding: 8px;
+                height: 50px;
+                line-height: 50px;
             }
-            td, th {
-                padding: 4px;
+            td {
+                padding: 6px;
             }
             .price {
-                width: 50px;
+                width: 60px;
             }
             .steak-subs .price, .salads .price, .italian-dishes .price {
-                padding-right: 20px;
+                padding-right: 30px;
+            }
+            .subheader {
+                font-size: 20px;
             }
             .menu-image {
                 width: 20%; /* Even smaller width for small screens */
