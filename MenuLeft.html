@@ -52,7 +52,7 @@
             border-collapse: collapse;
         }
         th, td {
-            font-size: 1.5em;
+            font-size: 1.7em; /* Slightly larger text */
             padding: 8px;
             text-align: center;
         }
@@ -62,6 +62,8 @@
         .size-header th {
             background-color: black;
             font-weight: bold;
+            text-align: center; /* Ensure centering */
+            white-space: nowrap; /* Prevent text wrapping */
         }
         td:first-child {
             text-align: left;
@@ -87,18 +89,16 @@
         }
         .image-container {
             width: 18%; /* Adjusted for 5 images */
-            position: relative;
             flex: 1;
+            text-align: center;
         }
         .menu-image {
             width: 100%;
-            max-width: 200px; /* Increased from 150px to make images bigger */
-            max-height: 200px; /* Increased from 150px */
+            max-width: 200px; /* Larger images */
+            max-height: 200px; /* Larger images */
             height: auto;
             object-fit: contain;
-            position: absolute;
-            display: none;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.5s ease; /* Smooth transition for slideshow */
         }
         .error-message {
             color: red;
@@ -114,7 +114,7 @@
         }
         @media (max-width: 768px) {
             table {
-                font-size: 1.2em;
+                font-size: 1.4em;
             }
             .menu-header {
                 font-size: 2em;
@@ -135,7 +135,7 @@
         }
         @media (max-width: 480px) {
             table {
-                font-size: 1em;
+                font-size: 1.2em;
             }
             .menu-header {
                 font-size: 1.5em;
@@ -217,7 +217,7 @@
                                 <td class="price">${item.lg_price || '-'}</td>
                                 <td class="price">${item.reg_price || '-'}</td>
                             </tr>
-                        `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
+                        `).join('') : '<tr><td>No items available</td><td class="price">-</td><td class="price">-</td></tr>'}
                     </table>
                 `;
                 document.getElementById('left-menu').innerHTML = leftMenu;
@@ -236,7 +236,7 @@
                                 <td class="price">${item.lg_price || '-'}</td>
                                 <td class="price">${item.reg_price || '-'}</td>
                             </tr>
-                        `).join('') : '<tr><td>No items available</td><td>-</td><td>-</td></tr>'}
+                        `).join('') : '<tr><td>No items available</td><td class="price">-</td><td class="price">-</td></tr>'}
                     </table>
                 `;
                 document.getElementById('right-menu').innerHTML = rightMenu;
@@ -246,10 +246,14 @@
                 let imageGroups = data.images || []; // Array of sub-arrays, each with 3 images
 
                 if (imageGroups.length > 0) {
-                    // Create five image containers
+                    // Create five image containers, each with a single img element
                     let containersHTML = '';
                     for (let i = 0; i < Math.min(5, imageGroups.length); i++) {
-                        containersHTML += `<div class="image-container" id="imageContainer${i}"></div>`;
+                        containersHTML += `
+                            <div class="image-container">
+                                <img id="menuImage${i}" class="menu-image" alt="Menu Image">
+                            </div>
+                        `;
                     }
                     imageRow.innerHTML = containersHTML;
 
@@ -268,16 +272,13 @@
                             }
                         }
 
-                        const container = document.getElementById(`imageContainer${i}`);
                         if (validSubImages.length > 0) {
-                            const imagesHTML = validSubImages.map((url, index) => `
-                                <img src="${url}" alt="Menu Image" class="menu-image" style="display: ${index === 0 ? 'block' : 'none'}; opacity: ${index === 0 ? '1' : '0'};">
-                            `).join('');
-                            container.innerHTML = imagesHTML;
-
-                            // Start cycling for this container
-                            startCycling(i, validSubImages.length);
+                            // Set initial image and start cycling
+                            const imageElement = document.getElementById(`menuImage${i}`);
+                            imageElement.src = validSubImages[0]; // Initial image
+                            startSlideshow(i, validSubImages);
                         } else {
+                            const container = document.querySelector(`#imageRow .image-container:nth-child(${i + 1})`);
                             container.innerHTML = '<p>No valid images</p>';
                         }
                     }
@@ -292,19 +293,33 @@
                 errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details or ensure MenuLeft.json is accessible at https://raw.githubusercontent.com/Mecozz/Menu/main/MenuLeft.json.`;
             });
 
-        function startCycling(containerIndex, imageCount) {
-            let currentIndex = 0;
-            const images = document.querySelectorAll(`#imageContainer${containerIndex} .menu-image`);
-            setInterval(() => {
-                images[currentIndex].style.opacity = '0';
-                images[currentIndex].style.display = 'none';
-                currentIndex = (currentIndex + 1) % imageCount;
-                images[currentIndex].style.display = 'block';
-                setTimeout(() => {
-                    images[currentIndex].style.opacity = '1';
-                }, 50);
+        function startSlideshow(containerIndex, validImages) {
+            let currentImageIndex = 0;
+            const imageElement = document.getElementById(`menuImage${containerIndex}`);
+            const slideshowInterval = setInterval(() => {
+                if (imageElement) {
+                    imageElement.style.opacity = '0'; // Fade out
+                    setTimeout(() => {
+                        // Move to the next valid image
+                        currentImageIndex = (currentImageIndex + 1) % validImages.length;
+                        imageElement.src = validImages[currentImageIndex];
+                        imageElement.style.opacity = '1'; // Fade in
+                    }, 500); // Match transition duration
+                }
             }, 5000); // Change image every 5 seconds
+
+            // Store the interval ID on the container to allow cleanup if needed
+            imageElement.dataset.intervalId = slideshowInterval;
         }
+
+        window.onbeforeunload = () => {
+            // Clean up intervals on page unload
+            const containers = document.querySelectorAll('.image-container img');
+            containers.forEach(img => {
+                const intervalId = img.dataset.intervalId;
+                if (intervalId) clearInterval(intervalId);
+            });
+        };
     </script>
 </body>
 </html>
