@@ -50,8 +50,9 @@
             text-align: right;
             width: 70px;
         }
-        .calzones .price {
-            padding-right: 40px; /* Space between Calzones prices and edge */
+        /* Add gap between Pizza prices and Calzones names */
+        #pizzaContent .price {
+            padding-right: 40px; /* Creates space between prices and Calzones column */
         }
         .subheader {
             font-weight: bold;
@@ -70,7 +71,7 @@
             padding: 10px;
         }
         .menu-image {
-            width: 20%; /* Four images, so roughly 25% each, adjusted for padding */
+            width: 20%; /* Four images, roughly 25% each, adjusted for padding */
             max-width: 150px;
             height: auto;
             object-fit: contain;
@@ -101,8 +102,8 @@
             .price {
                 width: 60px;
             }
-            .calzones .price {
-                padding-right: 25px;
+            #pizzaContent .price {
+                padding-right: 25px; /* Adjusted for medium screens */
             }
             .menu-image {
                 width: 18%;
@@ -122,8 +123,8 @@
             .price {
                 width: 50px;
             }
-            .calzones .price {
-                padding-right: 20px;
+            #pizzaContent .price {
+                padding-right: 20px; /* Adjusted for small screens */
             }
             .menu-image {
                 width: 15%;
@@ -151,7 +152,7 @@
                             <tr><td>Loading...</td><td class="price">-</td><td class="price">-</td></tr>
                         </table>
                     </td>
-                    <td class="calzones" id="calzonesContent">
+                    <td id="calzonesContent">
                         <table>
                             <tr class="header-row">
                                 <td class="subheader"></td>
