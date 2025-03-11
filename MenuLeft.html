@@ -20,7 +20,12 @@
         .menu-header {
             font-size: 2.5em;
             font-weight: bold;
-            color: yellow;
+            color: red;
+            background: yellow;
+            padding: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
         .menu-table {
             width: 100%;
@@ -38,10 +43,13 @@
         th, td {
             font-size: 1.5em;
             padding: 8px;
+            text-align: center;
         }
         th {
-            text-align: left;
             color: yellow;
+        }
+        td:first-child {
+            text-align: left;
         }
         .image-slider {
             width: 100%;
@@ -72,14 +80,14 @@
             .then(data => {
                 document.querySelector('.menu-header').innerText = `${data.header.left_category} & ${data.header.right_category}`;
                 
-                let leftMenu = `<table><tr><th>${data.header.left_category}</th><th>Large</th><th>Regular</th></tr>`;
+                let leftMenu = `<table><tr><th>Item</th><th>LG 14"</th><th>REG 10"</th></tr>`;
                 data.left_items.forEach(item => {
                     leftMenu += `<tr><td>${item.name}</td><td>${item.lg_price}</td><td>${item.reg_price}</td></tr>`;
                 });
                 leftMenu += '</table>';
                 document.getElementById('left-menu').innerHTML = leftMenu;
 
-                let rightMenu = `<table><tr><th>${data.header.right_category}</th><th>Large</th><th>Regular</th></tr>`;
+                let rightMenu = `<table><tr><th>Item</th><th>LG 14"</th><th>REG 10"</th></tr>`;
                 data.right_items.forEach(item => {
                     rightMenu += `<tr><td>${item.name}</td><td>${item.lg_price}</td><td>${item.reg_price}</td></tr>`;
                 });
