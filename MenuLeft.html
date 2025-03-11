@@ -243,7 +243,8 @@
 
                 // Populate five image slots with cycling images
                 const imageRow = document.getElementById('imageRow');
-                let imageGroups = data.images || []; // Array of sub-arrays, each with 3 images
+                let imageGroups = data.images || [];
+                const rotationSpeed = data.config?.image_rotation_speed || 5000; // Default to 5 seconds if not specified
 
                 if (imageGroups.length > 0) {
                     // Create five image containers, each with a single img element
@@ -276,7 +277,7 @@
                             // Set initial image and start cycling
                             const imageElement = document.getElementById(`menuImage${i}`);
                             imageElement.src = validSubImages[0]; // Initial image
-                            startSlideshow(i, validSubImages);
+                            startSlideshow(i, validSubImages, rotationSpeed);
                         } else {
                             const container = document.querySelector(`#imageRow .image-container:nth-child(${i + 1})`);
                             container.innerHTML = '<p>No valid images</p>';
@@ -293,7 +294,7 @@
                 errorMessage.innerText = `Failed to load menu data: ${error.message}. Check the console for details or ensure MenuLeft.json is accessible at https://raw.githubusercontent.com/Mecozz/Menu/main/MenuLeft.json.`;
             });
 
-        function startSlideshow(containerIndex, validImages) {
+        function startSlideshow(containerIndex, validImages, rotationSpeed) {
             let currentImageIndex = 0;
             const imageElement = document.getElementById(`menuImage${containerIndex}`);
             const slideshowInterval = setInterval(() => {
@@ -306,7 +307,7 @@
                         imageElement.style.opacity = '1'; // Fade in
                     }, 500); // Match transition duration
                 }
-            }, 5000); // Change image every 5 seconds
+            }, rotationSpeed); // Use rotation speed from JSON
 
             // Store the interval ID on the container to allow cleanup if needed
             imageElement.dataset.intervalId = slideshowInterval;
