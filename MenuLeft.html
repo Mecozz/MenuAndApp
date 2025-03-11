@@ -52,7 +52,7 @@
         }
         /* Gap between Pizza prices and Calzones names */
         #pizzaContent .price {
-            padding-right: 50px; /* Increased from 40px to 50px */
+            padding-right: 50px;
         }
         .header-row {
             background-color: yellow;
@@ -67,12 +67,21 @@
             vertical-align: middle;
             padding: 10px;
         }
+        /* Use flexbox to evenly space images with size limits */
+        #imageContent {
+            display: flex;
+            justify-content: space-between; /* Evenly distribute images across the width */
+            align-items: center;
+            flex-wrap: nowrap; /* Prevent wrapping */
+            width: 100%; /* Ensure it spans the full container */
+        }
         .menu-image {
-            width: 22%;
-            max-width: 170px;
+            width: auto; /* Let the max-width and flex handle sizing */
+            max-width: 150px; /* Limit image width to ensure all fit */
+            max-height: 150px; /* Limit height to prevent vertical overflow */
             height: auto;
             object-fit: contain;
-            margin: 0 10px;
+            flex: 1; /* Allow images to scale within the space */
         }
         .error-message {
             color: red;
@@ -100,14 +109,14 @@
                 width: 70px;
             }
             #pizzaContent .price {
-                padding-right: 40px; /* Adjusted for medium screens */
+                padding-right: 40px;
             }
             .item-row td:first-child {
-                padding-right: 20px; /* Adjusted buffer */
+                padding-right: 20px;
             }
             .menu-image {
-                width: 20%;
-                max-width: 140px;
+                max-width: 120px;
+                max-height: 120px;
             }
         }
         @media (max-width: 480px) {
@@ -124,14 +133,14 @@
                 width: 60px;
             }
             #pizzaContent .price {
-                padding-right: 30px; /* Adjusted for small screens */
+                padding-right: 30px;
             }
             .item-row td:first-child {
-                padding-right: 15px; /* Adjusted buffer */
+                padding-right: 15px;
             }
             .menu-image {
-                width: 18%;
-                max-width: 110px;
+                max-width: 90px;
+                max-height: 90px;
             }
         }
     </style>
@@ -186,7 +195,7 @@
             </table>
         </div>
     </div>
-    <div id="errorMessage" class="error-message" style="display: none;"></div>
+    <div id="errorMessage" class="error-message" style="display: none"></div>
 
     <script>
         function fetchWithTimeout(url, timeout = 5000) {
