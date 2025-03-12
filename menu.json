@@ -5,7 +5,7 @@
     "note": "* ALL PRICES INCLUDE 9% TAXES *"
   },
   "titleImages": {
-    "left": "https://github.com/Mecozz/Menu/blob/main/JimmyAnna.png?raw=true"
+    "left": "https://raw.githubusercontent.com/Mecozz/Menu/main/JimmyAnna.png"
   },
   "items": [
     {"name": "MEATBALLS", "lg_price": "13.00", "reg_price": "11.00"},
