@@ -29,29 +29,29 @@
   ],
   "images": [
     [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenParmSUB.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSteakCheeseSUB.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSteakPicklesSUB.png"
-    ],
-    [
       "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone2.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSubRINGS.png"
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenParmSUB.png"
+    ],
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZMeatballFetaPizza.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZPepperoniPizza.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinachFettaPizza.png"
     ],
     [
       "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpaghettiMeatballs.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpaghettiMeatballs2.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZOnionRINGS.png"
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinacopata.png"
     ],
     [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZPepperoniPizza.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZMeatballFetaPizza.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinachFettaPizza.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinacopata.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/ZStakeFries.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenParmSUB.png"
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSteakCheeseSUB.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSteakPicklesSUB.png"
+    ],
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZOnionRings.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSubRings.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone.png" // Repeated to fill the set
     ]
   ]
 }
