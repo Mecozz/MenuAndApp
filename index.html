@@ -18,15 +18,20 @@
     }
     .title-container {
       display: flex;
-      justify-content: center;
+      justify-content: space-between; /* Spread items across the width */
       align-items: center;
+      width: 100%;
       margin-bottom: 10px;
+    }
+    .title-img-container {
+      flex: 1; /* Each image container takes equal space on either side */
+      display: flex;
+      justify-content: center; /* Center the image within its zone */
     }
     .title-img {
       width: 100px; /* Adjust size as needed */
-      height: 100px; /* Adjust size as needed */
+      height: 100px;
       object-fit: contain;
-      margin: 0 20px; /* Space between images and title */
     }
     .menu-title {
       font-size: 4.5em;
@@ -34,6 +39,8 @@
       color: red;
       text-shadow: 4px 4px 6px rgba(255, 0, 0, 0.7);
       letter-spacing: 2px;
+      flex: 2; /* Title takes more space, pushing images outward */
+      text-align: center;
     }
     .menu-header {
       display: flex;
@@ -88,9 +95,13 @@
 <body>
   <div class="menu-container">
     <div class="title-container">
-      <img id="left-title-img" class="title-img">
+      <div class="title-img-container">
+        <img id="left-title-img" class="title-img">
+      </div>
       <h1 class="menu-title" id="menu-title"></h1>
-      <img id="right-title-img" class="title-img">
+      <div class="title-img-container">
+        <img id="right-title-img" class="title-img">
+      </div>
     </div>
     <div class="menu-header">
       <span id="category"></span>
