@@ -35,12 +35,14 @@
       object-fit: contain;
       /* Corrected heart-shaped clip-path */
       clip-path: polygon(
-        50% 0%, 
-        100% 30%, 
-        100% 40%, 
-        50% 100%, 
-        0% 40%, 
-        0% 30%
+        50% 0%,          /* Top center point */
+        70% 20%,         /* Right upper curve start */
+        90% 40%,         /* Right lobe peak */
+        70% 60%,         /* Right middle curve */
+        50% 80%,         /* Bottom center of heart */
+        30% 60%,         /* Left middle curve */
+        10% 40%,         /* Left lobe peak */
+        30% 20%          /* Left upper curve start */
       );
     }
     .menu-title {
