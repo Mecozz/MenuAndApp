@@ -16,8 +16,8 @@
             color: white;
             font-family: 'Open Sans', sans-serif;
             text-align: center;
-            overflow: hidden;
-            height: 100vh;
+            overflow: auto; /* Allow vertical scrolling if content exceeds viewport */
+            min-height: 100vh; /* Ensure body can grow beyond viewport if needed */
         }
         .menu-container {
             width: 90%;
@@ -91,11 +91,15 @@
             width: 18%; /* Adjusted for 5 images */
             flex: 1;
             text-align: center;
+            height: 200px; /* Reduced to match smaller images */
+            display: flex;
+            align-items: center; /* Center image vertically */
+            justify-content: center; /* Center image horizontally */
         }
         .menu-image {
             width: 100%;
-            max-width: 240px;
-            max-height: 240px;
+            max-width: 200px; /* Reduced from 240px to make images smaller */
+            max-height: 200px; /* Reduced from 240px to make images smaller */
             height: auto;
             object-fit: contain;
             transition: opacity 0.5s ease; /* Smooth transition for slideshow */
@@ -128,9 +132,12 @@
             #right-menu .price {
                 padding-right: 5px;
             }
+            .image-container {
+                height: 160px; /* Adjusted for smaller screens */
+            }
             .menu-image {
-                max-width: 192px;
-                max-height: 192px;
+                max-width: 160px; /* Adjusted from 192px */
+                max-height: 160px; /* Adjusted from 192px */
             }
         }
         @media (max-width: 480px) {
@@ -149,9 +156,12 @@
             #right-menu .price {
                 padding-right: 5px;
             }
+            .image-container {
+                height: 120px; /* Adjusted for very small screens */
+            }
             .menu-image {
-                max-width: 144px;
-                max-height: 144px;
+                max-width: 120px; /* Adjusted from 144px */
+                max-height: 120px; /* Adjusted from 144px */
             }
         }
     </style>
