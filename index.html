@@ -18,18 +18,19 @@
     }
     .title-container {
       display: flex;
-      justify-content: space-between; /* Spread items across the width */
+      justify-content: flex-start; /* Align items to the left with spacing */
       align-items: center;
       width: 100%;
       margin-bottom: 10px;
     }
     .title-img-container {
-      flex: 1; /* Each image container takes equal space on either side */
+      flex: 1; /* Takes up space to center the image */
       display: flex;
-      justify-content: center; /* Center the image within its zone */
+      justify-content: center; /* Center the image in its zone */
+      max-width: 20%; /* Limits the image container width */
     }
     .title-img {
-      width: 100px; /* Adjust size as needed */
+      width: 100px;
       height: 100px;
       object-fit: contain;
     }
@@ -39,7 +40,7 @@
       color: red;
       text-shadow: 4px 4px 6px rgba(255, 0, 0, 0.7);
       letter-spacing: 2px;
-      flex: 2; /* Title takes more space, pushing images outward */
+      flex: 3; /* Takes more space for the title */
       text-align: center;
     }
     .menu-header {
@@ -85,7 +86,7 @@
       padding-bottom: 10px;
     }
     .image-slider img {
-      width: 20%;
+      width: 22%;
       height: 150px;
       object-fit: contain;
       border-radius: 10px;
@@ -99,9 +100,6 @@
         <img id="left-title-img" class="title-img">
       </div>
       <h1 class="menu-title" id="menu-title"></h1>
-      <div class="title-img-container">
-        <img id="right-title-img" class="title-img">
-      </div>
     </div>
     <div class="menu-header">
       <span id="category"></span>
@@ -134,9 +132,8 @@ fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/menu.json')
     document.getElementById('category').textContent = data.header.category;
     document.getElementById('note').textContent = data.header.note;
     
-    // Set the title images from JSON
+    // Set only the left title image from JSON
     document.getElementById('left-title-img').src = data.titleImages.left;
-    document.getElementById('right-title-img').src = data.titleImages.right;
 
     const half = Math.ceil(data.items.length / 2);
     const leftItems = data.items.slice(0, half);
