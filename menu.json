@@ -5,8 +5,7 @@
     "note": "* ALL PRICES INCLUDE 9% TAXES *"
   },
   "titleImages": {
-    "left": "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza2.png?raw=true",
-    "right": "https://github.com/Mecozz/Digital-Menu/blob/main/Calzone1.png?raw=true"
+    "left": "https://github.com/Mecozz/Digital-Menu/blob/main/Pizza2.png?raw=true"
   },
   "items": [
     {"name": "MEATBALLS", "lg_price": "13.00", "reg_price": "11.00"},
