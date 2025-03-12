@@ -22,13 +22,13 @@
       align-items: center;
       width: 100%;
       margin-bottom: 10px;
+      position: relative; /* Allow absolute positioning of the image */
     }
     .title-img-container {
-      flex: 0 0 auto; /* Fixed width for image */
-      display: flex;
-      justify-content: center;
+      position: absolute; /* Position the image independently */
+      left: 10%; /* Approximate centering between left edge and "J" */
+      transform: translateX(-50%); /* Center the image within its position */
       width: 200px; /* Match the image width */
-      margin-right: 20px; /* Space between image and title */
     }
     .title-img {
       width: 200px;
