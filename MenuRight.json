@@ -33,7 +33,7 @@
     {"name": "PEPPER STEAK", "lg_price": "13.00", "reg_price": "11.00"},
     {"name": "ONION STEAK", "lg_price": "13.00", "reg_price": "11.00"},
     {"name": "MUSHROOM STEAK", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "2 ITEMS", "lg_price": "13.00", "reg_price": "11.00"},
+    {"name": "2 ITEMS", "lg_price": "13.75", "reg_price": "11.00"},
     {"name": "3 ITEMS", "lg_price": "13.75", "reg_price": "12.75"},
     {"name": "SPECIAL STEAK", "lg_price": "13.75", "reg_price": "12.75"},
     {"name": "EXTRA CHEESE", "lg_price": "2.50", "reg_price": "2.00"},
