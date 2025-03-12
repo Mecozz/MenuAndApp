@@ -18,31 +18,35 @@
     }
     .title-container {
       display: flex;
-      justify-content: flex-start; /* Align items to the left with spacing */
       align-items: center;
       width: 100%;
       margin-bottom: 10px;
     }
     .title-img-container {
-      flex: 1; /* Takes up space to center the image */
+      flex: 0 0 auto; /* Fixed width for image */
       display: flex;
-      justify-content: center; /* Center the image in its zone */
-      max-width: 30%; /* Increased to accommodate larger image */
+      justify-content: center;
+      width: 200px; /* Match the image width */
     }
     .title-img {
-      width: 200px; /* Keeping the larger size */
-      height: 200px; /* Keeping the larger size */
+      width: 200px;
+      height: 200px;
       object-fit: contain;
-      /* Removed clip-path */
+      border-radius: 20px; /* Rounded edges */
     }
     .menu-title {
-      font-size: 4.5em;
+      font-size: 3em; /* Reduced from 4.5em to better match image height */
       font-weight: bold;
       color: red;
       text-shadow: 4px 4px 6px rgba(255, 0, 0, 0.7);
       letter-spacing: 2px;
-      flex: 3; /* Takes more space for the title */
-      text-align: center;
+      flex: 1; /* Take remaining space */
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center the title in its space */
+      height: 200px; /* Match image height */
+      line-height: 1; /* Adjust line height to better fit */
+      margin: 0; /* Remove default margin */
     }
     .menu-header {
       display: flex;
