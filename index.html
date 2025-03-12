@@ -16,6 +16,18 @@
       margin: auto;
       padding-top: 5px;
     }
+    .title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .title-img {
+      width: 100px; /* Adjust size as needed */
+      height: 100px; /* Adjust size as needed */
+      object-fit: contain;
+      margin: 0 20px; /* Space between images and title */
+    }
     .menu-title {
       font-size: 4.5em;
       font-weight: bold;
@@ -66,8 +78,8 @@
       padding-bottom: 10px;
     }
     .image-slider img {
-      width: 20%; /* Increased from 18% */
-      height: 150px; /* Increased from 120px */
+      width: 20%;
+      height: 150px;
       object-fit: contain;
       border-radius: 10px;
     }
@@ -75,7 +87,11 @@
 </head>
 <body>
   <div class="menu-container">
-    <h1 class="menu-title" id="menu-title"></h1>
+    <div class="title-container">
+      <img id="left-title-img" class="title-img">
+      <h1 class="menu-title" id="menu-title"></h1>
+      <img id="right-title-img" class="title-img">
+    </div>
     <div class="menu-header">
       <span id="category"></span>
       <span id="note"></span>
@@ -106,6 +122,10 @@ fetch('https://raw.githubusercontent.com/Mecozz/Menu/main/menu.json')
     document.getElementById('menu-title').textContent = data.title;
     document.getElementById('category').textContent = data.header.category;
     document.getElementById('note').textContent = data.header.note;
+    
+    // Set the title images from JSON
+    document.getElementById('left-title-img').src = data.titleImages.left;
+    document.getElementById('right-title-img').src = data.titleImages.right;
 
     const half = Math.ceil(data.items.length / 2);
     const leftItems = data.items.slice(0, half);
