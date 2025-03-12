@@ -92,12 +92,18 @@
       margin-top: 15px;
       width: 100%;
       padding-bottom: 10px;
+      overflow-x: auto; /* Allow horizontal scrolling if images exceed width */
+      white-space: nowrap; /* Prevent wrapping of images */
     }
     .image-slider img {
-      width: 28%; /* Increased from 22% to make images wider */
+      width: 25%; /* Reduced from 28% to fit better, still wider than original 22% */
       height: 150px;
       object-fit: contain;
       border-radius: 10px;
+      margin-right: 10px; /* Add small gap between images */
+    }
+    .image-slider img:last-child {
+      margin-right: 0; /* Remove margin on the last image */
     }
   </style>
 </head>
