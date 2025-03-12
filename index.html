@@ -18,6 +18,7 @@
     }
     .title-container {
       display: flex;
+      justify-content: center; /* Center the entire layout */
       align-items: center;
       width: 100%;
       margin-bottom: 10px;
@@ -27,6 +28,7 @@
       display: flex;
       justify-content: center;
       width: 200px; /* Match the image width */
+      margin-right: 20px; /* Space between image and title */
     }
     .title-img {
       width: 200px;
@@ -35,19 +37,19 @@
       border-radius: 20px; /* Rounded edges */
     }
     .menu-title {
-      font-size: 5em; /* Increased significantly to maximize size */
+      font-size: 5em; /* Large size to maximize */
       font-weight: bold;
       color: red;
       text-shadow: 4px 4px 6px rgba(255, 0, 0, 0.7);
       letter-spacing: 2px;
-      flex: 1; /* Take remaining space */
-      display: flex;
-      align-items: center;
-      justify-content: center; /* Center the title in its space */
+      flex: 0 0 auto; /* Prevent title from stretching */
       height: 200px; /* Match image height */
       line-height: 1; /* Adjust line height to fit */
       margin: 0; /* Remove default margin */
       white-space: nowrap; /* Prevent text wrapping */
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center the title text */
     }
     .menu-header {
       display: flex;
