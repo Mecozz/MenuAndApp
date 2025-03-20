@@ -22,7 +22,7 @@
     {"name": "VEGETARIAN", "lg_price": "13.00", "reg_price": "11.00"},
     {"name": "ROAST BEEF", "lg_price": "13.00", "reg_price": "11.00"},
     {"name": "TURKEY", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "SAUSAGE & MEATBALLS", "lg_price": "13.00", "reg_price": "11.75"},
+    {"name": "SAUSAGE & MEATBALLS", "lg_price": "13.75", "reg_price": "11.75"},
     {"name": "COMBO ITALIAN", "lg_price": "13.75", "reg_price": "11.75"},
     {"name": "LAMB GRINDER", "lg_price": "13.75", "reg_price": "---"},
     {"name": "EXTRA CHEESE", "lg_price": "2.50", "reg_price": "2.00"}
