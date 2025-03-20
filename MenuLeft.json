@@ -16,7 +16,7 @@
     {"name": "MUSHROOM", "lg_price": "15.00", "reg_price": "11.00"},
     {"name": "SAUSAGE", "lg_price": "15.00", "reg_price": "11.00"},
     {"name": "MEATBALLS", "lg_price": "16.00", "reg_price": "12.00"},
-    {"name": "BACON", "lg_price": "16.00", "reg_price": "12.00"},
+    {"name": "BACON", "lg_price": "16.00", "reg_price": "12.00"}
   ],
   "right_items": [
     {"name": "PLAIN", "lg_price": "16.75", "reg_price": "13.00"},
