@@ -51,6 +51,42 @@
       "reg_price" : "12.00"
     }
   ],
+  "header" : {
+    "right_category" : "CALZONES",
+    "left_category" : "PIZZA"
+  },
+  "config" : {
+    "image_rotation_speed" : 10000
+  },
+  "images" : [
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone2.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone5.png"
+    ],
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZMeatballFetaPizza.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZPepperoniPizza.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausTomSpin.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinachFettaPizza.png"
+    ],
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone2.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone3.png"
+    ],
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausage.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone4.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal2.png"
+    ],
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallChkSpinache.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep2.png"
+    ]
+  ],
   "right_items" : [
     {
       "name" : "PLAIN",
@@ -112,41 +148,5 @@
       "lg_price" : "3.00",
       "reg_price" : "2.50"
     }
-  ],
-  "images" : [
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone2.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone5.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZMeatballFetaPizza.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZPepperoniPizza.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausTomSpin.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinachFettaPizza.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone2.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone3.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausage.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone4.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal2.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallChkSpinache.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep2.png"
-    ]
-  ],
-  "header" : {
-    "left_category" : "PIZZA",
-    "right_category" : "CALZONES"
-  },
-  "config" : {
-    "image_rotation_speed" : 10000
-  }
+  ]
 }
