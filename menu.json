@@ -1,8 +1,4 @@
 {
-  "header" : {
-    "category" : "HOT OR COLD SUBS",
-    "note" : "* ALL PRICES INCLUDE 9% TAXES *"
-  },
   "images" : [
     [
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub.png",
@@ -30,6 +26,10 @@
       "https://raw.githubusercontent.com/Mecozz/Menu/main/Yero.png"
     ]
   ],
+  "header" : {
+    "category" : "HOT OR COLD SUBS",
+    "note" : "* ALL PRICES INCLUDE 9% TAXES *"
+  },
   "items" : [
     {
       "reg_price" : "11.00",
