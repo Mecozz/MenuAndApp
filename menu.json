@@ -1,4 +1,8 @@
 {
+  "header" : {
+    "category" : "HOT OR COLD SUBS",
+    "note" : "* ALL PRICES INCLUDE 9% TAXES *"
+  },
   "images" : [
     [
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub.png",
@@ -26,33 +30,26 @@
       "https://raw.githubusercontent.com/Mecozz/Menu/main/Yero.png"
     ]
   ],
-  "left_items" : [
-
-  ],
-  "header" : {
-    "category" : "HOT OR COLD SUBS",
-    "note" : "* ALL PRICES INCLUDE 9% TAXES *"
-  },
   "items" : [
     {
       "reg_price" : "11.00",
       "name" : "MEATBALLS",
+      "lg_price" : "13.25"
+    },
+    {
+      "reg_price" : "11.00",
+      "name" : "SAUSAGE",
       "lg_price" : "13.00"
     },
     {
       "reg_price" : "11.00",
-      "lg_price" : "13.00",
-      "name" : "SAUSAGE"
+      "name" : "HAM & CHEESE",
+      "lg_price" : "13.00"
     },
     {
       "reg_price" : "11.00",
-      "lg_price" : "13.00",
-      "name" : "HAM & CHEESE"
-    },
-    {
-      "reg_price" : "11.00",
-      "lg_price" : "13.00",
-      "name" : "SALAMI"
+      "name" : "SALAMI",
+      "lg_price" : "13.00"
     },
     {
       "reg_price" : "11.00",
@@ -90,39 +87,39 @@
       "lg_price" : "13.00"
     },
     {
+      "reg_price" : "11.00",
       "name" : "VEGETARIAN",
-      "reg_price" : "11.00",
       "lg_price" : "13.00"
     },
     {
+      "reg_price" : "11.00",
       "name" : "ROAST BEEF",
-      "reg_price" : "11.00",
       "lg_price" : "13.00"
     },
     {
-      "lg_price" : "13.00",
       "reg_price" : "11.00",
-      "name" : "TURKEY"
+      "name" : "TURKEY",
+      "lg_price" : "13.00"
     },
     {
-      "lg_price" : "13.75",
       "reg_price" : "11.75",
-      "name" : "SAUSAGE & MEATBALLS"
+      "name" : "SAUSAGE & MEATBALLS",
+      "lg_price" : "13.75"
     },
     {
-      "lg_price" : "13.75",
       "reg_price" : "11.75",
-      "name" : "COMBO ITALIAN"
+      "name" : "COMBO ITALIAN",
+      "lg_price" : "13.75"
     },
     {
-      "lg_price" : "13.75",
       "reg_price" : "---",
-      "name" : "LAMB GRINDER"
+      "name" : "LAMB GRINDER",
+      "lg_price" : "13.75"
     },
     {
-      "lg_price" : "2.50",
       "reg_price" : "2.00",
-      "name" : "EXTRA CHEESE"
+      "name" : "EXTRA CHEESE",
+      "lg_price" : "2.50"
     }
   ]
 }
