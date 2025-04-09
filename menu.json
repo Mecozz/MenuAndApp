@@ -1,8 +1,4 @@
 {
-  "header" : {
-    "category" : "HOT OR COLD SUBS",
-    "note" : "* ALL PRICES INCLUDE 9% TAXES *"
-  },
   "images" : [
     [
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub.png",
@@ -30,51 +26,129 @@
       "https://raw.githubusercontent.com/Mecozz/Menu/main/Yero.png"
     ]
   ],
-  "items" : [
+  "header" : {
+    "category" : "HOT OR COLD SUBS",
+    "note" : "* ALL PRICES INCLUDE 9% TAXES *"
+  },
+  "middle_items" : [
     {
-      "lg_price" : "13.25",
-      "reg_price" : "11.00",
+      "price" : "11.00",
       "name" : "MEATBALLS"
     },
     {
-      "lg_price" : "13.00",
-      "reg_price" : "11.00",
+      "price" : "11.00",
       "name" : "SAUSAGE"
     },
     {
-      "lg_price" : "13.00",
-      "reg_price" : "11.00",
+      "price" : "11.00",
       "name" : "HAM & CHEESE"
     },
     {
-      "lg_price" : "13.00",
-      "reg_price" : "11.00",
+      "price" : "11.00",
       "name" : "SALAMI"
     },
     {
-      "lg_price" : "13.00",
-      "reg_price" : "11.00",
+      "price" : "11.00",
       "name" : "TUNA"
     },
     {
-      "lg_price" : "13.00",
-      "reg_price" : "11.00",
+      "price" : "11.00",
       "name" : "CHEESEBURGER"
     },
     {
-      "lg_price" : "13.00",
-      "reg_price" : "11.00",
+      "price" : "11.00",
       "name" : "B.L.T"
     },
     {
-      "lg_price" : "13.00",
-      "reg_price" : "11.00",
+      "price" : "11.00",
       "name" : "PASTRAMI"
     },
     {
-      "lg_price" : "13.75",
-      "reg_price" : "11.75",
+      "price" : "11.75",
       "name" : "GYROS"
+    },
+    {
+      "price" : "11.00",
+      "name" : "VEAL PARMESAN"
+    },
+    {
+      "price" : "11.00",
+      "name" : "CHICKEN PARMESAN"
+    },
+    {
+      "price" : "11.00",
+      "name" : "VEGETARIAN"
+    },
+    {
+      "price" : "11.00",
+      "name" : "ROAST BEEF"
+    },
+    {
+      "price" : "11.00",
+      "name" : "TURKEY"
+    },
+    {
+      "price" : "11.75",
+      "name" : "SAUSAGE & MEATBALLS"
+    },
+    {
+      "price" : "11.75",
+      "name" : "COMBO ITALIAN"
+    },
+    {
+      "price" : "---",
+      "name" : "LAMB GRINDER"
+    },
+    {
+      "price" : "2.00",
+      "name" : "EXTRA CHEESE"
+    }
+  ],
+  "items" : [
+    {
+      "lg_price" : "13.25",
+      "name" : "MEATBALLS",
+      "reg_price" : "11.00"
+    },
+    {
+      "lg_price" : "13.00",
+      "name" : "SAUSAGE",
+      "reg_price" : "11.00"
+    },
+    {
+      "lg_price" : "13.00",
+      "name" : "HAM & CHEESE",
+      "reg_price" : "11.00"
+    },
+    {
+      "lg_price" : "13.00",
+      "name" : "SALAMI",
+      "reg_price" : "11.00"
+    },
+    {
+      "lg_price" : "13.00",
+      "name" : "TUNA",
+      "reg_price" : "11.00"
+    },
+    {
+      "lg_price" : "13.00",
+      "name" : "CHEESEBURGER",
+      "reg_price" : "11.00"
+    },
+    {
+      "lg_price" : "13.00",
+      "name" : "B.L.T",
+      "reg_price" : "11.00"
+    },
+    {
+      "lg_price" : "13.00",
+      "name" : "PASTRAMI",
+      "reg_price" : "11.00"
+    },
+    {
+      "lg_price" : "13.75",
+      "name" : "GYROS",
+      "reg_price" : "11.75"
     },
     {
       "lg_price" : "13.00",
@@ -102,24 +176,24 @@
       "name" : "TURKEY"
     },
     {
+      "name" : "SAUSAGE & MEATBALLS",
       "lg_price" : "13.75",
-      "reg_price" : "11.75",
-      "name" : "SAUSAGE & MEATBALLS"
+      "reg_price" : "11.75"
     },
     {
+      "name" : "COMBO ITALIAN",
       "lg_price" : "13.75",
-      "reg_price" : "11.75",
-      "name" : "COMBO ITALIAN"
+      "reg_price" : "11.75"
     },
     {
+      "name" : "LAMB GRINDER",
       "lg_price" : "13.75",
-      "reg_price" : "---",
-      "name" : "LAMB GRINDER"
+      "reg_price" : "---"
     },
     {
+      "name" : "EXTRA CHEESE",
       "lg_price" : "2.50",
-      "reg_price" : "2.00",
-      "name" : "EXTRA CHEESE"
+      "reg_price" : "2.00"
     }
   ]
 }
