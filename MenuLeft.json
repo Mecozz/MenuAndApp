@@ -1,152 +1,40 @@
-{
-  "config" : {
-    "image_rotation_speed" : 10000
+this is the code that is supose to be in there and i need it to look exactly the same after i update the price with the app only changing the price {
+  "config": {
+    "image_rotation_speed": 10000
   },
-  "images" : [
+  "header": {
+    "left_category": "PIZZA",
+    "right_category": "CALZONES"
+  },
+  "left_items": [
+    {"name": "PLAIN", "lg_price": "13.00", "reg_price": "9.00"},
+    {"name": "ONIONS", "lg_price": "15.00", "reg_price": "11.00"},
+    {"name": "PEPPERS", "lg_price": "15.00", "reg_price": "11.00"},
+    {"name": "HAMBURG", "lg_price": "15.00", "reg_price": "11.00"},
+    {"name": "PEPPERONI", "lg_price": "15.00", "reg_price": "11.00"},
+    {"name": "HAM", "lg_price": "15.00", "reg_price": "11.00"},
+    {"name": "MUSHROOM", "lg_price": "15.00", "reg_price": "11.00"},
+    {"name": "SAUSAGE", "lg_price": "15.00", "reg_price": "11.00"},
+    {"name": "MEATBALLS", "lg_price": "16.00", "reg_price": "12.00"},
+    {"name": "BACON", "lg_price": "16.00", "reg_price": "12.00"}
+  ],
+  "right_items": [
+    {"name": "PLAIN", "lg_price": "16.75", "reg_price": "13.00"},
+    {"name": "1 ITEM", "lg_price": "18.75", "reg_price": "15.00"},
+    {"name": "2 ITEMS", "lg_price": "22.00", "reg_price": "16.75"},
+    {"name": "STEAK SPECIAL", "lg_price": "23.00", "reg_price": "16.75"},
+    {"name": "CHICKEN", "lg_price": "23.00", "reg_price": "16.75"},
+    {"name": "SPINACH & FETA", "lg_price": "23.00", "reg_price": "16.75"},
+    {"name": "MEATBALL", "lg_price": "22.00", "reg_price": "16.75"},
+    {"name": "HAM & PINEAPPLE", "lg_price": "23.00", "reg_price": "16.75"},
+    {"name": "HOUSE SPECIAL", "lg_price": "23.00", "reg_price": "16.75"},
+    {"name": "BACON OR GYRO", "lg_price": "23.00", "reg_price": "16.75"},
+    {"name": "MEAT LOVERS", "lg_price": "23.00", "reg_price": "17.75"},
+    {"name": "EXTRA CHEESE", "lg_price": "3.00", "reg_price": "2.50"}
+  ],
+ "images": [
     [
       "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone2.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone5.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZMeatballFetaPizza.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZPepperoniPizza.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausTomSpin.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinachFettaPizza.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone2.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone3.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausage.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone4.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal2.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallChkSpinache.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep2.png"
-    ]
-  ],
-  "right_items" : [
-    {
-      "lg_price" : "16.75",
-      "name" : "PLAIN",
-      "reg_price" : "13.00"
-    },
-    {
-      "lg_price" : "18.75",
-      "name" : "1 ITEM",
-      "reg_price" : "15.00"
-    },
-    {
-      "lg_price" : "22.00",
-      "name" : "2 ITEMS",
-      "reg_price" : "16.75"
-    },
-    {
-      "lg_price" : "23.00",
-      "name" : "STEAK SPECIAL",
-      "reg_price" : "16.75"
-    },
-    {
-      "lg_price" : "23.00",
-      "name" : "CHICKEN",
-      "reg_price" : "16.75"
-    },
-    {
-      "lg_price" : "23.00",
-      "name" : "SPINACH & FETA",
-      "reg_price" : "16.75"
-    },
-    {
-      "lg_price" : "22.00",
-      "name" : "MEATBALL",
-      "reg_price" : "16.75"
-    },
-    {
-      "lg_price" : "23.00",
-      "name" : "HAM & PINEAPPLE",
-      "reg_price" : "16.75"
-    },
-    {
-      "lg_price" : "23.00",
-      "name" : "HOUSE SPECIAL",
-      "reg_price" : "16.75"
-    },
-    {
-      "lg_price" : "23.00",
-      "name" : "BACON OR GYRO",
-      "reg_price" : "16.75"
-    },
-    {
-      "lg_price" : "23.00",
-      "name" : "MEAT LOVERS",
-      "reg_price" : "17.75"
-    },
-    {
-      "lg_price" : "3.00",
-      "name" : "EXTRA CHEESE",
-      "reg_price" : "2.50"
-    }
-  ],
-  "header" : {
-    "right_category" : "CALZONES",
-    "left_category" : "PIZZA"
-  },
-  "left_items" : [
-    {
-      "lg_price" : "13.25",
-      "reg_price" : "9.00",
-      "name" : "PLAIN"
-    },
-    {
-      "lg_price" : "15.00",
-      "reg_price" : "11.00",
-      "name" : "ONIONS"
-    },
-    {
-      "lg_price" : "15.00",
-      "reg_price" : "11.00",
-      "name" : "PEPPERS"
-    },
-    {
-      "lg_price" : "15.00",
-      "reg_price" : "11.00",
-      "name" : "HAMBURG"
-    },
-    {
-      "lg_price" : "15.00",
-      "reg_price" : "11.00",
-      "name" : "PEPPERONI"
-    },
-    {
-      "lg_price" : "15.00",
-      "name" : "HAM",
-      "reg_price" : "11.00"
-    },
-    {
-      "lg_price" : "15.00",
-      "name" : "MUSHROOM",
-      "reg_price" : "11.00"
-    },
-    {
-      "lg_price" : "15.00",
-      "name" : "SAUSAGE",
-      "reg_price" : "11.00"
-    },
-    {
-      "lg_price" : "16.00",
-      "name" : "MEATBALLS",
-      "reg_price" : "12.00"
-    },
-    {
-      "lg_price" : "16.00",
-      "name" : "BACON",
-      "reg_price" : "12.00"
-    }
-  ]
-}
