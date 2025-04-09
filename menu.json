@@ -2,7 +2,7 @@
   "items" : [
     {
       "name" : "MEATBALLS",
-      "lg_price" : "1.00",
+      "lg_price" : "50.00",
       "reg_price" : "11.00"
     },
     {
@@ -36,14 +36,14 @@
       "reg_price" : "11.00"
     },
     {
+      "name" : "PASTRAMI",
       "lg_price" : "13.00",
-      "reg_price" : "11.00",
-      "name" : "PASTRAMI"
+      "reg_price" : "11.00"
     },
     {
+      "name" : "GYROS",
       "lg_price" : "13.75",
-      "reg_price" : "11.75",
-      "name" : "GYROS"
+      "reg_price" : "11.75"
     },
     {
       "name" : "VEAL PARMESAN",
@@ -71,26 +71,30 @@
       "reg_price" : "11.00"
     },
     {
-      "reg_price" : "11.75",
       "name" : "SAUSAGE & MEATBALLS",
-      "lg_price" : "13.75"
+      "lg_price" : "13.75",
+      "reg_price" : "11.75"
     },
     {
-      "reg_price" : "11.75",
       "name" : "COMBO ITALIAN",
-      "lg_price" : "13.75"
+      "lg_price" : "13.75",
+      "reg_price" : "11.75"
     },
     {
-      "reg_price" : "---",
       "name" : "LAMB GRINDER",
-      "lg_price" : "13.75"
+      "lg_price" : "13.75",
+      "reg_price" : "---"
     },
     {
-      "reg_price" : "2.00",
       "name" : "EXTRA CHEESE",
-      "lg_price" : "2.50"
+      "lg_price" : "2.50",
+      "reg_price" : "2.00"
     }
   ],
+  "header" : {
+    "category" : "HOT OR COLD SUBS",
+    "note" : "* ALL PRICES INCLUDE 9% TAXES *"
+  },
   "images" : [
     [
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub.png",
@@ -117,9 +121,5 @@
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamCheeseSub.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/Yero.png"
     ]
-  ],
-  "header" : {
-    "category" : "HOT OR COLD SUBS",
-    "note" : "* ALL PRICES INCLUDE 9% TAXES *"
-  }
+  ]
 }
