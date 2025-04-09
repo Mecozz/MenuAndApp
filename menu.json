@@ -1,33 +1,97 @@
 {
-  "title": "JIMMY'S HOUSE OF PIZZA",
-  "header": {
-    "category": "HOT OR COLD SUBS",
-    "note": "* ALL PRICES INCLUDE 9% TAXES *"
-  },
-  "titleImages": {
-    "left": "https://raw.githubusercontent.com/Mecozz/Menu/main/JimmyAnna.png"
-  },
-  "items": [
-    {"name": "MEATBALLS", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "SAUSAGE", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "HAM & CHEESE", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "SALAMI", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "TUNA", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "CHEESEBURGER", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "B.L.T", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "PASTRAMI", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "GYROS", "lg_price": "13.75", "reg_price": "11.75"},
-    {"name": "VEAL PARMESAN", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "CHICKEN PARMESAN", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "VEGETARIAN", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "ROAST BEEF", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "TURKEY", "lg_price": "13.00", "reg_price": "11.00"},
-    {"name": "SAUSAGE & MEATBALLS", "lg_price": "13.75", "reg_price": "11.75"},
-    {"name": "COMBO ITALIAN", "lg_price": "13.75", "reg_price": "11.75"},
-    {"name": "LAMB GRINDER", "lg_price": "13.75", "reg_price": "---"},
-    {"name": "EXTRA CHEESE", "lg_price": "2.50", "reg_price": "2.00"}
+  "items" : [
+    {
+      "name" : "MEATBALLS",
+      "lg_price" : "1.00",
+      "reg_price" : "11.00"
+    },
+    {
+      "name" : "SAUSAGE",
+      "lg_price" : "13.00",
+      "reg_price" : "11.00"
+    },
+    {
+      "name" : "HAM & CHEESE",
+      "lg_price" : "13.00",
+      "reg_price" : "11.00"
+    },
+    {
+      "name" : "SALAMI",
+      "lg_price" : "13.00",
+      "reg_price" : "11.00"
+    },
+    {
+      "name" : "TUNA",
+      "lg_price" : "13.00",
+      "reg_price" : "11.00"
+    },
+    {
+      "name" : "CHEESEBURGER",
+      "lg_price" : "13.00",
+      "reg_price" : "11.00"
+    },
+    {
+      "name" : "B.L.T",
+      "lg_price" : "13.00",
+      "reg_price" : "11.00"
+    },
+    {
+      "lg_price" : "13.00",
+      "reg_price" : "11.00",
+      "name" : "PASTRAMI"
+    },
+    {
+      "lg_price" : "13.75",
+      "reg_price" : "11.75",
+      "name" : "GYROS"
+    },
+    {
+      "name" : "VEAL PARMESAN",
+      "lg_price" : "13.00",
+      "reg_price" : "11.00"
+    },
+    {
+      "name" : "CHICKEN PARMESAN",
+      "lg_price" : "13.00",
+      "reg_price" : "11.00"
+    },
+    {
+      "name" : "VEGETARIAN",
+      "lg_price" : "13.00",
+      "reg_price" : "11.00"
+    },
+    {
+      "name" : "ROAST BEEF",
+      "lg_price" : "13.00",
+      "reg_price" : "11.00"
+    },
+    {
+      "name" : "TURKEY",
+      "lg_price" : "13.00",
+      "reg_price" : "11.00"
+    },
+    {
+      "reg_price" : "11.75",
+      "name" : "SAUSAGE & MEATBALLS",
+      "lg_price" : "13.75"
+    },
+    {
+      "reg_price" : "11.75",
+      "name" : "COMBO ITALIAN",
+      "lg_price" : "13.75"
+    },
+    {
+      "reg_price" : "---",
+      "name" : "LAMB GRINDER",
+      "lg_price" : "13.75"
+    },
+    {
+      "reg_price" : "2.00",
+      "name" : "EXTRA CHEESE",
+      "lg_price" : "2.50"
+    }
   ],
-  "images": [
+  "images" : [
     [
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YCheesBurgerSub.png",
@@ -53,5 +117,9 @@
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamCheeseSub.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/Yero.png"
     ]
-  ]
+  ],
+  "header" : {
+    "category" : "HOT OR COLD SUBS",
+    "note" : "* ALL PRICES INCLUDE 9% TAXES *"
+  }
 }
