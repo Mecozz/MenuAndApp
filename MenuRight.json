@@ -1,16 +1,34 @@
 {
+  "bottom_middle_items" : [
+    {
+      "name" : "FRIED CHICKEN FINGER & FRIES",
+      "price" : "13.75"
+    },
+    {
+      "name" : "BUFFALO TENDERS & FRIES",
+      "price" : "13.75"
+    },
+    {
+      "name" : "REG WINGS & FRIES",
+      "price" : "13.75"
+    },
+    {
+      "name" : "LAMB PLATE W/GREEK SALAD & FRIES",
+      "price" : "23.00"
+    }
+  ],
   "middle_items" : [
     {
-      "name" : "TOSSED SALAD",
-      "price" : "91.00"
+      "price" : "91.00",
+      "name" : "TOSSED SALAD"
     },
     {
-      "name" : "ANTIPASTO SALAD",
-      "price" : "12.00"
+      "price" : "12.00",
+      "name" : "ANTIPASTO SALAD"
     },
     {
-      "name" : "GREEK SALAD",
-      "price" : "11.00"
+      "price" : "11.00",
+      "name" : "GREEK SALAD"
     },
     {
       "name" : "CHEF'S SALAD",
@@ -41,171 +59,12 @@
       "price" : "12.00"
     }
   ],
-  "bottom_left_items" : [
-    {
-      "name" : "SPAGHETTI & SAUCE",
-      "price" : "10.00"
-    },
-    {
-      "name" : "W/MEATBALLS",
-      "price" : "11.75"
-    },
-    {
-      "name" : "W/SAUSAGE",
-      "price" : "11.75"
-    },
-    {
-      "price" : "12.75",
-      "name" : "COMBO"
-    },
-    {
-      "price" : "11.75",
-      "name" : "W/CHICKEN OR VEAL"
-    }
-  ],
-  "bottom_middle_items" : [
-    {
-      "price" : "13.75",
-      "name" : "FRIED CHICKEN FINGER & FRIES"
-    },
-    {
-      "price" : "13.75",
-      "name" : "BUFFALO TENDERS & FRIES"
-    },
-    {
-      "price" : "13.75",
-      "name" : "REG WINGS & FRIES"
-    },
-    {
-      "price" : "23.00",
-      "name" : "LAMB PLATE W/GREEK SALAD & FRIES"
-    }
-  ],
-  "left_items" : [
-    {
-      "name" : "CHEESE STEAK",
-      "lg_price" : "50.00",
-      "reg_price" : "50.00"
-    },
-    {
-      "name" : "PEPPER STEAK",
-      "lg_price" : "13.00",
-      "reg_price" : "11.00"
-    },
-    {
-      "name" : "ONION STEAK",
-      "lg_price" : "13.00",
-      "reg_price" : "11.00"
-    },
-    {
-      "name" : "MUSHROOM STEAK",
-      "lg_price" : "13.00",
-      "reg_price" : "11.00"
-    },
-    {
-      "name" : "2 ITEMS",
-      "lg_price" : "13.75",
-      "reg_price" : "11.00"
-    },
-    {
-      "name" : "3 ITEMS",
-      "lg_price" : "13.75",
-      "reg_price" : "12.75"
-    },
-    {
-      "name" : "SPECIAL STEAK",
-      "lg_price" : "13.75",
-      "reg_price" : "12.75"
-    },
-    {
-      "name" : "EXTRA CHEESE",
-      "lg_price" : "2.50",
-      "reg_price" : "2.00"
-    },
-    {
-      "name" : "EXTRA STEAK",
-      "lg_price" : "5.00",
-      "reg_price" : "3.50"
-    }
-  ],
-  "right_items" : [
-    {
-      "name" : "BAKLAVA",
-      "lg_price" : "3.75",
-      "reg_price" : ""
-    },
-    {
-      "name" : "GARLIC BREAD-PLAIN",
-      "lg_price" : "4.50",
-      "reg_price" : "4.50"
-    },
-    {
-      "reg_price" : "5.00",
-      "name" : "W/CHEESE",
-      "lg_price" : "5.75"
-    },
-    {
-      "reg_price" : "5.00",
-      "name" : "FRENCH FRIES",
-      "lg_price" : "7.00"
-    },
-    {
-      "reg_price" : "5.00",
-      "name" : "ONION RINGS",
-      "lg_price" : "7.00"
-    },
-    {
-      "reg_price" : "",
-      "name" : "RICE PILAF",
-      "lg_price" : "6.75"
-    },
-    {
-      "reg_price" : "",
-      "name" : "GREEK PITA",
-      "lg_price" : "9.75"
-    },
-    {
-      "reg_price" : "",
-      "name" : "FRIED MUSHROOMS",
-      "lg_price" : "9.75"
-    },
-    {
-      "reg_price" : "",
-      "name" : "MOZZARELLA STICKS",
-      "lg_price" : "9.75"
-    },
-    {
-      "reg_price" : "",
-      "name" : "CHICKEN WINGS",
-      "lg_price" : "9.75"
-    },
-    {
-      "reg_price" : "",
-      "name" : "JALAPENO POPPERS",
-      "lg_price" : "9.75"
-    },
-    {
-      "reg_price" : "",
-      "name" : "CHICKEN TENDERS",
-      "lg_price" : "9.75"
-    },
-    {
-      "reg_price" : "",
-      "name" : "BUFFALO TENDERS",
-      "lg_price" : "9.75"
-    },
-    {
-      "reg_price" : "",
-      "name" : "FRIED RAVIOLI",
-      "lg_price" : "9.75"
-    }
-  ],
   "header" : {
-    "bottom_middle_category" : "DINNERS",
-    "right_category" : "SIDE ORDERS",
-    "left_category" : "STEAK SUBS",
+    "middle_category" : "SALADS",
     "bottom_left_category" : "ITALIAN DISHES",
-    "middle_category" : "SALADS"
+    "right_category" : "SIDE ORDERS",
+    "bottom_middle_category" : "DINNERS",
+    "left_category" : "STEAK SUBS"
   },
   "images" : [
     [
@@ -230,5 +89,146 @@
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YMozSticks.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YFriesOR.png"
     ]
+  ],
+  "right_items" : [
+    {
+      "reg_price" : "",
+      "lg_price" : "3.75",
+      "name" : "BAKLAVA"
+    },
+    {
+      "reg_price" : "4.50",
+      "lg_price" : "4.50",
+      "name" : "GARLIC BREAD-PLAIN"
+    },
+    {
+      "reg_price" : "5.00",
+      "lg_price" : "5.75",
+      "name" : "W/CHEESE"
+    },
+    {
+      "reg_price" : "5.00",
+      "lg_price" : "7.00",
+      "name" : "FRENCH FRIES"
+    },
+    {
+      "reg_price" : "5.00",
+      "lg_price" : "7.00",
+      "name" : "ONION RINGS"
+    },
+    {
+      "reg_price" : "",
+      "lg_price" : "6.75",
+      "name" : "RICE PILAF"
+    },
+    {
+      "reg_price" : "",
+      "lg_price" : "9.75",
+      "name" : "GREEK PITA"
+    },
+    {
+      "reg_price" : "",
+      "lg_price" : "9.75",
+      "name" : "FRIED MUSHROOMS"
+    },
+    {
+      "name" : "MOZZARELLA STICKS",
+      "lg_price" : "9.75",
+      "reg_price" : ""
+    },
+    {
+      "name" : "CHICKEN WINGS",
+      "lg_price" : "9.75",
+      "reg_price" : ""
+    },
+    {
+      "name" : "JALAPENO POPPERS",
+      "lg_price" : "9.75",
+      "reg_price" : ""
+    },
+    {
+      "lg_price" : "9.75",
+      "reg_price" : "",
+      "name" : "CHICKEN TENDERS"
+    },
+    {
+      "lg_price" : "9.75",
+      "reg_price" : "",
+      "name" : "BUFFALO TENDERS"
+    },
+    {
+      "lg_price" : "9.75",
+      "reg_price" : "",
+      "name" : "FRIED RAVIOLI"
+    }
+  ],
+  "bottom_left_items" : [
+    {
+      "name" : "SPAGHETTI & SAUCE",
+      "price" : "10.00"
+    },
+    {
+      "name" : "W/MEATBALLS",
+      "price" : "11.75"
+    },
+    {
+      "name" : "W/SAUSAGE",
+      "price" : "11.75"
+    },
+    {
+      "name" : "COMBO",
+      "price" : "12.75"
+    },
+    {
+      "name" : "W/CHICKEN OR VEAL",
+      "price" : "11.75"
+    }
+  ],
+  "left_items" : [
+    {
+      "reg_price" : "25.00",
+      "lg_price" : "25.00",
+      "name" : "CHEESE STEAK"
+    },
+    {
+      "reg_price" : "11.00",
+      "lg_price" : "13.00",
+      "name" : "PEPPER STEAK"
+    },
+    {
+      "reg_price" : "11.00",
+      "lg_price" : "13.00",
+      "name" : "ONION STEAK"
+    },
+    {
+      "reg_price" : "11.00",
+      "lg_price" : "13.00",
+      "name" : "MUSHROOM STEAK"
+    },
+    {
+      "reg_price" : "11.00",
+      "lg_price" : "13.75",
+      "name" : "2 ITEMS"
+    },
+    {
+      "reg_price" : "12.75",
+      "lg_price" : "13.75",
+      "name" : "3 ITEMS"
+    },
+    {
+      "reg_price" : "12.75",
+      "lg_price" : "13.75",
+      "name" : "SPECIAL STEAK"
+    },
+    {
+      "reg_price" : "2.00",
+      "lg_price" : "2.50",
+      "name" : "EXTRA CHEESE"
+    },
+    {
+      "reg_price" : "3.50",
+      "lg_price" : "5.00",
+      "name" : "EXTRA STEAK"
+    }
   ]
 }
