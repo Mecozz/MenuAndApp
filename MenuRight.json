@@ -1,11 +1,4 @@
 {
-  "header" : {
-    "left_category" : "STEAK SUBS",
-    "bottom_middle_category" : "DINNERS",
-    "right_category" : "SIDE ORDERS",
-    "bottom_left_category" : "ITALIAN DISHES",
-    "middle_category" : "SALADS"
-  },
   "bottom_middle_items" : [
     {
       "name" : "FRIED CHICKEN FINGER & FRIES",
@@ -26,34 +19,34 @@
   ],
   "left_items" : [
     {
-      "name" : "CHEESE STEAK",
       "reg_price" : "9.08",
-      "lg_price" : "13.25"
+      "name" : "CHEESE STEAK",
+      "lg_price" : "13.58"
     },
     {
+      "reg_price" : "11.00",
       "name" : "PEPPER STEAK",
-      "reg_price" : "11.00",
       "lg_price" : "13.00"
     },
     {
+      "reg_price" : "11.00",
       "name" : "ONION STEAK",
-      "reg_price" : "11.00",
       "lg_price" : "13.00"
     },
     {
+      "reg_price" : "11.00",
       "name" : "MUSHROOM STEAK",
-      "reg_price" : "11.00",
       "lg_price" : "13.00"
     },
     {
+      "reg_price" : "11.00",
       "name" : "2 ITEMS",
-      "lg_price" : "13.75",
-      "reg_price" : "11.00"
+      "lg_price" : "13.75"
     },
     {
+      "reg_price" : "12.75",
       "name" : "3 ITEMS",
-      "lg_price" : "13.75",
-      "reg_price" : "12.75"
+      "lg_price" : "13.75"
     },
     {
       "reg_price" : "12.75",
@@ -69,6 +62,131 @@
       "reg_price" : "3.50",
       "name" : "EXTRA STEAK",
       "lg_price" : "5.00"
+    }
+  ],
+  "header" : {
+    "bottom_left_category" : "ITALIAN DISHES",
+    "left_category" : "STEAK SUBS",
+    "bottom_middle_category" : "DINNERS",
+    "middle_category" : "SALADS",
+    "right_category" : "SIDE ORDERS"
+  },
+  "images" : [
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/Xrings.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YChickenFriesPlate.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YStreaakCheeseSub.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamSalad.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSteakPepSalami.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSteakSalad.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XStreakPep.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XStreakPepSalaFries.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinacopata.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XWingsFries.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSteakPepSalami.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YWings.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YGreekSalad.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YSteakMushsub.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSteakPicklesSub.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpaghettiMeatballs2.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YMozSticks.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YFriesOR.png"
+    ]
+  ],
+  "right_items" : [
+    {
+      "reg_price" : "0.00",
+      "name" : "BAKLAVA",
+      "lg_price" : "3.75"
+    },
+    {
+      "reg_price" : "4.50",
+      "name" : "GARLIC BREAD-PLAIN",
+      "lg_price" : "4.50"
+    },
+    {
+      "reg_price" : "5.00",
+      "name" : "W/CHEESE",
+      "lg_price" : "5.75"
+    },
+    {
+      "reg_price" : "5.00",
+      "name" : "FRENCH FRIES",
+      "lg_price" : "7.00"
+    },
+    {
+      "lg_price" : "7.00",
+      "name" : "ONION RINGS",
+      "reg_price" : "5.00"
+    },
+    {
+      "lg_price" : "6.75",
+      "name" : "RICE PILAF",
+      "reg_price" : "0.00"
+    },
+    {
+      "lg_price" : "9.75",
+      "name" : "GREEK PITA",
+      "reg_price" : "0.00"
+    },
+    {
+      "lg_price" : "9.75",
+      "name" : "FRIED MUSHROOMS",
+      "reg_price" : "0.00"
+    },
+    {
+      "lg_price" : "9.75",
+      "name" : "MOZZARELLA STICKS",
+      "reg_price" : "0.00"
+    },
+    {
+      "lg_price" : "9.75",
+      "name" : "CHICKEN WINGS",
+      "reg_price" : "0.00"
+    },
+    {
+      "lg_price" : "9.75",
+      "name" : "JALAPENO POPPERS",
+      "reg_price" : "0.00"
+    },
+    {
+      "lg_price" : "9.75",
+      "name" : "CHICKEN TENDERS",
+      "reg_price" : "0.00"
+    },
+    {
+      "lg_price" : "9.75",
+      "name" : "BUFFALO TENDERS",
+      "reg_price" : "0.00"
+    },
+    {
+      "lg_price" : "9.75",
+      "name" : "FRIED RAVIOLI",
+      "reg_price" : "0.00"
+    }
+  ],
+  "bottom_left_items" : [
+    {
+      "name" : "SPAGHETTI & SAUCE",
+      "price" : "10.00"
+    },
+    {
+      "name" : "W/MEATBALLS",
+      "price" : "11.75"
+    },
+    {
+      "name" : "W/SAUSAGE",
+      "price" : "11.75"
+    },
+    {
+      "name" : "COMBO",
+      "price" : "12.75"
+    },
+    {
+      "name" : "W/CHICKEN OR VEAL",
+      "price" : "11.75"
     }
   ],
   "middle_items" : [
@@ -111,124 +229,6 @@
     {
       "name" : "LAMB OR STEAK SALAD",
       "price" : "12.00"
-    }
-  ],
-  "images" : [
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/Xrings.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YChickenFriesPlate.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YStreaakCheeseSub.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamSalad.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSteakPepSalami.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSteakSalad.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XStreakPep.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XStreakPepSalaFries.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinacopata.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XWingsFries.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSteakPepSalami.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YWings.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YGreekSalad.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YSteakMushsub.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSteakPicklesSub.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpaghettiMeatballs2.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YMozSticks.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YFriesOR.png"
-    ]
-  ],
-  "bottom_left_items" : [
-    {
-      "name" : "SPAGHETTI & SAUCE",
-      "price" : "10.00"
-    },
-    {
-      "name" : "W/MEATBALLS",
-      "price" : "11.75"
-    },
-    {
-      "name" : "W/SAUSAGE",
-      "price" : "11.75"
-    },
-    {
-      "name" : "COMBO",
-      "price" : "12.75"
-    },
-    {
-      "name" : "W/CHICKEN OR VEAL",
-      "price" : "11.75"
-    }
-  ],
-  "right_items" : [
-    {
-      "reg_price" : "0.00",
-      "name" : "BAKLAVA",
-      "lg_price" : "3.75"
-    },
-    {
-      "reg_price" : "4.50",
-      "name" : "GARLIC BREAD-PLAIN",
-      "lg_price" : "4.50"
-    },
-    {
-      "reg_price" : "5.00",
-      "name" : "W/CHEESE",
-      "lg_price" : "5.75"
-    },
-    {
-      "reg_price" : "5.00",
-      "name" : "FRENCH FRIES",
-      "lg_price" : "7.00"
-    },
-    {
-      "reg_price" : "5.00",
-      "name" : "ONION RINGS",
-      "lg_price" : "7.00"
-    },
-    {
-      "reg_price" : "0.00",
-      "name" : "RICE PILAF",
-      "lg_price" : "6.75"
-    },
-    {
-      "reg_price" : "0.00",
-      "name" : "GREEK PITA",
-      "lg_price" : "9.75"
-    },
-    {
-      "reg_price" : "0.00",
-      "name" : "FRIED MUSHROOMS",
-      "lg_price" : "9.75"
-    },
-    {
-      "reg_price" : "0.00",
-      "name" : "MOZZARELLA STICKS",
-      "lg_price" : "9.75"
-    },
-    {
-      "reg_price" : "0.00",
-      "name" : "CHICKEN WINGS",
-      "lg_price" : "9.75"
-    },
-    {
-      "reg_price" : "0.00",
-      "name" : "JALAPENO POPPERS",
-      "lg_price" : "9.75"
-    },
-    {
-      "name" : "CHICKEN TENDERS",
-      "lg_price" : "9.75",
-      "reg_price" : "0.00"
-    },
-    {
-      "name" : "BUFFALO TENDERS",
-      "lg_price" : "9.75",
-      "reg_price" : "0.00"
-    },
-    {
-      "name" : "FRIED RAVIOLI",
-      "lg_price" : "9.75",
-      "reg_price" : "0.00"
     }
   ]
 }
