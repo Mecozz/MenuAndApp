@@ -1,62 +1,84 @@
 {
-  "images" : [
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone2.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone5.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZMeatballFetaPizza.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZPepperoniPizza.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausTomSpin.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinachFettaPizza.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone2.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone3.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausage.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone4.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal2.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallChkSpinache.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep2.png"
-    ]
+  "left_items" : [
+    {
+      "lg_price" : "50.50",
+      "reg_price" : "9.00",
+      "name" : "PLAIN"
+    },
+    {
+      "lg_price" : "15.03",
+      "reg_price" : "11.00",
+      "name" : "ONIONS"
+    },
+    {
+      "lg_price" : "15.00",
+      "reg_price" : "11.00",
+      "name" : "PEPPERS"
+    },
+    {
+      "lg_price" : "15.25",
+      "reg_price" : "11.00",
+      "name" : "HAMBURG"
+    },
+    {
+      "lg_price" : "15.00",
+      "reg_price" : "11.00",
+      "name" : "PEPPERONI"
+    },
+    {
+      "lg_price" : "15.00",
+      "reg_price" : "11.00",
+      "name" : "HAM"
+    },
+    {
+      "lg_price" : "15.00",
+      "reg_price" : "11.00",
+      "name" : "MUSHROOM"
+    },
+    {
+      "lg_price" : "15.00",
+      "reg_price" : "11.00",
+      "name" : "SAUSAGE"
+    },
+    {
+      "lg_price" : "16.00",
+      "reg_price" : "12.00",
+      "name" : "MEATBALLS"
+    },
+    {
+      "lg_price" : "16.00",
+      "reg_price" : "12.00",
+      "name" : "BACON"
+    }
   ],
-  "header" : {
-    "left_category" : "PIZZA",
-    "right_category" : "CALZONES"
+  "config" : {
+    "image_rotation_speed" : 10000
   },
   "right_items" : [
     {
-      "name" : "PLAIN",
+      "lg_price" : "16.75",
       "reg_price" : "13.00",
-      "lg_price" : "16.75"
+      "name" : "PLAIN"
     },
     {
-      "name" : "1 ITEM",
+      "lg_price" : "18.75",
       "reg_price" : "15.00",
-      "lg_price" : "18.75"
+      "name" : "1 ITEM"
     },
     {
-      "name" : "2 ITEMS",
+      "lg_price" : "22.00",
       "reg_price" : "16.75",
-      "lg_price" : "22.00"
+      "name" : "2 ITEMS"
     },
     {
-      "name" : "STEAK SPECIAL",
+      "lg_price" : "23.00",
       "reg_price" : "16.75",
-      "lg_price" : "23.00"
+      "name" : "STEAK SPECIAL"
     },
     {
-      "name" : "CHICKEN",
+      "lg_price" : "23.00",
       "reg_price" : "16.75",
-      "lg_price" : "23.00"
+      "name" : "CHICKEN"
     },
     {
       "name" : "SPINACH & FETA",
@@ -94,60 +116,38 @@
       "lg_price" : "3.00"
     }
   ],
-  "left_items" : [
-    {
-      "name" : "PLAIN",
-      "reg_price" : "9.00",
-      "lg_price" : "50.50"
-    },
-    {
-      "name" : "ONIONS",
-      "reg_price" : "11.00",
-      "lg_price" : "15.03"
-    },
-    {
-      "name" : "PEPPERS",
-      "reg_price" : "11.00",
-      "lg_price" : "15.00"
-    },
-    {
-      "name" : "HAMBURG",
-      "reg_price" : "11.00",
-      "lg_price" : "15.25"
-    },
-    {
-      "name" : "PEPPERONI",
-      "reg_price" : "11.00",
-      "lg_price" : "15.00"
-    },
-    {
-      "name" : "HAM",
-      "reg_price" : "11.00",
-      "lg_price" : "15.00"
-    },
-    {
-      "name" : "MUSHROOM",
-      "reg_price" : "11.00",
-      "lg_price" : "15.00"
-    },
-    {
-      "name" : "SAUSAGE",
-      "reg_price" : "11.00",
-      "lg_price" : "15.00"
-    },
-    {
-      "name" : "MEATBALLS",
-      "reg_price" : "12.00",
-      "lg_price" : "16.00"
-    },
-    {
-      "name" : "BACON",
-      "reg_price" : "12.00",
-      "lg_price" : "16.00"
-    }
+  "images" : [
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone2.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone5.png"
+    ],
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZMeatballFetaPizza.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZPepperoniPizza.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausTomSpin.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinachFettaPizza.png"
+    ],
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone2.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone3.png"
+    ],
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausage.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone4.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal2.png"
+    ],
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallChkSpinache.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep2.png"
+    ]
   ],
-  "config" : {
-    "image_rotation_speed" : 10000
+  "header" : {
+    "left_category" : "PIZZA",
+    "right_category" : "CALZONES"
   },
   "middle_items" : [
 
