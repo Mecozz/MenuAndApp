@@ -1,26 +1,11 @@
 {
-  "bottom_left_items" : [
-    {
-      "name" : "SPAGHETTI & SAUCE",
-      "price" : "10.00"
-    },
-    {
-      "name" : "W/MEATBALLS",
-      "price" : "11.75"
-    },
-    {
-      "name" : "W/SAUSAGE",
-      "price" : "11.75"
-    },
-    {
-      "name" : "COMBO",
-      "price" : "12.75"
-    },
-    {
-      "name" : "W/CHICKEN OR VEAL",
-      "price" : "11.75"
-    }
-  ],
+  "header" : {
+    "left_category" : "STEAK SUBS",
+    "right_category" : "SIDE ORDERS",
+    "bottom_left_category" : "ITALIAN DISHES",
+    "middle_category" : "SALADS",
+    "bottom_middle_category" : "DINNERS"
+  },
   "middle_items" : [
     {
       "name" : "TOSSED SALAD",
@@ -63,59 +48,10 @@
       "price" : "12.00"
     }
   ],
-  "header" : {
-    "bottom_middle_category" : "DINNERS",
-    "left_category" : "STEAK SUBS",
-    "bottom_left_category" : "ITALIAN DISHES",
-    "middle_category" : "SALADS",
-    "right_category" : "SIDE ORDERS"
-  },
-  "bottom_middle_items" : [
-    {
-      "name" : "FRIED CHICKEN FINGER & FRIES",
-      "price" : "13.75"
-    },
-    {
-      "name" : "BUFFALO TENDERS & FRIES",
-      "price" : "13.75"
-    },
-    {
-      "name" : "REG WINGS & FRIES",
-      "price" : "13.75"
-    },
-    {
-      "name" : "LAMB PLATE W/GREEK SALAD & FRIES",
-      "price" : "23.00"
-    }
-  ],
-  "images" : [
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/Xrings.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YChickenFriesPlate.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YStreaakCheeseSub.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamSalad.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSteakPepSalami.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSteakSalad.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XStreakPep.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XStreakPepSalaFries.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinacopata.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XWingsFries.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSteakPepSalami.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YWings.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YGreekSalad.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YSteakMushsub.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSteakPicklesSub.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpaghettiMeatballs2.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YMozSticks.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/YFriesOR.png"
-    ]
-  ],
   "left_items" : [
     {
       "name" : "CHEESE STEAK",
-      "lg_price" : "13.50",
+      "lg_price" : "13.25",
       "reg_price" : "9.08"
     },
     {
@@ -230,5 +166,69 @@
       "lg_price" : "9.75",
       "reg_price" : "0.00"
     }
+  ],
+  "bottom_left_items" : [
+    {
+      "name" : "SPAGHETTI & SAUCE",
+      "price" : "10.00"
+    },
+    {
+      "name" : "W/MEATBALLS",
+      "price" : "11.75"
+    },
+    {
+      "name" : "W/SAUSAGE",
+      "price" : "11.75"
+    },
+    {
+      "name" : "COMBO",
+      "price" : "12.75"
+    },
+    {
+      "name" : "W/CHICKEN OR VEAL",
+      "price" : "11.75"
+    }
+  ],
+  "bottom_middle_items" : [
+    {
+      "name" : "FRIED CHICKEN FINGER & FRIES",
+      "price" : "13.75"
+    },
+    {
+      "name" : "BUFFALO TENDERS & FRIES",
+      "price" : "13.75"
+    },
+    {
+      "name" : "REG WINGS & FRIES",
+      "price" : "13.75"
+    },
+    {
+      "name" : "LAMB PLATE W/GREEK SALAD & FRIES",
+      "price" : "23.00"
+    }
+  ],
+  "images" : [
+    [
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/Xrings.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YChickenFriesPlate.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YStreaakCheeseSub.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamSalad.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSteakPepSalami.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSteakSalad.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XStreakPep.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XStreakPepSalaFries.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinacopata.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XWingsFries.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSteakPepSalami.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YWings.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YGreekSalad.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YSteakMushsub.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSteakPicklesSub.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpaghettiMeatballs2.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YMozSticks.png",
+      "https://raw.githubusercontent.com/Mecozz/Menu/main/YFriesOR.png"
+    ]
   ]
 }
