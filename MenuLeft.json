@@ -1,11 +1,63 @@
 {
+  "header" : {
+    "left_category" : "PIZZA",
+    "right_category" : "CALZONES"
+  },
+  "left_items" : [
+    {
+      "reg_price" : "9.00",
+      "name" : "PLAIN",
+      "lg_price" : "50.50"
+    },
+    {
+      "reg_price" : "11.00",
+      "name" : "ONIONS",
+      "lg_price" : "15.03"
+    },
+    {
+      "reg_price" : "11.00",
+      "name" : "PEPPERS",
+      "lg_price" : "15.00"
+    },
+    {
+      "reg_price" : "11.00",
+      "name" : "HAMBURG",
+      "lg_price" : "15.25"
+    },
+    {
+      "reg_price" : "11.00",
+      "name" : "PEPPERONI",
+      "lg_price" : "15.00"
+    },
+    {
+      "reg_price" : "11.00",
+      "name" : "HAM",
+      "lg_price" : "15.00"
+    },
+    {
+      "reg_price" : "11.00",
+      "name" : "MUSHROOM",
+      "lg_price" : "15.00"
+    },
+    {
+      "reg_price" : "11.00",
+      "name" : "SAUSAGE",
+      "lg_price" : "15.00"
+    },
+    {
+      "reg_price" : "12.00",
+      "name" : "MEATBALLS",
+      "lg_price" : "16.00"
+    },
+    {
+      "reg_price" : "12.00",
+      "name" : "BACON",
+      "lg_price" : "16.00"
+    }
+  ],
   "middle_items" : [
 
   ],
-  "header" : {
-    "right_category" : "CALZONES",
-    "left_category" : "PIZZA"
-  },
   "config" : {
     "image_rotation_speed" : 10000
   },
@@ -37,58 +89,6 @@
       "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep2.png"
     ]
-  ],
-  "left_items" : [
-    {
-      "lg_price" : "50.00",
-      "reg_price" : "9.00",
-      "name" : "PLAIN"
-    },
-    {
-      "lg_price" : "15.03",
-      "reg_price" : "11.00",
-      "name" : "ONIONS"
-    },
-    {
-      "lg_price" : "15.00",
-      "reg_price" : "11.00",
-      "name" : "PEPPERS"
-    },
-    {
-      "lg_price" : "15.25",
-      "reg_price" : "11.00",
-      "name" : "HAMBURG"
-    },
-    {
-      "lg_price" : "15.00",
-      "reg_price" : "11.00",
-      "name" : "PEPPERONI"
-    },
-    {
-      "lg_price" : "15.00",
-      "reg_price" : "11.00",
-      "name" : "HAM"
-    },
-    {
-      "lg_price" : "15.00",
-      "reg_price" : "11.00",
-      "name" : "MUSHROOM"
-    },
-    {
-      "lg_price" : "15.00",
-      "reg_price" : "11.00",
-      "name" : "SAUSAGE"
-    },
-    {
-      "lg_price" : "16.00",
-      "reg_price" : "12.00",
-      "name" : "MEATBALLS"
-    },
-    {
-      "lg_price" : "16.00",
-      "reg_price" : "12.00",
-      "name" : "BACON"
-    }
   ],
   "right_items" : [
     {
