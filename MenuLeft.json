@@ -10,7 +10,6 @@
     "image_rotation_speed" : 10000
   },
   "images" : [
-    [
       "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone2.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal.png",
@@ -36,7 +35,6 @@
       "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallChkSpinache.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep2.png"
-    ]
   ],
   "left_items" : [
     {
