@@ -1,4 +1,8 @@
 {
+  "header" : {
+    "note" : "* ALL PRICES INCLUDE 9% TAXES *",
+    "category" : "HOT OR COLD SUBS"
+  },
   "items" : [
     {
       "lg_price" : "13.50",
@@ -26,75 +30,74 @@
       "reg_price" : "11.00"
     },
     {
+      "lg_price" : "13.00",
       "name" : "CHEESEBURGER",
-      "reg_price" : "11.00",
-      "lg_price" : "13.00"
+      "reg_price" : "11.00"
     },
     {
+      "lg_price" : "13.00",
       "name" : "B.L.T",
-      "reg_price" : "11.00",
-      "lg_price" : "13.00"
+      "reg_price" : "11.00"
     },
     {
+      "lg_price" : "13.00",
       "name" : "PASTRAMI",
-      "reg_price" : "11.00",
-      "lg_price" : "13.00"
+      "reg_price" : "11.00"
     },
     {
+      "lg_price" : "13.75",
       "name" : "GYROS",
-      "reg_price" : "11.75",
-      "lg_price" : "13.75"
+      "reg_price" : "11.75"
     },
     {
-      "reg_price" : "11.00",
+      "lg_price" : "13.50",
+      "name" : "VEAL PARMESAN",
+      "reg_price" : "11.00"
+    },
+    {
       "lg_price" : "13.00",
-      "name" : "VEAL PARMESAN"
+      "name" : "CHICKEN PARMESAN",
+      "reg_price" : "11.00"
     },
     {
-      "reg_price" : "11.00",
       "lg_price" : "13.00",
-      "name" : "CHICKEN PARMESAN"
+      "name" : "VEGETARIAN",
+      "reg_price" : "11.00"
     },
     {
-      "reg_price" : "11.00",
       "lg_price" : "13.00",
-      "name" : "VEGETARIAN"
+      "name" : "ROAST BEEF",
+      "reg_price" : "11.00"
     },
     {
-      "reg_price" : "11.00",
       "lg_price" : "13.00",
-      "name" : "ROAST BEEF"
+      "name" : "TURKEY",
+      "reg_price" : "11.00"
     },
     {
-      "reg_price" : "11.00",
-      "lg_price" : "13.00",
-      "name" : "TURKEY"
-    },
-    {
-      "reg_price" : "11.75",
       "lg_price" : "13.75",
-      "name" : "SAUSAGE & MEATBALLS"
+      "name" : "SAUSAGE & MEATBALLS",
+      "reg_price" : "11.75"
     },
     {
-      "reg_price" : "11.75",
       "lg_price" : "13.75",
-      "name" : "COMBO ITALIAN"
+      "name" : "COMBO ITALIAN",
+      "reg_price" : "11.75"
     },
     {
-      "reg_price" : "0.00",
       "lg_price" : "13.75",
-      "name" : "LAMB GRINDER"
+      "name" : "LAMB GRINDER",
+      "reg_price" : "0.00"
     },
     {
-      "reg_price" : "2.00",
       "lg_price" : "2.50",
-      "name" : "EXTRA CHEESE"
+      "name" : "EXTRA CHEESE",
+      "reg_price" : "2.00"
     }
   ],
-  "header" : {
-    "category" : "HOT OR COLD SUBS",
-    "note" : "* ALL PRICES INCLUDE 9% TAXES *"
-  },
+  "middle_items" : [
+
+  ],
   "images" : [
     "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub.png",
     "https://raw.githubusercontent.com/Mecozz/Menu/main/YCheesBurgerSub.png",
@@ -111,8 +114,5 @@
     "https://raw.githubusercontent.com/Mecozz/Menu/main/YCheesBurgerSub.png",
     "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamCheeseSub.png",
     "https://raw.githubusercontent.com/Mecozz/Menu/main/Yero.png"
-  ],
-  "middle_items" : [
-
   ]
 }
