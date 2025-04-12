@@ -18,7 +18,6 @@
     }
   ],
   "images" : [
-    [
       "https://raw.githubusercontent.com/Mecozz/Menu/main/Xrings.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YChickenFriesPlate.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YStreaakCheeseSub.png",
@@ -39,7 +38,6 @@
       "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpaghettiMeatballs2.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YMozSticks.png",
       "https://raw.githubusercontent.com/Mecozz/Menu/main/YFriesOR.png"
-    ]
   ],
   "header" : {
     "right_category" : "SIDE ORDERS",
