@@ -9,33 +9,25 @@
   "config" : {
     "image_rotation_speed" : 10000
   },
-  "images" : [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone2.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone5.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZMeatballFetaPizza.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZPepperoniPizza.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausTomSpin.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinachFettaPizza.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone2.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone3.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausage.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone4.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal2.png"
-    ],
-    [
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallChkSpinache.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
-      "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep2.png"
-  ],
+"images": [
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone2.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone5.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/ZMeatballFetaPizza.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/ZPepperoniPizza.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausTomSpin.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/ZSpinachFettaPizza.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone2.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone3.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallSausage.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/XCalzone4.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/XChickBrocCal2.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallChkSpinache.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep.png",
+  "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep2.png"
+],
   "left_items" : [
     {
       "reg_price" : "9.00",
