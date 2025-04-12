@@ -1,118 +1,118 @@
 {
   "items" : [
     {
-      "reg_price" : "11.50",
+      "lg_price" : "13.50",
       "name" : "MEATBALLS",
-      "lg_price" : "13.00"
+      "reg_price" : "11.50"
     },
     {
-      "reg_price" : "11.00",
+      "lg_price" : "13.00",
       "name" : "SAUSAGE",
-      "lg_price" : "13.00"
+      "reg_price" : "11.00"
     },
     {
-      "reg_price" : "11.00",
+      "lg_price" : "13.00",
       "name" : "HAM & CHEESE",
-      "lg_price" : "13.00"
+      "reg_price" : "11.00"
     },
     {
-      "reg_price" : "11.00",
+      "lg_price" : "13.00",
       "name" : "SALAMI",
-      "lg_price" : "13.00"
+      "reg_price" : "11.00"
     },
     {
-      "reg_price" : "11.00",
+      "lg_price" : "13.00",
       "name" : "TUNA",
-      "lg_price" : "13.00"
+      "reg_price" : "11.00"
     },
     {
-      "reg_price" : "11.00",
       "name" : "CHEESEBURGER",
+      "reg_price" : "11.00",
       "lg_price" : "13.00"
     },
     {
-      "reg_price" : "11.00",
       "name" : "B.L.T",
+      "reg_price" : "11.00",
       "lg_price" : "13.00"
     },
     {
-      "reg_price" : "11.00",
       "name" : "PASTRAMI",
+      "reg_price" : "11.00",
       "lg_price" : "13.00"
     },
     {
-      "reg_price" : "11.75",
       "name" : "GYROS",
+      "reg_price" : "11.75",
       "lg_price" : "13.75"
     },
     {
       "reg_price" : "11.00",
-      "name" : "VEAL PARMESAN",
-      "lg_price" : "13.00"
+      "lg_price" : "13.00",
+      "name" : "VEAL PARMESAN"
     },
     {
       "reg_price" : "11.00",
-      "name" : "CHICKEN PARMESAN",
-      "lg_price" : "13.00"
+      "lg_price" : "13.00",
+      "name" : "CHICKEN PARMESAN"
     },
     {
       "reg_price" : "11.00",
-      "name" : "VEGETARIAN",
-      "lg_price" : "13.00"
+      "lg_price" : "13.00",
+      "name" : "VEGETARIAN"
     },
     {
       "reg_price" : "11.00",
-      "name" : "ROAST BEEF",
-      "lg_price" : "13.00"
+      "lg_price" : "13.00",
+      "name" : "ROAST BEEF"
     },
     {
       "reg_price" : "11.00",
-      "name" : "TURKEY",
-      "lg_price" : "13.00"
+      "lg_price" : "13.00",
+      "name" : "TURKEY"
     },
     {
       "reg_price" : "11.75",
-      "name" : "SAUSAGE & MEATBALLS",
-      "lg_price" : "13.75"
+      "lg_price" : "13.75",
+      "name" : "SAUSAGE & MEATBALLS"
     },
     {
       "reg_price" : "11.75",
-      "name" : "COMBO ITALIAN",
-      "lg_price" : "13.75"
+      "lg_price" : "13.75",
+      "name" : "COMBO ITALIAN"
     },
     {
       "reg_price" : "0.00",
-      "name" : "LAMB GRINDER",
-      "lg_price" : "13.75"
+      "lg_price" : "13.75",
+      "name" : "LAMB GRINDER"
     },
     {
       "reg_price" : "2.00",
-      "name" : "EXTRA CHEESE",
-      "lg_price" : "2.50"
+      "lg_price" : "2.50",
+      "name" : "EXTRA CHEESE"
     }
   ],
   "header" : {
     "category" : "HOT OR COLD SUBS",
     "note" : "* ALL PRICES INCLUDE 9% TAXES *"
   },
+  "images" : [
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YCheesBurgerSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamCheeseSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YTurkeyCheeseSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamCheeseSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YCheesBurgerSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/Yero.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YTurkeyCheeseSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamCheeseSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YTurkeyCheeseSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YCheesBurgerSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamCheeseSub.png",
+    "https://raw.githubusercontent.com/Mecozz/Menu/main/Yero.png"
+  ],
   "middle_items" : [
 
-  ],
-  "images": [
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YCheesBurgerSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamCheeseSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YTurkeyCheeseSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamCheeseSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YCheesBurgerSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/Yero.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YTurkeyCheeseSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamCheeseSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YBaconSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YTurkeyCheeseSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YCheesBurgerSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/YHamCheeseSub.png",
-  "https://raw.githubusercontent.com/Mecozz/Menu/main/Yero.png"
-]
+  ]
 }
