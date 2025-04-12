@@ -1,66 +1,73 @@
 {
-  "left_items" : [
+  "right_items" : [
     {
-      "reg_price" : "9.00",
       "name" : "PLAIN",
-      "lg_price" : "50.00"
+      "reg_price" : "13.00",
+      "lg_price" : "16.75"
     },
     {
-      "reg_price" : "11.00",
-      "name" : "ONIONS",
-      "lg_price" : "15.03"
+      "name" : "1 ITEM",
+      "reg_price" : "15.00",
+      "lg_price" : "18.75"
     },
     {
-      "reg_price" : "11.00",
-      "name" : "PEPPERS",
-      "lg_price" : "15.00"
+      "name" : "2 ITEMS",
+      "reg_price" : "16.75",
+      "lg_price" : "22.00"
     },
     {
-      "reg_price" : "11.00",
-      "name" : "HAMBURG",
-      "lg_price" : "15.25"
+      "name" : "STEAK SPECIAL",
+      "reg_price" : "16.75",
+      "lg_price" : "23.00"
     },
     {
-      "reg_price" : "11.00",
-      "name" : "PEPPERONI",
-      "lg_price" : "15.00"
+      "name" : "CHICKEN",
+      "reg_price" : "16.75",
+      "lg_price" : "23.00"
     },
     {
-      "reg_price" : "11.00",
-      "name" : "HAM",
-      "lg_price" : "15.00"
+      "name" : "SPINACH & FETA",
+      "reg_price" : "16.75",
+      "lg_price" : "23.00"
     },
     {
-      "reg_price" : "11.00",
-      "name" : "MUSHROOM",
-      "lg_price" : "15.00"
+      "name" : "MEATBALL",
+      "reg_price" : "16.75",
+      "lg_price" : "22.00"
     },
     {
-      "reg_price" : "11.00",
-      "name" : "SAUSAGE",
-      "lg_price" : "15.00"
+      "name" : "HAM & PINEAPPLE",
+      "reg_price" : "16.75",
+      "lg_price" : "23.00"
     },
     {
-      "reg_price" : "12.00",
-      "name" : "MEATBALLS",
-      "lg_price" : "16.00"
+      "name" : "HOUSE SPECIAL",
+      "reg_price" : "16.75",
+      "lg_price" : "23.00"
     },
     {
-      "reg_price" : "12.00",
-      "name" : "BACON",
-      "lg_price" : "16.00"
+      "name" : "BACON OR GYRO",
+      "reg_price" : "16.75",
+      "lg_price" : "23.00"
+    },
+    {
+      "name" : "MEAT LOVERS",
+      "reg_price" : "17.75",
+      "lg_price" : "23.00"
+    },
+    {
+      "name" : "EXTRA CHEESE",
+      "reg_price" : "2.50",
+      "lg_price" : "3.00"
     }
   ],
-  "config" : {
-    "image_rotation_speed" : 10000
+  "header" : {
+    "left_category" : "PIZZA",
+    "right_category" : "CALZONES"
   },
   "middle_items" : [
 
   ],
-  "header" : {
-    "right_category" : "CALZONES",
-    "left_category" : "PIZZA"
-  },
   "images" : [
     [
       "https://raw.githubusercontent.com/Mecozz/Menu/main/ZChickenBrocCalzone.png",
@@ -90,66 +97,59 @@
       "https://raw.githubusercontent.com/Mecozz/Menu/main/XSmallPep2.png"
     ]
   ],
-  "right_items" : [
+  "left_items" : [
     {
-      "reg_price" : "13.00",
       "name" : "PLAIN",
-      "lg_price" : "16.75"
+      "reg_price" : "9.00",
+      "lg_price" : "13.00"
     },
     {
-      "reg_price" : "15.00",
-      "name" : "1 ITEM",
-      "lg_price" : "18.75"
+      "name" : "ONIONS",
+      "reg_price" : "11.00",
+      "lg_price" : "15.03"
     },
     {
-      "reg_price" : "16.75",
-      "name" : "2 ITEMS",
-      "lg_price" : "22.00"
+      "lg_price" : "15.00",
+      "reg_price" : "11.00",
+      "name" : "PEPPERS"
     },
     {
-      "reg_price" : "16.75",
-      "name" : "STEAK SPECIAL",
-      "lg_price" : "23.00"
+      "lg_price" : "15.25",
+      "reg_price" : "11.00",
+      "name" : "HAMBURG"
     },
     {
-      "reg_price" : "16.75",
-      "name" : "CHICKEN",
-      "lg_price" : "23.00"
+      "name" : "PEPPERONI",
+      "reg_price" : "11.00",
+      "lg_price" : "15.00"
     },
     {
-      "reg_price" : "16.75",
-      "name" : "SPINACH & FETA",
-      "lg_price" : "23.00"
+      "name" : "HAM",
+      "reg_price" : "11.00",
+      "lg_price" : "15.00"
     },
     {
-      "reg_price" : "16.75",
-      "name" : "MEATBALL",
-      "lg_price" : "22.00"
+      "name" : "MUSHROOM",
+      "reg_price" : "11.00",
+      "lg_price" : "15.00"
     },
     {
-      "reg_price" : "16.75",
-      "name" : "HAM & PINEAPPLE",
-      "lg_price" : "23.00"
+      "name" : "SAUSAGE",
+      "reg_price" : "11.00",
+      "lg_price" : "15.00"
     },
     {
-      "reg_price" : "16.75",
-      "name" : "HOUSE SPECIAL",
-      "lg_price" : "23.00"
+      "name" : "MEATBALLS",
+      "reg_price" : "12.00",
+      "lg_price" : "16.00"
     },
     {
-      "reg_price" : "16.75",
-      "name" : "BACON OR GYRO",
-      "lg_price" : "23.00"
-    },
-    {
-      "reg_price" : "17.75",
-      "name" : "MEAT LOVERS",
-      "lg_price" : "23.00"
-    },
-    {
-      "reg_price" : "2.50",
-      "name" : "EXTRA CHEESE",
-      "lg_price" : "3.00"
+      "name" : "BACON",
+      "reg_price" : "12.00",
+      "lg_price" : "16.00"
     }
-  ]
+  ],
+  "config" : {
+    "image_rotation_speed" : 10000
+  }
 }
